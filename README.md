@@ -22,7 +22,7 @@ Once GitHub has been setup correctly you can clone this reposotiry by pressing t
 
 ### Git push & pull
 Before you start working on code in jupyter, be sure that you have the latest version of this repository. Do this by typing 'git pull'. Once you have written certain parts of code and want to upload it to this repository do this as follows.
-		git add .
+		git add . (this will select all files)
 		git commit
 		(optional: write a description of your changes. Then press control+x. Followed by 'y', finally press enter)
 		git push
