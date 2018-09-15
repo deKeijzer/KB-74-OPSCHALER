@@ -34,6 +34,6 @@ More push & pull information can be found in [this notebook](https://github.com/
 # Important data locations
 
 ## KNMI dataframe
-`weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])
-weather = weather.set_index(['datetime'])
+`weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])  
+weather = weather.set_index(['datetime'])  
 weather.head()`
