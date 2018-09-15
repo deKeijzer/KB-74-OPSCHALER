@@ -35,7 +35,8 @@ More push & pull information can be found in [this notebook](https://github.com/
 
 ## KNMI dataframe
 The KNMI dataframe is read in as follows. 
-More information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb)
+More information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb).
+
 `weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])`
 `weather = weather.set_index(['datetime'])`
 `weather.head()`
