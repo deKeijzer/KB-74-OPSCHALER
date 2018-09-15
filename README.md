@@ -30,3 +30,10 @@ Before you start working on code in jupyter, be sure that you have the latest ve
 * `git commit -m 'commit message. For examples changes that you made to the code.'`
 * `git push`
 More push & pull information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb).
+
+# Important data locations
+
+## KNMI dataframe
+`weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])
+weather = weather.set_index(['datetime'])
+weather.head()`
