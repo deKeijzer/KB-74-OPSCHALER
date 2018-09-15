@@ -1,5 +1,5 @@
 # KB-74-OPSCHALER
-This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at the Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week a head with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
+This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at The Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week a head with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
 
 # Setting up GitHub on JupyterHub
 1. Login to JupyterHub on the datascience server. 
