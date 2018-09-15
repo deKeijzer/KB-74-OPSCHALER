@@ -34,8 +34,8 @@ More push & pull information can be found in [this notebook](https://github.com/
 # Important data locations
 
 ## KNMI dataframe
-The KNMI dataframe is read in as follows.  
+The KNMI dataframe (1,82 GB) is read in as follows.  
 More information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb).  
-`weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])`  
-`weather = weather.set_index(['datetime'])`  
-`weather.head()`  
+* `weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])`   
+* `weather = weather.set_index(['datetime'])`  
+* `weather.head()`  
