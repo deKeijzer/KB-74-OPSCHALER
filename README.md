@@ -11,9 +11,10 @@ This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for 
 
 ## Basic SSH commands
 * `ls` Lists directory contents
-* `cd` directory_name' Moves up to directory_name
-* `cd` Moves down a directory
+* `cd directory_name' Moves up to directory_name
+* `cd ..` Moves down a directory
 * `cp` Copies a file or directory to directory
+* Press tab to finish a word automatically.
 Note that `~` represents your home folder. 
 More info on Linux commands: [link](https://1.bp.blogspot.com/-Y9rBRKuT0wA/VrJ7xwjdVjI/AAAAAAAAh2k/sdrCyf7nLbo/s1600/linux-reference-bg-invert-1.png)
 
