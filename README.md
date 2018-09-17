@@ -41,7 +41,7 @@ More information can be found in [this notebook](https://github.com/deKeijzer/KB
 * `weather.head()`  
 
 ## Smartmeter, gasmeter, weather combined dataframes
-The smartmeter, gasmeter and weather dataframes merged into one dataframe. 
+The smartmeter, gasmeter and weather dataframes merged into one dataframe.  
 More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)
 * `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
 * `dwelling_id = P01S01W0373` (for example)
