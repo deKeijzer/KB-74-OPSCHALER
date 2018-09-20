@@ -75,5 +75,5 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 
 ## NaN Information of raw dataframes
 Location: `/datc/opschaler/nan_information`  
-This folder contains `dwelling_id.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
+This folder contains `dwelling_id_threshold_percentage.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
 The notebook in which `dwelling_id.csv` is created can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/df_NaN_checker.ipynb).
