@@ -42,7 +42,7 @@ Below is a list of the most important data locations for the Opschaler project. 
 The KNMI data consists of two dataframes. One is the raw format, this is the way KNMI has provided the data. The other dataset is the processed one, this has been cleaned/prepared/processed in such a way that it can be used for EDA.
 
 ### KNMI Raw data
-Location: `/datc/opschaler/weather_data/knmi_10_min_raw_data`
+Location: `/datc/opschaler/weather_data/knmi_10_min_raw_data`  
 This is the raw 10 minute interval data from 2015 till 2018 as provided by the KNMI (by mail).
 
 ### KNMI Processed dataframe
