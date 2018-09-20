@@ -52,9 +52,16 @@ Reading in the data is done as follows:
 * `weather = weather.set_index(['datetime'])`  
 * `weather.head()`  
 
-## Smartmeter, gasmeter, weather combined dataframes
-The smartmeter, gasmeter and weather dataframes merged into one dataframe.  
-More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)
+## Raw smartmeter data (from the TU Delft server)
+Location: `/datc/opschaler/smartmeter_data`  
+These are the raw smartmeter dataframes from the TU Delft server.  
+They should be in the format `dwelling_id.csv`.  
+These files contain the raw electricity and raw gas data.  
+
+## Processed dwelling_id dataframes
+Location: `/datc/opschaler/combined_dfs_gas_smart_weather`  
+The smartmeter, gasmeter and weather dataframes merged into one dataframe, merged into  
+More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)  
 * `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'_merged_gas_smart_weather.csv', delimiter='\t', parse_dates=['datetime'])`
