@@ -33,7 +33,9 @@ Before you start working on code in jupyter, be sure that you have the latest ve
 More push & pull information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb).
 
 # Important data locations
-Below is a list of the most important data locations for the Opschaler project. <b>Make sure to not modify or add any files in the folders listed below.</b> Some notebooks have been programmed in such a way that they expect all files in a folder to have a certain file structure. For example: in the `smartmeter_data folder` the only files in there should be smartmeter files in the format `dwelling_id.csv`. Any other file in there will crash the notebook which uses this folder to process the files.
+Below is a list of the most important data locations for the Opschaler project. <b>Make sure to not modify or add any files in the folders listed below.</b> Some notebooks have been programmed in such a way that they expect all files in a folder to have a certain file structure. For example: in the `smartmeter_data folder` the only files in there should be smartmeter files in the format `dwelling_id.csv`. Any other file in there will crash the notebook which uses this folder to process the files.  
+* Use the <b>Processed dwelling_id dataframes</b> files for EDA
+
 
 ## KNMI
 The KNMI data consists of two dataframes. One is the raw format, this is the way KNMI has provided the data. The other dataset is the processed one, this has been cleaned/prepared/processed in such a way that it can be used for EDA.
