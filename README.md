@@ -34,6 +34,7 @@ More push & pull information can be found in [this notebook](https://github.com/
 
 # Important data locations
 Below is a list of the most important data locations for the Opschaler project. <b>Make sure to not modify or add any files in the folders listed below.</b> Some notebooks have been programmed in such a way that they expect all files in a folder to have a certain file structure. For example: in the `smartmeter_data folder` the only files in there should be smartmeter files in the format `dwelling_id.csv`. Any other file in there will crash the notebook which uses this folder to process the files.  
+* Only read files, do not write to them.
 * Use the [Processed dwelling_id dataframes](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md#processed-dwelling_id-dataframes) files for EDA.
 
 
@@ -54,15 +55,19 @@ Reading in the data is done as follows:
 * `weather = weather.set_index(['datetime'])`  
 * `weather.head()`  
 
-## Raw smartmeter data (from the TU Delft server)
+## Smartmeter data (from the TU Delft server)
+This is the smartmeter data as downloaded from the TU Delft server.  
+
+### Raw smartmeter data (from the TU Delft server)
 Location: `/datc/opschaler/smartmeter_data`  
 These are the raw smartmeter dataframes from the TU Delft server.  
 They should be in the format `dwelling_id.csv`.  
 These files contain the raw electricity and raw gas data.  
 
-## Processed dwelling_id dataframes
+### Processed dwelling_id dataframes
 Location: `/datc/opschaler/combined_dfs_gas_smart_weather`  
-The smartmeter, gasmeter and weather dataframes merged into one dataframe, merged into  
+The smartmeter, gasmeter and weather dataframes merged into one dataframe.
+Use these files to do EDA on.
 More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)  
 * `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
