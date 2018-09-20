@@ -42,7 +42,7 @@ Below is a list of the most important data locations for the Opschaler project. 
 The KNMI data consists of two dataframes. One is the raw format, this is the way KNMI has provided the data. The other dataset is the processed one, this has been cleaned/prepared/processed in such a way that it can be used for EDA.
 
 ### KNMI Raw data
-Location: `/datc/opschaler/weather_data/knmi_10_min_raw_data`
+Location: `/datc/opschaler/weather_data/knmi_10_min_raw_data`  
 This is the raw 10 minute interval data from 2015 till 2018 as provided by the KNMI (by mail).
 
 ### KNMI Processed dataframe
@@ -72,3 +72,8 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 * `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
+
+## NaN Information of raw dataframes
+Location: `/datc/opschaler/nan_information`  
+This folder contains `dwelling_id_threshold_percentage.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
+The notebook in which `dwelling_id_threshold_percentage.csv` is created can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/df_NaN_checker.ipynb).
