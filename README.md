@@ -72,3 +72,8 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 * `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
+
+## NaN Information of raw dataframes
+Location: `/datc/opschaler/nan_information`  
+This folder contains `dwelling_id.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
+The function in which `dwelling_id.csv` is created can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/df_NaN_checker.ipynb).
