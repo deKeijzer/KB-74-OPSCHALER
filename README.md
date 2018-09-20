@@ -34,8 +34,11 @@ More push & pull information can be found in [this notebook](https://github.com/
 
 # Important data locations
 
-## KNMI dataframe
-The KNMI dataframe (1,82 GB) is read in as follows.  
+## KNMI
+
+### Combined weather dataframe
+The KNMI dataframe (1,82 GB) contains weather data from 2015 to 2018.
+The original resolution was 10 minutes, but this has been resampled to 10 seconds by using interpolation.
 More information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb).  
 * `weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])`   
 * `weather = weather.set_index(['datetime'])`  
