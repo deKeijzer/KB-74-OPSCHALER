@@ -52,12 +52,86 @@ def clean_prepare_smart_gas(file_path):
     return smart, gas
 
 
+def df_NaN_checker(df, threshold_percentage):
+    """
+    df: input pandas dataframe
+    threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
+
+    Checks each column in the input dataframe for NaNs.
+    Outputs the amount of NaNs behind each other, including the start and stop index, per column as a sublist.
+    For example when the dataframe has three columns.
+    Output is in the form of:
+    [[column_one_info], [column_two_info], [column_three_info]]
+    With the column_..._info being in the form of:
+    [start_index, stop_index, amount_of_NaNs]
+    """
+    columns = df.columns
+    df = df.isnull()
+    output = []
+
+    for i in range(len(columns)):
+        column_name = columns[i]
+
+        column_info_final = []
+        column_info = []
+        temp = []
+        x = False
+
+        for j, value in enumerate(df[column_name]):
+            if x == False and value == True:
+                temp.append(j)
+                x = True
+            elif x == True and value == True:
+                temp.append(j)
+            elif x == True and value == False:
+                column_info.append(temp)
+                temp = []
+                x = False
+
+        lengths = []
+
+        for array in column_info:
+            lengths.append([array[0], array[-1], len(array)])
+
+        output.append(lengths)
+
+    # Convert df_info to a readable dataframe instead of list
+
+    """
+    Row per column from the 'output' list
+    Columns: start-index, stop-index, NaN streak
+    """
+    columns = df.columns
+
+    df_info = pd.DataFrame(columns=['Column name', 'Start index', 'Stop index', 'Amount of NaNs'])
+
+    for column in range(len(output)):
+        for i in range(len(output[column])):
+            column_name = df.columns[column]
+            start = output[column][i][0]
+            stop = output[column][i][1]
+            amount = output[column][i][2]
+            df_info = df_info.append(
+                {'Column name': column_name, 'Start index': start, 'Stop index': stop, 'Amount of NaNs': amount},
+                ignore_index=True)
+        pass
+
+    percentage = (df_info['Amount of NaNs'] / len(df)) * 100
+
+    df_info.drop(df_info[percentage < threshold_percentage].index, inplace=True)
+
+    return df_info
+
+
 def resample_smart_gas(smart, gas):
     """
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
     Returns (smart_resampled, gas_resampled)
     """
+
+    # Implement NaN checker here
+
     smart_resampled = smart.resample('10s').mean()
 
     gas_resampled = gas.resample('H').mean()
@@ -83,6 +157,21 @@ def save_df(df, dwelling_id):
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
 
+def read_weather_data():
+    weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#',
+                          parse_dates=['datetime'])
+    weather = weather.set_index(['datetime'])
+    return weather
+
+
+def smartmeter_data():
+    path = '/datc/opschaler/smartmeter_data'
+    file_paths = np.array(glob.glob(path + "/*.csv"))
+    print('Detected %s smartmeter_data files.' % len(file_paths))
+    #
+    dwelling_ids = np.array(list((map(lambda x: x[-15:-4], file_paths))))
+
+    return file_paths, dwelling_ids
 
 def main():
     for i, file_path in enumerate(file_paths):
@@ -100,24 +189,11 @@ def main():
         print('-----')
 
 
-def read_weather_data():
-    weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#',
-                          parse_dates=['datetime'])
-    weather = weather.set_index(['datetime'])
-    return weather
+def main_new():
+    file_paths, dwelling_ids = smartmeter_data()
 
+    # index 48 is the 'export_P01S01W0000.csv' test dataframe
+    smart, gas = clean_prepare_smart_gas(file_paths[48])
+    smart_resampled, gas_resampled = resample_smart_gas(smart, gas)
 
-def smartmeter_data():
-    path = '/datc/opschaler/smartmeter_data'
-    file_paths = np.array(glob.glob(path + "/*.csv"))
-    print('Detected %s smartmeter_data files.' % len(file_paths))
-    #
-    dwelling_ids = np.array(list((map(lambda x: x[-15:-4], file_paths))))
-
-    return file_paths, dwelling_ids
-
-
-file_paths, dwelling_ids = smartmeter_data()
-
-# index 48 is the 0000 test dataframe
-smart, gas = clean_prepare_smart_gas(file_paths[48])
+%time main_new()
