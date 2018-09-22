@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import glob
 import time
+
 import matplotlib.pyplot as plt
 
 
@@ -251,6 +252,7 @@ gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_i
 smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
 gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
 
-plt.plot(gas_processed.index, gas_processed.gasMeter, '.')
-plt.show()
+# After interpolation, ready to combine & save output
 
+plt.plot([1,2,3,4,5], [1,2,3,4,5], '.')
+plt.show()
