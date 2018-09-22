@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import glob
 import time
+import matplotlib.pyplot as plt
 
 
 def clean_datetime(df):
@@ -225,6 +226,8 @@ file_paths, dwelling_ids = smartmeter_data()
 index 48 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
 """
+
+# Read in raw smartmeter dataframe, split them into smart, gas df
 smart, gas = clean_prepare_smart_gas(file_paths[48])
 
 print('----- smart NaNs -----')
@@ -232,6 +235,7 @@ print(smart.isnull().sum())
 print('----- gas NaNs -----')
 print(gas.isnull().sum())
 
+# Resample dataframes (using mean()) and output nan_info
 smart_resampled, smart_nan_info, gas_resampled, gas_nan_info = smart_gas_nan_checker(smart, gas)
 
 print('----- smart_resampled NaNs -----')
@@ -239,5 +243,14 @@ print(smart_resampled.isnull().sum())
 print('----- gas_resampled NaNs -----')
 print(gas_resampled.isnull().sum())
 
-smart_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 3)
-gas_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
+# drop NaN streaks above threshold
+smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 3)
+gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
+
+# resample & interpolate dataframes
+smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
+gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
+
+plt.plot(gas_processed.index, gas_processed.gasMeter, '.')
+plt.show()
+
