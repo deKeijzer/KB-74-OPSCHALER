@@ -151,19 +151,23 @@ def smart_gas_nan_checker(smart, gas):
 
     return smart_resampled, smart_nan_info, gas_resampled, gas_nan_info
 
-def process_nans(df, df_nan_info, threshold):
+def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     """
-
+    Drops NaN streaks from the df when they are larger then the threshold value.
+    This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
     :param df: Dataframe to process NaNs off
     :param df_nan_info: NaN info dataframe of the input df
     :param threshold: Interpolate if 'Amount of NaNs' from detected NaN streak is below this number.
-    :return:
+    :return: dataframe
     """
+
+    # Check for NaN streaks > threshold and drop them form the df
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
         if amount > threshold:
             start_index = (df_nan_info['Start index'][i])
             stop_index = (df_nan_info['Stop index'][i])
-            df = df
+            index_list = df[start_index:stop_index].index
+            df = df.drop(index_list)
 
     return df
 
@@ -235,7 +239,5 @@ print(smart_resampled.isnull().sum())
 print('----- gas_resampled NaNs -----')
 print(gas_resampled.isnull().sum())
 
-smart_processed = process_nans(smart_resampled, smart_nan_info, 3)
-
-smart_processed
-
+smart_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 3)
+gas_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
