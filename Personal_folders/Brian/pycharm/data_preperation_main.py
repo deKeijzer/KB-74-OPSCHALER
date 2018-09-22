@@ -52,7 +52,7 @@ def clean_prepare_smart_gas(file_path):
     return smart, gas
 
 
-def df_NaN_checker(df, threshold_percentage):
+def df_nan_checker(df, threshold_percentage):
     """
     df: input pandas dataframe
     threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
@@ -79,10 +79,10 @@ def df_NaN_checker(df, threshold_percentage):
 
         for j, value in enumerate(df[column_name]):
             if x == False and value == True:
-                temp.append(j)
+                temp.append(df.index[j])
                 x = True
             elif x == True and value == True:
-                temp.append(j)
+                temp.append(df.index[j])
             elif x == True and value == False:
                 column_info.append(temp)
                 temp = []
@@ -123,7 +123,7 @@ def df_NaN_checker(df, threshold_percentage):
     return df_info
 
 
-def resample_smart_gas(smart, gas):
+def smart_gas_nan_checker(smart, gas):
     """
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
@@ -131,16 +131,41 @@ def resample_smart_gas(smart, gas):
     """
 
     # Implement NaN checker here
+    # Resample to the same sampling time, use .mean, that way empty gaps will apear as NaNs
+    # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
 
     smart_resampled = smart.resample('10s').mean()
-
     gas_resampled = gas.resample('H').mean()
+
+    smart_nan_info = df_nan_checker(smart_resampled, 0)
+    gas_nan_info = df_nan_checker(gas_resampled, 0)
+
+
     # replace 0s with NaNs
-    gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
+    #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
     gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
 
-    return smart_resampled, gas_resampled
+    # 0th  index is zero, replace it with 1st index.
+    gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
+
+    return smart_resampled, smart_nan_info, gas_resampled, gas_nan_info
+
+def process_nans(df, df_nan_info, threshold):
+    """
+
+    :param df: Dataframe to process NaNs off
+    :param df_nan_info: NaN info dataframe of the input df
+    :param threshold: Interpolate if 'Amount of NaNs' from detected NaN streak is below this number.
+    :return:
+    """
+    for i, amount in enumerate(df_nan_info['Amount of NaNs']):
+        if amount > threshold:
+            start_index = (df_nan_info['Start index'][i])
+            stop_index = (df_nan_info['Stop index'][i])
+            df = df
+
+    return df
 
 def merge_smart_gas_weather(smart_resampled, gas_resampled, weather):
     """
@@ -189,11 +214,28 @@ def main():
         print('-----')
 
 
-def main_new():
-    file_paths, dwelling_ids = smartmeter_data()
 
-    # index 48 is the 'export_P01S01W0000.csv' test dataframe
-    smart, gas = clean_prepare_smart_gas(file_paths[48])
-    smart_resampled, gas_resampled = resample_smart_gas(smart, gas)
+file_paths, dwelling_ids = smartmeter_data()
 
-%time main_new()
+"""
+index 48 is the 'export_P01S01W0000.csv' test dataframe
+smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
+"""
+smart, gas = clean_prepare_smart_gas(file_paths[48])
+
+print('----- smart NaNs -----')
+print(smart.isnull().sum())
+print('----- gas NaNs -----')
+print(gas.isnull().sum())
+
+smart_resampled, smart_nan_info, gas_resampled, gas_nan_info = smart_gas_nan_checker(smart, gas)
+
+print('----- smart_resampled NaNs -----')
+print(smart_resampled.isnull().sum())
+print('----- gas_resampled NaNs -----')
+print(gas_resampled.isnull().sum())
+
+smart_processed = process_nans(smart_resampled, smart_nan_info, 3)
+
+smart_processed
+
