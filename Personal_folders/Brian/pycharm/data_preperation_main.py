@@ -148,16 +148,16 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     gas_resampled = gas.resample('H').mean()
 
     print('-- smart, gas nan_info --')
-    #smart_nan_info = df_nan_checker(smart_resampled, 0)
-    #gas_nan_info = df_nan_checker(gas_resampled, 0)
+    smart_nan_info = df_nan_checker(smart_resampled, 0)
+    gas_nan_info = df_nan_checker(gas_resampled, 0)
 
     print('-- smart,gas nan_fig')
     smart_nan_fig = plot_nans(smart_resampled, dwelling_id, 'smart')
-    #gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
+    gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
 
     print('-- resampling gas, creating gasPower --')
     # replace 0s with NaNs
-    #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
+    gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
     gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
 
     # 0th  index is zero, replace it with 1st index.
@@ -225,7 +225,7 @@ def plot_nans(df, dwelling_id, type):
     fig = fig.get_figure()
     fig.tight_layout()
     fig.show()
-    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'_'+type+'.png')
+    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'_'+type+'.png', dpi=1000)
     return fig
 
 
@@ -271,15 +271,18 @@ def main():
 
         smart, gas = clean_prepare_smart_gas(file_paths[i])
         smart_resampled, gas_resampled = resample_smart_gas(smart, gas)
-        df = merge_smart_gas_weather(smart_resampled, gas_resampled, weather)
+        df = merge_dfs(smart_resampled, gas_resampled, weather)
         save_df(df, dwelling_id)
         t2 = time.time()
         print('Finished iteration %s in %.1f [s], Finished processing dwelling_id: %s, ' % (i, (t2 - t1), dwelling_id))
         print('-----')
 
 
-#weather = read_weather_data()
+weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
+file_paths = file_paths[9:]
+dwelling_ids = dwelling_ids[9:]
+
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
@@ -288,50 +291,58 @@ N=29 is the smallest test df
 N=24 is the smallest real df
 13 is largest real df
 """
-N = 10
+for i in range(len(file_paths)):
+    t1 = time.time()
+    N = i
+    print('---------- N=%s ----------' % i)
 
-file_path = file_paths[N]
-dwelling_id = dwelling_ids[N]
-print('Selected dwelling_id: '+dwelling_ids[N])
+    file_path = file_paths[N]
+    dwelling_id = dwelling_ids[N]
+    print('Selected dwelling_id: '+dwelling_ids[N])
 
-# Read in raw smartmeter dataframe, split them into smart, gas df
-smart, gas = clean_prepare_smart_gas(file_path)
+    # Read in raw smartmeter dataframe, split them into smart, gas df
+    smart, gas = clean_prepare_smart_gas(file_path)
 
-print('----- smart NaNs -----')
-#print(smart.isnull().sum())
-print('----- gas NaNs -----')
-#print(gas.isnull().sum())
+    print('----- Resampling -----')
+    # Resample dataframes (using mean()) and output nan_info
+    smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
 
-print('----- Resampling -----')
-# Resample dataframes (using mean()) and output nan_info
-smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
+    print('----- Saving NaN information -----')
+    # Save NaN information
+    smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
+    gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
 
-print('----- Saving NaN information -----')
-# Save NaN information
-smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
-gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
+    print('----- smart_resampled NaNs -----')
+    print(smart_resampled.isnull().sum())
+    print('----- gas_resampled NaNs -----')
+    print(gas_resampled.isnull().sum())
 
-print('----- smart_resampled NaNs -----')
-print(smart_resampled.isnull().sum())
-print('----- gas_resampled NaNs -----')
-print(gas_resampled.isnull().sum())
+    print('----- Drop NaN streak above threshold -----')
+    # drop NaN streaks above threshold
+    smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 6)
+    gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
 
-print('----- Drop NaN streak above threshold -----')
-# drop NaN streaks above threshold
-smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 6)
-gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
+    """
+    Resample & interpolate dataframes
+    Should NOT interpolate ePower, interpolate eMeter... 
+    """
+
+    print('----- Interpolating -----')
+    smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
+    gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
+
+    # After interpolation, ready to combine & save output
+    print('----- merge_dfs -----')
+    df = merge_dfs(smart_processed, gas_processed, weather)
+
+    print('----- save_df -----')
+    save_df(df, dwelling_id)
+
+    t2 = time.time()
+    print('---------- FINISHED iteration %s IN %s ----------' % (i, (t2-t1)))
 
 """
-Resample & interpolate dataframes
-Should NOT interpolate ePower, interpolate eMeter... 
+What slows down the code a lot:
+df_nan_checker
+clean_datetime
 """
-
-print('----- Interpolating -----')
-smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
-gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
-
-# After interpolation, ready to combine & save output
-#df = merge_dfs(smart_processed, gas_processed, weather)
-
-smart_resampled.index.dtype
-
