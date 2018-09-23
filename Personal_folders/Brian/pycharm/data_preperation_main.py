@@ -151,7 +151,7 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     gas_nan_info = df_nan_checker(gas_resampled, 0)
 
     smart_nan_fig = plot_nans(smart_resampled, dwelling_id, 'smart')
-    gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
+    #gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
 
 
     # replace 0s with NaNs
@@ -186,28 +186,41 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
 
 
 def plot_nans(df, dwelling_id, type):
+    import matplotlib.ticker as mticker
+
     plt.clf()
+    #df = df.reset_index()
     df = df.isnull()
 
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
+
     try:
         df.index = df.index.to_period('H')
     except:
         print('plot_nans could not set df.index.to_period')
 
     # Plot heatmap
-    fig = sns.heatmap(df, cmap='gray_r')
+    # square = True, better column seperation, but makes fig not nice
+
+    n = int(len(df)*0.2)
+    fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
+    fig.invert_yaxis()
+    #fig = sns.heatmap(df, cmap='gray_r', square=False)
 
     # Correct layout
     fig.tick_params(axis='x', rotation=90)
     fig.tick_params(axis='y', rotation=0)
 
+    #n = int(len(df)*2)
+    #myLocator = mticker.MultipleLocator(n)
+    #fig.yaxis.set_major_locator(myLocator)
+
     #fig.yaxis.set_major_locator(mdates.AutoDateFormatter())
     #fig.yaxis.set_major_formatter(mdates.AutoDateFormatter('%Y-%m-%d'))
 
-    fig.grid(alpha=0.2)
+    fig.grid(alpha=1)
 
     #fig.invert_yaxis()
     fig.set(xlabel='Column [-]', ylabel='Index [-]')
@@ -275,6 +288,7 @@ file_paths, dwelling_ids = smartmeter_data()
 """
 index 48 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
+N=24 is the smallest real df
 """
 N = 48
 
