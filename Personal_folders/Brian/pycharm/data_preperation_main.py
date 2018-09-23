@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import glob
 import time
+import datetime
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -186,14 +187,35 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
 
 def plot_nans(df, dwelling_id, type):
     plt.clf()
-    df = df.reset_index() # get rid of datetime, use indices instead
     df = df.isnull()
-    #ticks = round(int(len(df)*0.1) /10000)
-    fig = sns.heatmap(df, cmap='gray_r', yticklabels=10, cbar=False, color='r')
-    fig.invert_yaxis()
+
+
+    # Reindex datetimes
+    # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
+    try:
+        df.index = df.index.to_period('H')
+    except:
+        print('plot_nans could not set df.index.to_period')
+
+    # Plot heatmap
+    fig = sns.heatmap(df, cmap='gray_r')
+
+    # Correct layout
+    fig.tick_params(axis='x', rotation=90)
+    fig.tick_params(axis='y', rotation=0)
+
+    #fig.yaxis.set_major_locator(mdates.AutoDateFormatter())
+    #fig.yaxis.set_major_formatter(mdates.AutoDateFormatter('%Y-%m-%d'))
+
+    fig.grid(alpha=0.2)
+
+    #fig.invert_yaxis()
     fig.set(xlabel='Column [-]', ylabel='Index [-]')
     plt.title('Dwelling ID: '+dwelling_id)
+
     fig = fig.get_figure()
+    fig.tight_layout()
+    fig.show()
     fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'_'+type+'.png')
     return fig
 
@@ -271,8 +293,6 @@ print(gas.isnull().sum())
 # Resample dataframes (using mean()) and output nan_info
 smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
 
-smart_nan_fig.show()
-
 # Save NaN information
 smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
 gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
@@ -296,4 +316,5 @@ gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
 # After interpolation, ready to combine & save output
 #df = merge_dfs(smart_processed, gas_processed, weather)
 
+smart_resampled.index.dtype
 
