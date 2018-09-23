@@ -48,8 +48,8 @@ def clean_prepare_smart_gas(file_path):
     smart = df.iloc[:, :7]
     gas = df.iloc[:, 7:]
 
-    smart = clean_datetime(smart)
-    gas = clean_datetime(gas)
+    #smart = clean_datetime(smart)
+    #gas = clean_datetime(gas)
 
     smart['datetime'] = pd.to_datetime(smart['datetime'])
     gas['datetime'] = pd.to_datetime(gas['datetime'])
@@ -143,17 +143,19 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     # Implement NaN checker here
     # Resample to the same sampling time, use .mean, that way empty gaps will apear as NaNs
     # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
-
+    print('-- smart, gas resampling --')
     smart_resampled = smart.resample('10s').mean()
     gas_resampled = gas.resample('H').mean()
 
-    smart_nan_info = df_nan_checker(smart_resampled, 0)
-    gas_nan_info = df_nan_checker(gas_resampled, 0)
+    print('-- smart, gas nan_info --')
+    #smart_nan_info = df_nan_checker(smart_resampled, 0)
+    #gas_nan_info = df_nan_checker(gas_resampled, 0)
 
+    print('-- smart,gas nan_fig')
     smart_nan_fig = plot_nans(smart_resampled, dwelling_id, 'smart')
     #gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
 
-
+    print('-- resampling gas, creating gasPower --')
     # replace 0s with NaNs
     #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
     gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
@@ -161,7 +163,7 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     # 0th  index is zero, replace it with 1st index.
     gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
-    return smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig
+    return (smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig)
 
 
 def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
@@ -186,43 +188,37 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
 
 
 def plot_nans(df, dwelling_id, type):
-    import matplotlib.ticker as mticker
-
     plt.clf()
-    #df = df.reset_index()
     df = df.isnull()
-
+    #df = df.resample('10D').sum() #resample make amount of NaNs visible
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
-
     try:
-        df.index = df.index.to_period('H')
+        df.index = df.index.to_period('D')
     except:
         print('plot_nans could not set df.index.to_period')
 
     # Plot heatmap
-    # square = True, better column seperation, but makes fig not nice
 
-    n = int(len(df)*0.2)
-    fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
+    n = int(len(df)*0.2) # Choose amount of yticklabels to show
+    #fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
+    #fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar_kws={"label": "Amount of NaNs [-]"},
+    #                  yticklabels=n)
+    fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True,
+                      yticklabels=n,cbar_kws={})
+
+    # Set cbar ticks manually
+    cbar = fig.collections[0].colorbar
+    cbar.set_ticks([0, 1])
+    cbar.set_ticklabels(['Not NaN', 'NaN'])
+
     fig.invert_yaxis()
-    #fig = sns.heatmap(df, cmap='gray_r', square=False)
 
     # Correct layout
     fig.tick_params(axis='x', rotation=90)
     fig.tick_params(axis='y', rotation=0)
-
-    #n = int(len(df)*2)
-    #myLocator = mticker.MultipleLocator(n)
-    #fig.yaxis.set_major_locator(myLocator)
-
-    #fig.yaxis.set_major_locator(mdates.AutoDateFormatter())
-    #fig.yaxis.set_major_formatter(mdates.AutoDateFormatter('%Y-%m-%d'))
-
-    fig.grid(alpha=1)
-
-    #fig.invert_yaxis()
+    #fig.grid(alpha=1)
     fig.set(xlabel='Column [-]', ylabel='Index [-]')
     plt.title('Dwelling ID: '+dwelling_id)
 
@@ -286,27 +282,31 @@ def main():
 file_paths, dwelling_ids = smartmeter_data()
 
 """
-index 48 is the 'export_P01S01W0000.csv' test dataframe
+index 49 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
+N=29 is the smallest test df
 N=24 is the smallest real df
+13 is largest real df
 """
-N = 48
+N = 10
 
 file_path = file_paths[N]
 dwelling_id = dwelling_ids[N]
-
+print('Selected dwelling_id: '+dwelling_ids[N])
 
 # Read in raw smartmeter dataframe, split them into smart, gas df
 smart, gas = clean_prepare_smart_gas(file_path)
 
 print('----- smart NaNs -----')
-print(smart.isnull().sum())
+#print(smart.isnull().sum())
 print('----- gas NaNs -----')
-print(gas.isnull().sum())
+#print(gas.isnull().sum())
 
+print('----- Resampling -----')
 # Resample dataframes (using mean()) and output nan_info
 smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
 
+print('----- Saving NaN information -----')
 # Save NaN information
 smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
 gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
@@ -316,6 +316,7 @@ print(smart_resampled.isnull().sum())
 print('----- gas_resampled NaNs -----')
 print(gas_resampled.isnull().sum())
 
+print('----- Drop NaN streak above threshold -----')
 # drop NaN streaks above threshold
 smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 6)
 gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
@@ -324,6 +325,8 @@ gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_i
 Resample & interpolate dataframes
 Should NOT interpolate ePower, interpolate eMeter... 
 """
+
+print('----- Interpolating -----')
 smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
 gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
 
