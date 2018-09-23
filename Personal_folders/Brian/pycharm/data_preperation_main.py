@@ -280,8 +280,8 @@ def main():
 
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-file_paths = file_paths[9:]
-dwelling_ids = dwelling_ids[9:]
+file_paths = file_paths[14:] #10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[14:]
 
 
 """
