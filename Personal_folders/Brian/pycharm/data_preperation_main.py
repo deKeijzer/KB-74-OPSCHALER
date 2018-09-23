@@ -1,9 +1,17 @@
+"""
+Shifr+F9 (Debug first, then plots will appear in SciView)
+"""
+
 import pandas as pd
 import numpy as np
 import glob
 import time
 
 import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib as mpl
+mpl.style.use('default')
+
 
 
 def clean_datetime(df):
@@ -74,7 +82,6 @@ def df_nan_checker(df, threshold_percentage):
     for i in range(len(columns)):
         column_name = columns[i]
 
-        column_info_final = []
         column_info = []
         temp = []
         x = False
@@ -125,7 +132,7 @@ def df_nan_checker(df, threshold_percentage):
     return df_info
 
 
-def smart_gas_nan_checker(smart, gas):
+def smart_gas_nan_checker(smart, gas, dwelling_id):
     """
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
@@ -142,6 +149,9 @@ def smart_gas_nan_checker(smart, gas):
     smart_nan_info = df_nan_checker(smart_resampled, 0)
     gas_nan_info = df_nan_checker(gas_resampled, 0)
 
+    smart_nan_fig = plot_nans(smart_resampled, dwelling_id, 'smart')
+    gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
+
 
     # replace 0s with NaNs
     #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
@@ -150,8 +160,8 @@ def smart_gas_nan_checker(smart, gas):
     # 0th  index is zero, replace it with 1st index.
     gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
+    return smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig
 
-    return smart_resampled, smart_nan_info, gas_resampled, gas_nan_info
 
 def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     """
@@ -173,12 +183,27 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
 
     return df
 
-def merge_smart_gas_weather(smart_resampled, gas_resampled, weather):
+
+def plot_nans(df, dwelling_id, type):
+    plt.clf()
+    df = df.reset_index() # get rid of datetime, use indices instead
+    df = df.isnull()
+    #ticks = round(int(len(df)*0.1) /10000)
+    fig = sns.heatmap(df, cmap='gray_r', yticklabels=10, cbar=False, color='r')
+    fig.invert_yaxis()
+    fig.set(xlabel='Column [-]', ylabel='Index [-]')
+    plt.title('Dwelling ID: '+dwelling_id)
+    fig = fig.get_figure()
+    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'_'+type+'.png')
+    return fig
+
+
+def merge_dfs(df1, df2, df3):
     """
     Merges the dataframes, outputs one df.
     """
-    df = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
-    df = pd.merge(df, weather, left_index=True, right_index=True)
+    df = pd.merge(df1, df2, left_index=True, right_index=True)
+    df = pd.merge(df, df3, left_index=True, right_index=True)
 
     return df
 
@@ -187,6 +212,7 @@ def save_df(df, dwelling_id):
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
+
 
 def read_weather_data():
     weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#',
@@ -204,6 +230,7 @@ def smartmeter_data():
 
     return file_paths, dwelling_ids
 
+
 def main():
     for i, file_path in enumerate(file_paths):
         t1 = time.time()
@@ -220,16 +247,21 @@ def main():
         print('-----')
 
 
-
+#weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
 
 """
 index 48 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
 """
+N = 48
+
+file_path = file_paths[N]
+dwelling_id = dwelling_ids[N]
+
 
 # Read in raw smartmeter dataframe, split them into smart, gas df
-smart, gas = clean_prepare_smart_gas(file_paths[48])
+smart, gas = clean_prepare_smart_gas(file_path)
 
 print('----- smart NaNs -----')
 print(smart.isnull().sum())
@@ -237,7 +269,13 @@ print('----- gas NaNs -----')
 print(gas.isnull().sum())
 
 # Resample dataframes (using mean()) and output nan_info
-smart_resampled, smart_nan_info, gas_resampled, gas_nan_info = smart_gas_nan_checker(smart, gas)
+smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
+
+smart_nan_fig.show()
+
+# Save NaN information
+smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
+gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
 
 print('----- smart_resampled NaNs -----')
 print(smart_resampled.isnull().sum())
@@ -245,14 +283,17 @@ print('----- gas_resampled NaNs -----')
 print(gas_resampled.isnull().sum())
 
 # drop NaN streaks above threshold
-smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 3)
+smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 6)
 gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
 
-# resample & interpolate dataframes
+"""
+Resample & interpolate dataframes
+Should NOT interpolate ePower, interpolate eMeter... 
+"""
 smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
 gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
 
 # After interpolation, ready to combine & save output
+#df = merge_dfs(smart_processed, gas_processed, weather)
 
-plt.plot([1,2,3,4,5], [1,2,3,4,5], '.')
-plt.show()
+
