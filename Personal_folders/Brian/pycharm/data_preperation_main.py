@@ -162,17 +162,17 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
 
     print('-- smart,gas nan_fig')
-    df_nan_fig = plot_nans(df_nan_info)
+    df_nan_fig = plot_nans(df_nan_info, dwelling_id)
 
     print('-- resampling smart_gas_resampled_merged --')
 
-    gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
-    gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
+    #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
+    #gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
 
     # 0th  index is zero, replace it with 1st index.
-    gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
+    #gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
-    return (smart_gas_resampled_combined, df_nan_info, df_nan_fig)
+    return smart_gas_resampled_combined, df_nan_info, df_nan_fig
 
 
 def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
@@ -314,22 +314,19 @@ for i in range(len(file_paths)):
 
     print('----- Resampling -----')
     # Resample dataframes (using mean()) and output nan_info
-    smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
+    smart_gas_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
 
     print('----- Saving NaN information -----')
     # Save NaN information
-    smart_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_smart.csv', sep='\t')
-    gas_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_gas.csv', sep='\t')
+    df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
-    print('----- smart_resampled NaNs -----')
-    print(smart_resampled.isnull().sum())
-    print('----- gas_resampled NaNs -----')
-    print(gas_resampled.isnull().sum())
+    print('----- smart_gas_resampled_combined NaNs -----')
+    print(smart_gas_resampled_combined.isnull().sum())
+
 
     print('----- Drop NaN streak above threshold -----')
     # drop NaN streaks above threshold
-    smart_partly_processed = drop_nan_streaks_above_threshold(smart_resampled, smart_nan_info, 6)
-    gas_partly_processed = drop_nan_streaks_above_threshold(gas_resampled, gas_nan_info, 3)
+    smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
 
     """
     Resample & interpolate dataframes
@@ -337,12 +334,13 @@ for i in range(len(file_paths)):
     """
 
     print('----- Interpolating -----')
-    smart_processed = smart_partly_processed.resample('10s').interpolate(method='time')
-    gas_processed = gas_partly_processed.resample('10s').interpolate(method='time')
+    # Do you need to resample to 10s again?
+    # Problem with this is that it also interpolates ePower
+    combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
 
     # After interpolation, ready to combine & save output
     print('----- merge_dfs -----')
-    df = merge_dfs(smart_processed, gas_processed, weather)
+    df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
 
     print('----- save_df -----')
     save_df(df, dwelling_id)
