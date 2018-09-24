@@ -165,8 +165,8 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     df_nan_fig = plot_nans(smart_gas_resampled_combined, dwelling_id)
 
     print('-- smart, gas nan_info --')
-    #df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
-    df_nan_info = pd.DataFrame() #empty placeholder
+    df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
+    #df_nan_info = pd.DataFrame() #empty placeholder
     print('-- resampling smart_gas_resampled_merged --')
 
     return smart_gas_resampled_combined, df_nan_info, df_nan_fig
@@ -273,10 +273,10 @@ def smartmeter_data():
     return file_paths, dwelling_ids
 
 
-#weather = read_weather_data()
+weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-#file_paths = file_paths[24:25] #10,11 not saved, needs to run for 50+ minutes...
-#dwelling_ids = dwelling_ids[24:25]
+#file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
+#dwelling_ids = dwelling_ids[28:29]
 
 
 """
@@ -304,7 +304,7 @@ for i in range(len(file_paths)):
 
     print('----- Saving NaN information -----')
     # Save NaN information
-    #df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
+    df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
     print(smart_gas_resampled_combined.isnull().sum())
@@ -312,7 +312,7 @@ for i in range(len(file_paths)):
 
     print('----- Drop NaN streak above threshold -----')
     # drop NaN streaks above threshold
-    #smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
+    smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
 
     """
     Resample & interpolate dataframes
@@ -322,14 +322,14 @@ for i in range(len(file_paths)):
     print('----- Interpolating -----')
     # Do you need to resample to 10s again?
     # Problem with this is that it also interpolates ePower
-    #combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
+    combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
 
     # After interpolation, ready to combine & save output
     print('----- merge_dfs -----')
     #df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
 
     print('----- save_df -----')
-    #save_df(df, dwelling_id)
+    save_df(combined_processed, dwelling_id)
 
     t2 = time.time()
     print('---------- FINISHED iteration %s IN %s ----------' % (i, (t2-t1)))
