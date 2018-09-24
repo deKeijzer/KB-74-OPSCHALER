@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="IpnbSettings">
+    <option name="username" value="16011015" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 2.7.14 (sftp://16011015@datascience.hhs.nl:22/opt/jupyterhub/anaconda/bin/python3.6)" project-jdk-type="Python SDK" />
+</project>
