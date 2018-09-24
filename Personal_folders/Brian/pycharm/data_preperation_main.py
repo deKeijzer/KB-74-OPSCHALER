@@ -51,8 +51,11 @@ def clean_prepare_smart_gas(file_path):
     #smart = clean_datetime(smart)
     #gas = clean_datetime(gas)
 
-    smart['datetime'] = pd.to_datetime(smart['datetime'])
-    gas['datetime'] = pd.to_datetime(gas['datetime'])
+    try:
+        smart['datetime'] = pd.to_datetime(smart['datetime'])
+        gas['datetime'] = pd.to_datetime(gas['datetime'])
+    except:
+        print('datetime column contains non-datetime values')
 
     smart = smart.set_index(['datetime'])
     gas = gas.set_index(['datetime'])
@@ -280,8 +283,8 @@ def main():
 
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-file_paths = file_paths[14:] #10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[14:]
+file_paths = file_paths[:1] #10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[:1]
 
 
 """
