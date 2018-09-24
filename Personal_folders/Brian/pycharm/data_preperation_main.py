@@ -142,7 +142,7 @@ def df_nan_checker(df, threshold_percentage):
     return df_info
 
 
-def smart_gas_nan_checker(smart, gas, dwelling_id):
+def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     """
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
@@ -160,16 +160,18 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     # Merge the two dfs
     print('-- merge smart gas resampled --')
     smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
+    smart_gas_weather_resampled_combined = pd.merge(smart_gas_resampled_combined, weather, left_index=True,
+                                                    right_index=True)
 
     print('-- smart,gas nan_fig')
-    df_nan_fig = plot_nans(smart_gas_resampled_combined, dwelling_id)
+    df_nan_fig = plot_nans(smart_gas_weather_resampled_combined, dwelling_id)
 
     print('-- smart, gas nan_info --')
-    df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
+    df_nan_info = df_nan_checker(smart_gas_weather_resampled_combined, 0)
     #df_nan_info = pd.DataFrame() #empty placeholder
     print('-- resampling smart_gas_resampled_merged --')
 
-    return smart_gas_resampled_combined, df_nan_info, df_nan_fig
+    return smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig
 
 
 def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
@@ -257,7 +259,9 @@ def save_df(df, dwelling_id):
 
 
 def read_weather_data():
-    weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#',
+    # Check if UTC to gmt+1 conversion is being handled correctly
+    weather = pd.read_csv('//datc//opschaler//weather_data//knmi_10_min_raw_data//output//df_combined_uncleaned.csv',
+                          delimiter='\t', comment='#',
                           parse_dates=['datetime'])
     weather = weather.set_index(['datetime'])
     return weather
@@ -272,7 +276,7 @@ def smartmeter_data():
 
     return file_paths, dwelling_ids
 
-
+t1 = time.time()
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
 #file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
@@ -287,7 +291,7 @@ N=24 is the smallest real df
 13 is largest real df
 """
 for i in range(len(file_paths)):
-    t1 = time.time()
+    t2 = time.time()
     N = i
     print('---------- N=%s ----------' % i)
 
@@ -300,19 +304,19 @@ for i in range(len(file_paths)):
 
     print('----- Resampling -----')
     # Resample dataframes (using mean()) and output nan_info
-    smart_gas_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, dwelling_id)
+    smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
     print('----- Saving NaN information -----')
     # Save NaN information
     df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
-    print(smart_gas_resampled_combined.isnull().sum())
+    print(smart_gas_weather_resampled_combined.isnull().sum())
 
 
     print('----- Drop NaN streak above threshold -----')
     # drop NaN streaks above threshold
-    smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
+    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, 6)
 
     """
     Resample & interpolate dataframes
@@ -322,7 +326,7 @@ for i in range(len(file_paths)):
     print('----- Interpolating -----')
     # Do you need to resample to 10s again?
     # Problem with this is that it also interpolates ePower
-    combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
+    combined_processed = smart_gas_weather_resampled_combined.resample('10s').interpolate(method='time')
 
     # After interpolation, ready to combine & save output
     print('----- merge_dfs -----')
@@ -331,8 +335,11 @@ for i in range(len(file_paths)):
     print('----- save_df -----')
     save_df(combined_processed, dwelling_id)
 
-    t2 = time.time()
-    print('---------- FINISHED iteration %s IN %s ----------' % (i, (t2-t1)))
+    t3 = time.time()
+    print('---------- FINISHED iteration %s IN %s ----------' % (i, (t3-t2)))
+
+t4 = time.time()
+print('Total runtime: %s' % (t4-t1))
 
 """
 What slows down the code a lot:
