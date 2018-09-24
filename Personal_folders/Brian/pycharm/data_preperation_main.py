@@ -82,6 +82,8 @@ def df_nan_checker(df, threshold_percentage):
     [[column_one_info], [column_two_info], [column_three_info]]
     With the column_..._info being in the form of:
     [start_index, stop_index, amount_of_NaNs]
+
+    TODO: Parellalize, as in one column per core/worker?
     """
     columns = df.columns
     df = df.isnull()
@@ -152,25 +154,20 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
     print('-- smart, gas resampling --')
     smart_resampled = smart.resample('10s').mean()
-    gas_resampled = gas.resample('10s').mean()
+    gas_resampled = gas.resample('H').mean() #Needs a check wether cols are 0
+    #gas_resampled = gas.resample('10s').mean()
 
     # Merge the two dfs
     print('-- merge smart gas resampled --')
     smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
 
-    print('-- smart, gas nan_info --')
-    df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
-
     print('-- smart,gas nan_fig')
-    df_nan_fig = plot_nans(df_nan_info, dwelling_id)
+    df_nan_fig = plot_nans(smart_gas_resampled_combined, dwelling_id)
 
+    print('-- smart, gas nan_info --')
+    #df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
+    df_nan_info = pd.DataFrame() #empty placeholder
     print('-- resampling smart_gas_resampled_merged --')
-
-    #gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
-    #gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
-
-    # 0th  index is zero, replace it with 1st index.
-    #gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
     return smart_gas_resampled_combined, df_nan_info, df_nan_fig
 
@@ -210,12 +207,17 @@ def plot_nans(df, dwelling_id):
 
     # Plot heatmap
 
-    n = int(len(df)*0.2) # Choose amount of yticklabels to show
+    n = int(len(df)*0.1) # Choose amount of yticklabels to show
     #fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
     #fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar_kws={"label": "Amount of NaNs [-]"},
     #                  yticklabels=n)
-    fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True,
-                      yticklabels=n,cbar_kws={})
+    try:
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True,
+                      yticklabels=n*2, cbar_kws={})
+    except TypeError:
+        print('plot_nans ValueError')
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, cbar_kws={})
+
 
     # Set cbar ticks manually
     cbar = fig.collections[0].colorbar
@@ -271,26 +273,10 @@ def smartmeter_data():
     return file_paths, dwelling_ids
 
 
-def main():
-    for i, file_path in enumerate(file_paths):
-        t1 = time.time()
-        # dwelling_id = file_paths[i][-15:-4]
-        dwelling_id = file_paths[i][-15:-4]
-        print('Started iteration %s, processing dwelling_id: %s' % (i, dwelling_id))
-
-        smart, gas = clean_prepare_smart_gas(file_paths[i])
-        smart_resampled, gas_resampled = resample_smart_gas(smart, gas)
-        df = merge_dfs(smart_resampled, gas_resampled, weather)
-        save_df(df, dwelling_id)
-        t2 = time.time()
-        print('Finished iteration %s in %.1f [s], Finished processing dwelling_id: %s, ' % (i, (t2 - t1), dwelling_id))
-        print('-----')
-
-
-weather = read_weather_data()
+#weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-file_paths = file_paths[:1] #10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[:1]
+#file_paths = file_paths[24:25] #10,11 not saved, needs to run for 50+ minutes...
+#dwelling_ids = dwelling_ids[24:25]
 
 
 """
@@ -318,7 +304,7 @@ for i in range(len(file_paths)):
 
     print('----- Saving NaN information -----')
     # Save NaN information
-    df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
+    #df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
     print(smart_gas_resampled_combined.isnull().sum())
@@ -326,7 +312,7 @@ for i in range(len(file_paths)):
 
     print('----- Drop NaN streak above threshold -----')
     # drop NaN streaks above threshold
-    smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
+    #smart_gas_partly_processed = drop_nan_streaks_above_threshold(smart_gas_resampled_combined, df_nan_info, 6)
 
     """
     Resample & interpolate dataframes
@@ -336,14 +322,14 @@ for i in range(len(file_paths)):
     print('----- Interpolating -----')
     # Do you need to resample to 10s again?
     # Problem with this is that it also interpolates ePower
-    combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
+    #combined_processed = smart_gas_resampled_combined.resample('10s').interpolate(method='time')
 
     # After interpolation, ready to combine & save output
     print('----- merge_dfs -----')
-    df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
+    #df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
 
     print('----- save_df -----')
-    save_df(df, dwelling_id)
+    #save_df(df, dwelling_id)
 
     t2 = time.time()
     print('---------- FINISHED iteration %s IN %s ----------' % (i, (t2-t1)))
