@@ -56,6 +56,10 @@ def clean_prepare_smart_gas(file_path):
         gas['datetime'] = pd.to_datetime(gas['datetime'])
     except:
         print('datetime column contains non-datetime values')
+        smart = clean_datetime(smart)
+        gas = clean_datetime(gas)
+        smart['datetime'] = pd.to_datetime(smart['datetime'])
+        gas['datetime'] = pd.to_datetime(gas['datetime'])
 
     smart = smart.set_index(['datetime'])
     gas = gas.set_index(['datetime'])
@@ -148,25 +152,27 @@ def smart_gas_nan_checker(smart, gas, dwelling_id):
     # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
     print('-- smart, gas resampling --')
     smart_resampled = smart.resample('10s').mean()
-    gas_resampled = gas.resample('H').mean()
+    gas_resampled = gas.resample('10s').mean()
+
+    # Merge the two dfs
+    print('-- merge smart gas resampled --')
+    smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
 
     print('-- smart, gas nan_info --')
-    smart_nan_info = df_nan_checker(smart_resampled, 0)
-    gas_nan_info = df_nan_checker(gas_resampled, 0)
+    df_nan_info = df_nan_checker(smart_gas_resampled_combined, 0)
 
     print('-- smart,gas nan_fig')
-    smart_nan_fig = plot_nans(smart_resampled, dwelling_id, 'smart')
-    gas_nan_fig = plot_nans(gas_resampled, dwelling_id, 'gas')
+    df_nan_fig = plot_nans(df_nan_info)
 
-    print('-- resampling gas, creating gasPower --')
-    # replace 0s with NaNs
+    print('-- resampling smart_gas_resampled_merged --')
+
     gas_resampled = gas_resampled.resample('10s').interpolate(method='time')
     gas_resampled['gasPower'] = gas_resampled['gasMeter'].diff()
 
     # 0th  index is zero, replace it with 1st index.
     gas_resampled['gasPower'][0] = gas_resampled['gasPower'][1]
 
-    return (smart_resampled, smart_nan_info, smart_nan_fig, gas_resampled, gas_nan_info, gas_nan_fig)
+    return (smart_gas_resampled_combined, df_nan_info, df_nan_fig)
 
 
 def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
@@ -190,7 +196,7 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     return df
 
 
-def plot_nans(df, dwelling_id, type):
+def plot_nans(df, dwelling_id):
     plt.clf()
     df = df.isnull()
     #df = df.resample('10D').sum() #resample make amount of NaNs visible
@@ -228,7 +234,7 @@ def plot_nans(df, dwelling_id, type):
     fig = fig.get_figure()
     fig.tight_layout()
     fig.show()
-    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'_'+type+'.png', dpi=1000)
+    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'.png', dpi=1000)
     return fig
 
 
