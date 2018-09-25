@@ -154,7 +154,15 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
     print('-- smart, gas resampling --')
     smart_resampled = smart.resample('10s').mean()
-    gas_resampled = gas.resample('H').mean() #Needs a check wether cols are 0
+
+
+    gas_resampled = gas.resample('H').mean() #Makes missing gaps appear as NaN
+    gas_resampled = gas_resampled.resample('10s').ffill() #forward fill the values
+
+    weather = weather.resample('10min').mean() # Makes missing gaps appear as NaN
+    weather = weather.resample('10s').ffill() # Forward fill the values
+    # For more resampling info see: https://pandas.pydata.org/pandas-docs/stable/api.html#id41
+
     #gas_resampled = gas.resample('10s').mean()
 
     # Merge the two dfs
@@ -252,8 +260,14 @@ def merge_dfs(df1, df2, df3):
     return df
 
 
-def save_df(df, dwelling_id):
-    dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'
+def save_df_interpolated(df, dwelling_id):
+    dir = '//datc//opschaler//combined_dfs_gas_smart_weather_interpolated//'
+    df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
+    print('Saved %s' % dwelling_id)
+
+
+def save_df_not_interpolated(df, dwelling_id):
+    dir = '//datc//opschaler//combined_dfs_gas_smart_weather_NOT_interpolated//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
 
@@ -276,11 +290,12 @@ def smartmeter_data():
 
     return file_paths, dwelling_ids
 
+
 t1 = time.time()
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-#file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
-#dwelling_ids = dwelling_ids[28:29]
+file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[28:29]
 
 
 """
@@ -305,6 +320,8 @@ for i in range(len(file_paths)):
     print('----- Resampling -----')
     # Resample dataframes (using mean()) and output nan_info
     smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
+
+    save_df_not_interpolated(smart_gas_weather_resampled_combined, dwelling_id)
 
     print('----- Saving NaN information -----')
     # Save NaN information
@@ -333,7 +350,7 @@ for i in range(len(file_paths)):
     #df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
 
     print('----- save_df -----')
-    save_df(combined_processed, dwelling_id)
+    save_df_interpolated(combined_processed, dwelling_id)
 
     t3 = time.time()
     print('---------- FINISHED iteration %s IN %s ----------' % (i, (t3-t2)))
