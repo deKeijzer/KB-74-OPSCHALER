@@ -193,12 +193,18 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     """
 
     # Check for NaN streaks > threshold and drop them from the df
+    length = len(df_nan_info['Amount of NaNs'])
+    print('df_nan_info length: %s' % length)
+
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
+        print('Enumeration %s of %s' % (i, length))
         if amount > threshold:
+            print('Start of: amount > threshold')
             start_index = (df_nan_info['Start index'][i])
             stop_index = (df_nan_info['Stop index'][i])
             index_list = df[start_index:stop_index].index
             df = df.drop(index_list)
+            print('End of: amount > threshold')
 
     return df
 
