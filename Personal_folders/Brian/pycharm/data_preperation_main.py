@@ -1,5 +1,7 @@
 """
 Shifr+F9 (Debug first, then plots will appear in SciView)
+
+TODO: Decide to do x (drop or interpolate) if NaN streak is y amount (do this per column)
 """
 
 import pandas as pd
@@ -94,7 +96,7 @@ def df_nan_checker(df, threshold_percentage):
     length = len(columns)
 
     for i in range(length):
-        print('At iteration %s of %s' % (i, length))
+        #print('At iteration %s of %s' % (i, length))
         column_name = columns[i]
         column_info = []
         temp = []
@@ -133,20 +135,20 @@ def df_nan_checker(df, threshold_percentage):
     amounts = []
 
     for column in range(length):
-        print('At iteration %s of %s' % (column, length))
+        #print('At iteration %s of %s' % (column, length))
         for i in range(len(output[column])):
             column_names.append(df.columns[column])
             starts.append(output[column][i][0])
             stops.append(output[column][i][1])
             amounts.append(output[column][i][2])
 
+    print('Appending NaN info to df')
+    # Convert list to pd series
     column_names = pd.Series(column_names)
     starts = pd.Series(starts)
     stops = pd.Series(stops)
     amounts = pd.Series(amounts)
-
-    print('Appending NaN info to df')
-
+    # Append pd series to a column
     df_info['Column name'] = column_names.values
     df_info['Start index'] = starts.values
     df_info['Stop index'] = stops.values
@@ -154,7 +156,6 @@ def df_nan_checker(df, threshold_percentage):
 
     percentage = (df_info['Amount of NaNs'] / len(df)) * 100
     df_info.drop(df_info[percentage < threshold_percentage].index, inplace=True)
-    print(df_info.head())
 
     return df_info
 
@@ -216,13 +217,14 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
         if amount > threshold:
             start_index = (df_nan_info['Start index'][i])
             stop_index = (df_nan_info['Stop index'][i])
-            print('Enumeration %s of %s, start_index stop_index, %s-----%s' % (i, length, start_index, stop_index))
+            #print('Enumeration %s of %s, start_index stop_index, %s-----%s' % (i, length, start_index, stop_index))
             try:
                 indices_to_drop += df[start_index:stop_index].index
             except:
                 print('Could not index_list, df.drop')
         else:
-            print('amount < threshold')
+            #print('amount < threshold')
+            pass
 
     print('Dropping NaN streaks > threshold')
     l1 = len(df)
@@ -340,8 +342,8 @@ file_paths, dwelling_ids = smartmeter_data()
 
 print(dwelling_ids)
 
-file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[0:1]
+#file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
+#dwelling_ids = dwelling_ids[0:1]
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
@@ -392,7 +394,7 @@ for N in range(len(file_paths)):
     save_df_interpolated(combined_processed, dwelling_id)
 
     t3 = time.time()
-    print('---------- FINISHED iteration %s IN %.1f ----------' % (N, (t3-t2)))
+    print('------------------------------ FINISHED iteration %s IN %.1f' % (N, (t3-t2)))
 
 t4 = time.time()
 print('Total runtime: %.1f' % (t4-t1))
