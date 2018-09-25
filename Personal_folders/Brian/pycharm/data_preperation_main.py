@@ -165,6 +165,7 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
 
     #gas_resampled = gas.resample('10s').mean()
 
+
     # Merge the two dfs
     print('-- merge smart gas resampled --')
     smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
@@ -294,16 +295,18 @@ def smartmeter_data():
 t1 = time.time()
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[28:29]
 
+print(dwelling_ids)
 
+file_paths = file_paths[21:22] #10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[21:22]
+
+#0373
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
-N=29 is the smallest test df
-N=24 is the smallest real df
-13 is largest real df
+N=27:28 is the smallest test df
+daan 21:22
 """
 for i in range(len(file_paths)):
     t2 = time.time()
@@ -318,7 +321,7 @@ for i in range(len(file_paths)):
     smart, gas = clean_prepare_smart_gas(file_path)
 
     print('----- Resampling -----')
-    # Resample dataframes (using mean()) and output nan_info
+    # Resample dataframes (using mean()), then upsample to 10s using ffill and output nan_info
     smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
     save_df_not_interpolated(smart_gas_weather_resampled_combined, dwelling_id)
