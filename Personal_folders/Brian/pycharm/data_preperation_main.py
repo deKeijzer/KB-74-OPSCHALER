@@ -135,10 +135,10 @@ def df_nan_checker(df, threshold_percentage):
     for column in range(length):
         print('At iteration %s of %s' % (column, length))
         for i in range(len(output[column])):
-            column_name = df.columns[column]
-            start = output[column][i][0]
-            stop = output[column][i][1]
-            amount = output[column][i][2]
+            column_names.append(df.columns[column])
+            starts.append(output[column][i][0])
+            stops.append(output[column][i][1])
+            amounts.append(output[column][i][2])
 
     column_names = pd.Series(column_names)
     starts = pd.Series(starts)
@@ -154,6 +154,7 @@ def df_nan_checker(df, threshold_percentage):
 
     percentage = (df_info['Amount of NaNs'] / len(df)) * 100
     df_info.drop(df_info[percentage < threshold_percentage].index, inplace=True)
+    print(df_info.head())
 
     return df_info
 
@@ -224,7 +225,10 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
             print('amount < threshold')
 
     print('Dropping NaN streaks > threshold')
+    l1 = len(df)
     df = df.drop(indices_to_drop)
+    l2 = len(df)
+    print('Removed %s rows' % (l1-l2))
     return df
 
 
@@ -283,7 +287,7 @@ def save_df_interpolated(df, dwelling_id):
     """
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather_interpolated//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
-    print('Saved %s' % dwelling_id)
+    print('Saved interpolated df: %s' % dwelling_id)
     return
 
 
@@ -296,7 +300,7 @@ def save_df_not_interpolated(df, dwelling_id):
     """
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather_NOT_interpolated//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
-    print('Saved %s' % dwelling_id)
+    print('Saved not interpolated df: %s' % dwelling_id)
     return
 
 
@@ -388,10 +392,10 @@ for N in range(len(file_paths)):
     save_df_interpolated(combined_processed, dwelling_id)
 
     t3 = time.time()
-    print('---------- FINISHED iteration %s IN %s ----------' % (N, (t3-t2)))
+    print('---------- FINISHED iteration %s IN %.1f ----------' % (N, (t3-t2)))
 
 t4 = time.time()
-print('Total runtime: %s' % (t4-t1))
+print('Total runtime: %.1f' % (t4-t1))
 
 """
 What slows down the code a lot:
