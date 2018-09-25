@@ -127,6 +127,7 @@ def df_nan_checker(df, threshold_percentage):
 
     df_info = pd.DataFrame(columns=['Column name', 'Start index', 'Stop index', 'Amount of NaNs'])
     length = len(output)
+
     for column in range(length):
         print('At iteration %s of %s' % (column, length))
         for i in range(len(output[column])):
@@ -137,10 +138,8 @@ def df_nan_checker(df, threshold_percentage):
             df_info = df_info.append(
                 {'Column name': column_name, 'Start index': start, 'Stop index': stop, 'Amount of NaNs': amount},
                 ignore_index=True)
-        pass
 
     percentage = (df_info['Amount of NaNs'] / len(df)) * 100
-
     df_info.drop(df_info[percentage < threshold_percentage].index, inplace=True)
 
     return df_info
@@ -199,18 +198,17 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     print('df_nan_info length: %s' % length)
 
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
-        print('Enumeration %s of %s' % (i, length))
         if amount > threshold:
-            print('Start of: amount > threshold')
             start_index = (df_nan_info['Start index'][i])
             stop_index = (df_nan_info['Stop index'][i])
+            print('Enumeration %s of %s, start_index stop_index, %s-----%s' % (i, length, start_index, stop_index))
             try:
                 index_list = df[start_index:stop_index].index
-                df = df.drop(index_list)
+                df = df.drop(index_list) # remove this to outside of the loop
             except:
                 print('Could not index_list, df.drop')
-
-            print('End of: amount > threshold')
+        else:
+            print('amount < threshold')
 
     print('done: drop_nan_streaks_above_threshold')
     return df
