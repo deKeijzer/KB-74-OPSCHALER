@@ -14,15 +14,18 @@ import matplotlib as mpl
 mpl.style.use('default')
 
 
-
 def clean_datetime(df):
     """
+    TODO: Speed up the function
     Input should be a df with a column called 'datetime'.
-    This function checks wether a row in the df.datetime column can be parsed to a pandas datetime object,
+    This function checks wether a row in the df.datetime column can be parsed to a Pandas datetime object,
     by trying pd.to_datetime() on it.
     If it fails it will replace that row with np.nan().
     Finally this function will return the df with the NaN rows dropped.
     It only drops the row if the datetime column contains a NaN.
+
+    :param df: Pandas DataFrame containing a datetime column called 'datetime'.
+    :return: Pandas DataFrame
     """
     for i in range(len(df)):
         try:
@@ -40,16 +43,15 @@ def clean_prepare_smart_gas(file_path):
     """
     Input is a dwelling_id.csv file.
     Output are cleaned & prepared dataframes (smart, gas).
-    Return: smart, gas
+
+    :param file_path: path to 'dwelling_id.csv' file
+    :return: Smart and gas Pandas DataFrames
     """
     df = pd.read_csv(file_path, delimiter=';', header=0)
     df = df.rename(index=str, columns={'Timestamp': 'datetime', 'gasTimestamp': 'datetime'})
 
     smart = df.iloc[:, :7]
     gas = df.iloc[:, 7:]
-
-    #smart = clean_datetime(smart)
-    #gas = clean_datetime(gas)
 
     try:
         smart['datetime'] = pd.to_datetime(smart['datetime'])
@@ -72,9 +74,7 @@ def clean_prepare_smart_gas(file_path):
 
 def df_nan_checker(df, threshold_percentage):
     """
-    df: input pandas dataframe
-    threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
-
+    TODO: Parellalize, as in one column per core/worker?
     Checks each column in the input dataframe for NaNs.
     Outputs the amount of NaNs behind each other, including the start and stop index, per column as a sublist.
     For example when the dataframe has three columns.
@@ -83,8 +83,11 @@ def df_nan_checker(df, threshold_percentage):
     With the column_..._info being in the form of:
     [start_index, stop_index, amount_of_NaNs]
 
-    TODO: Parellalize, as in one column per core/worker?
+    :param df: Pandas DataFrame
+    :param threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
+    :return: Pandas DataFrame
     """
+
     columns = df.columns
     df = df.isnull()
     output = []
@@ -120,7 +123,6 @@ def df_nan_checker(df, threshold_percentage):
     Row per column from the 'output' list
     Columns: start-index, stop-index, NaN streak
     """
-    columns = df.columns
 
     df_info = pd.DataFrame(columns=['Column name', 'Start index', 'Stop index', 'Amount of NaNs'])
 
@@ -147,38 +149,35 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
     Returns (smart_resampled, gas_resampled)
+
+    :param smart: Pandas DataFrame
+    :param gas: Pandas DataFrame
+    :param weather: Pandas DataFrame
+    :param dwelling_id: String
+    :return: smart_resampled, gas_resampled as a Pandas DataFrame
     """
 
-    # Implement NaN checker here
-    # Resample to the same sampling time, use .mean, that way empty gaps will apear as NaNs
-    # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
-    print('-- smart, gas resampling --')
+    print('Resampling smart, gas, weather')
     smart_resampled = smart.resample('10s').mean()
 
+    gas_resampled = gas.resample('H').mean()  # Makes missing gaps appear as NaN
+    gas_resampled = gas_resampled.resample('10s').ffill()  # forward fill the values, change to mean() later
 
-    gas_resampled = gas.resample('H').mean() #Makes missing gaps appear as NaN
-    gas_resampled = gas_resampled.resample('10s').ffill() #forward fill the values
-
-    weather = weather.resample('10min').mean() # Makes missing gaps appear as NaN
-    weather = weather.resample('10s').ffill() # Forward fill the values
+    weather = weather.resample('10min').mean()  # Makes missing gaps appear as NaN
+    weather = weather.resample('10s').ffill()  # Forward fill the values, change to mean() later
     # For more resampling info see: https://pandas.pydata.org/pandas-docs/stable/api.html#id41
 
-    #gas_resampled = gas.resample('10s').mean()
-
-
-    # Merge the two dfs
-    print('-- merge smart gas resampled --')
+    # Merge the three dfs
+    print('Merging smart, gas, weather')
     smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
     smart_gas_weather_resampled_combined = pd.merge(smart_gas_resampled_combined, weather, left_index=True,
                                                     right_index=True)
 
-    print('-- smart,gas nan_fig')
+    print('smart,gas nan_fig')
     df_nan_fig = plot_nans(smart_gas_weather_resampled_combined, dwelling_id)
 
-    print('-- smart, gas nan_info --')
+    print('smart, gas nan_info')
     df_nan_info = df_nan_checker(smart_gas_weather_resampled_combined, 0)
-    #df_nan_info = pd.DataFrame() #empty placeholder
-    print('-- resampling smart_gas_resampled_merged --')
 
     return smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig
 
@@ -187,13 +186,13 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     """
     Drops NaN streaks from the df when they are larger then the threshold value.
     This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
-    :param df: Dataframe to process NaNs off
-    :param df_nan_info: NaN info dataframe of the input df
+    :param df: Pandas DataDrame to process NaNs off
+    :param df_nan_info: NaN info Pandas DataFrame of the input df
     :param threshold: Interpolate if 'Amount of NaNs' from detected NaN streak is below this number.
-    :return: dataframe
+    :return: Pandas DataFrame
     """
 
-    # Check for NaN streaks > threshold and drop them form the df
+    # Check for NaN streaks > threshold and drop them from the df
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
         if amount > threshold:
             start_index = (df_nan_info['Start index'][i])
@@ -205,9 +204,14 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
 
 
 def plot_nans(df, dwelling_id):
+    """
+    Create a heatmap of the NaNs in the input DataFrame.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: Seaborn heatmap as a Figure
+    """
     plt.clf()
     df = df.isnull()
-    #df = df.resample('10D').sum() #resample make amount of NaNs visible
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
@@ -217,63 +221,65 @@ def plot_nans(df, dwelling_id):
         print('plot_nans could not set df.index.to_period')
 
     # Plot heatmap
+    n = int(len(df)*0.1)  # Choose amount of yticklabels to show
 
-    n = int(len(df)*0.1) # Choose amount of yticklabels to show
-    #fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
-    #fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar_kws={"label": "Amount of NaNs [-]"},
-    #                  yticklabels=n)
     try:
-        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True,
-                      yticklabels=n*2, cbar_kws={})
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, yticklabels=n*2, cbar_kws={})
     except TypeError:
         print('plot_nans ValueError')
         fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, cbar_kws={})
-
 
     # Set cbar ticks manually
     cbar = fig.collections[0].colorbar
     cbar.set_ticks([0, 1])
     cbar.set_ticklabels(['Not NaN', 'NaN'])
 
-    fig.invert_yaxis()
-
     # Correct layout
+    fig.invert_yaxis()
     fig.tick_params(axis='x', rotation=90)
     fig.tick_params(axis='y', rotation=0)
-    #fig.grid(alpha=1)
     fig.set(xlabel='Column [-]', ylabel='Index [-]')
     plt.title('Dwelling ID: '+dwelling_id)
 
     fig = fig.get_figure()
     fig.tight_layout()
     fig.show()
-    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'.png', dpi=1000)
+    print('Saving heatmap')
+    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'.png', dpi=500)
     return fig
 
 
-def merge_dfs(df1, df2, df3):
-    """
-    Merges the dataframes, outputs one df.
-    """
-    df = pd.merge(df1, df2, left_index=True, right_index=True)
-    df = pd.merge(df, df3, left_index=True, right_index=True)
-
-    return df
-
-
 def save_df_interpolated(df, dwelling_id):
+    """
+    Save interpolated dataframe.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: None
+    """
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather_interpolated//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
+    return
 
 
 def save_df_not_interpolated(df, dwelling_id):
+    """
+    Save non-interpolated dataframe.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: None
+    """
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather_NOT_interpolated//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
+    return
 
 
 def read_weather_data():
+    """
+    Reads in the weather Pandas DataFrame.
+    :return: Pandas DataFrame
+    """
     # Check if UTC to gmt+1 conversion is being handled correctly
     weather = pd.read_csv('//datc//opschaler//weather_data//knmi_10_min_raw_data//output//df_combined_uncleaned.csv',
                           delimiter='\t', comment='#',
@@ -283,59 +289,64 @@ def read_weather_data():
 
 
 def smartmeter_data():
+    """
+    Reads in the file paths and dwelling id's of the smartmeter data.
+    :return: file_paths, dwelling_ids, both as lists.
+    """
     path = '/datc/opschaler/smartmeter_data'
     file_paths = np.array(glob.glob(path + "/*.csv"))
+
     print('Detected %s smartmeter_data files.' % len(file_paths))
-    #
     dwelling_ids = np.array(list((map(lambda x: x[-15:-4], file_paths))))
 
     return file_paths, dwelling_ids
 
 
+# Start the main loop
 t1 = time.time()
+
+print('Reading in weather data')
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
 
 print(dwelling_ids)
 
-file_paths = file_paths[21:22] #10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[21:22]
+file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[0:1]
 
-#0373
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
 N=27:28 is the smallest test df
 daan 21:22
 """
-for i in range(len(file_paths)):
+for N in range(len(file_paths)):
     t2 = time.time()
-    N = i
-    print('---------- N=%s ----------' % i)
+    print('---------- N=%s ----------' % N)
 
     file_path = file_paths[N]
     dwelling_id = dwelling_ids[N]
     print('Selected dwelling_id: '+dwelling_ids[N])
 
+    print('----- clean_prepare_smart_gas -----')
     # Read in raw smartmeter dataframe, split them into smart, gas df
     smart, gas = clean_prepare_smart_gas(file_path)
 
-    print('----- Resampling -----')
+    print('----- smart_gas_nan_checker -----')
     # Resample dataframes (using mean()), then upsample to 10s using ffill and output nan_info
     smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
+    print('----- save_df_not_interpolated -----')
     save_df_not_interpolated(smart_gas_weather_resampled_combined, dwelling_id)
 
-    print('----- Saving NaN information -----')
-    # Save NaN information
+    print('----- df_nan_info.to_csv -----')
     df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
-    print('----- smart_gas_resampled_combined NaNs -----')
-    print(smart_gas_weather_resampled_combined.isnull().sum())
+    #print('----- smart_gas_resampled_combined NaNs -----')
+    #print(smart_gas_weather_resampled_combined.isnull().sum())
 
 
-    print('----- Drop NaN streak above threshold -----')
-    # drop NaN streaks above threshold
+    print('----- drop_nan_streaks_above_threshold -----')
     smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, 6)
 
     """
@@ -343,20 +354,16 @@ for i in range(len(file_paths)):
     Should NOT interpolate ePower, interpolate eMeter... 
     """
 
-    print('----- Interpolating -----')
+    print('----- Interpolate smart_gas_weather_partly_processed -----')
     # Do you need to resample to 10s again?
     # Problem with this is that it also interpolates ePower
     combined_processed = smart_gas_weather_resampled_combined.resample('10s').interpolate(method='time')
 
-    # After interpolation, ready to combine & save output
-    print('----- merge_dfs -----')
-    #df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
-
-    print('----- save_df -----')
+    print('----- save_df_interpolated -----')
     save_df_interpolated(combined_processed, dwelling_id)
 
     t3 = time.time()
-    print('---------- FINISHED iteration %s IN %s ----------' % (i, (t3-t2)))
+    print('---------- FINISHED iteration %s IN %s ----------' % (N, (t3-t2)))
 
 t4 = time.time()
 print('Total runtime: %s' % (t4-t1))
