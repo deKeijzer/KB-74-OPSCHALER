@@ -61,7 +61,7 @@ This is the smartmeter data as downloaded from the TU Delft server.
 ### Raw smartmeter data (from the TU Delft server)
 Location: `/datc/opschaler/smartmeter_data`  
 These are the raw smartmeter dataframes from the TU Delft server.  
-They should be in the format `dwelling_id.csv`.  
+They should be in the format `export_dwelling_id.csv`.  
 These files contain the raw electricity and raw gas data.  
 
 ### Interpolated dwelling_id dataframes
