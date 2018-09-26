@@ -1,7 +1,7 @@
 """
 Shifr+F9 (Debug first, then plots will appear in SciView)
 
-TODO: Decide to do x (drop or interpolate) if NaN streak is y amount (do this per column)
+TODO: add legend to plot_nans
 """
 
 import pandas as pd
@@ -188,7 +188,7 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
     smart_gas_weather_resampled_combined = pd.merge(smart_gas_resampled_combined, weather, left_index=True,
                                                     right_index=True)
-
+    print('Length of combined df: %s' % len(smart_gas_weather_resampled_combined))
     print('smart,gas nan_fig')
     df_nan_fig = plot_nans(smart_gas_weather_resampled_combined, dwelling_id)
 
@@ -198,13 +198,13 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     return smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig
 
 
-def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
+def drop_nan_streaks_above_threshold(df, df_nan_info, thresholds):
     """
     Drops NaN streaks from the df when they are larger then the threshold value.
     This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
     :param df: Pandas DataDrame to process NaNs off
     :param df_nan_info: NaN info Pandas DataFrame of the input df
-    :param threshold: Interpolate if 'Amount of NaNs' from detected NaN streak is below this number.
+    :param thresholds: Dictionary {'column_name':column_threshold}
     :return: Pandas DataFrame
     """
 
@@ -213,17 +213,23 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
     print('df_nan_info length: %s' % length)
 
     indices_to_drop = []
+    no_threshold_detected = []
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
-        if amount > threshold:
-            start_index = (df_nan_info['Start index'][i])
-            stop_index = (df_nan_info['Stop index'][i])
-            #print('Enumeration %s of %s, start_index stop_index, %s-----%s' % (i, length, start_index, stop_index))
-            try:
-                indices_to_drop += df[start_index:stop_index].index
-            except:
-                print('Could not index_list, df.drop')
-        else:
-            #print('amount < threshold')
+        selected_column = df_nan_info['Column name'][i]
+        try:
+            if amount > thresholds[selected_column]:
+                start_index = (df_nan_info['Start index'][i])
+                stop_index = (df_nan_info['Stop index'][i])
+                print('Enumeration %s of %s | start_index stop_index | %s \t %s \t | column %s' % (i, length, start_index, stop_index, selected_column))
+                try:
+                    indices_to_drop += df[start_index:stop_index].index
+                except:
+                    print('Could not add indices to indices_to_drop list')
+            else:
+                #print('amount < threshold')
+                pass
+        except:
+            #print('No threshold detected for %s' % selected_column)
             pass
 
     print('Dropping NaN streaks > threshold')
@@ -243,6 +249,9 @@ def plot_nans(df, dwelling_id):
     """
     plt.clf()
     df = df.isnull()
+    # Downsample to make all data visible
+    #df = df.resample('1T').sum()  # Downsample to make small NaNs visible
+    #df = df.apply(lambda x: x > 0, 1)  # Replace values >0 with 1
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
@@ -255,15 +264,15 @@ def plot_nans(df, dwelling_id):
     n = int(len(df)*0.1)  # Choose amount of yticklabels to show
 
     try:
-        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, yticklabels=n*2, cbar_kws={})
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=False, yticklabels=n*2, cbar_kws={})
     except TypeError:
         print('plot_nans ValueError')
-        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, cbar_kws={})
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=False, cbar_kws={})
 
     # Set cbar ticks manually
-    cbar = fig.collections[0].colorbar
-    cbar.set_ticks([0, 1])
-    cbar.set_ticklabels(['Not NaN', 'NaN'])
+    #cbar = fig.collections[0].colorbar
+    #cbar.set_ticks([0, 1])
+    #cbar.set_ticklabels(['Not NaN', 'NaN'])
 
     # Correct layout
     fig.invert_yaxis()
@@ -276,7 +285,8 @@ def plot_nans(df, dwelling_id):
     fig.tight_layout()
     fig.show()
     print('Saving heatmap')
-    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'.png', dpi=500)
+    fig.savefig('//datc//opschaler//nan_information//figures//' + dwelling_id + '.png', dpi=1200)
+
     return fig
 
 
@@ -342,8 +352,8 @@ file_paths, dwelling_ids = smartmeter_data()
 
 print(dwelling_ids)
 
-#file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
-#dwelling_ids = dwelling_ids[0:1]
+file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
+dwelling_ids = dwelling_ids[0:1]
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
@@ -373,12 +383,17 @@ for N in range(len(file_paths)):
     print('----- df_nan_info.to_csv -----')
     df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
-    #print('----- smart_gas_resampled_combined NaNs -----')
-    #print(smart_gas_weather_resampled_combined.isnull().sum())
+    print('----- smart_gas_resampled_combined NaNs -----')
+    print(smart_gas_weather_resampled_combined.isnull().sum())
 
 
     print('----- drop_nan_streaks_above_threshold -----')
-    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, 6)
+    thresholds = {'eMeter': 6,
+                  'ePower': 6,
+                  'gasMeter': 6,
+                  'T': 12,
+                  'Q': 12}
+    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, thresholds)
 
     """
     Resample & interpolate dataframes
@@ -394,10 +409,10 @@ for N in range(len(file_paths)):
     save_df_interpolated(combined_processed, dwelling_id)
 
     t3 = time.time()
-    print('------------------------------ FINISHED iteration %s IN %.1f' % (N, (t3-t2)))
+    print('------------------------------ FINISHED iteration %s in %.1f [s]' % (N, (t3-t2)))
 
 t4 = time.time()
-print('Total runtime: %.1f' % (t4-t1))
+print('Total runtime: %.1f [s]' % (t4-t1))
 
 """
 What slows down the code a lot:
