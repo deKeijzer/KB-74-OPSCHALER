@@ -193,32 +193,32 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     df_nan_fig = plot_nans(smart_gas_weather_resampled_combined, dwelling_id)
 
     print('smart, gas nan_info')
-    df_nan_info = df_nan_checker(smart_gas_weather_resampled_combined, 0)
+    df_nan_table = df_nan_checker(smart_gas_weather_resampled_combined, 0)
 
-    return smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig
+    return smart_gas_weather_resampled_combined, df_nan_table, df_nan_fig
 
 
-def drop_nan_streaks_above_threshold(df, df_nan_info, thresholds):
+def drop_nan_streaks_above_threshold(df, df_nan_table, thresholds):
     """
     Drops NaN streaks from the df when they are larger then the threshold value.
-    This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
+    This function also inputs df_nan_table because it already has been made in the smart_gas_nan_checker.
     :param df: Pandas DataDrame to process NaNs off
-    :param df_nan_info: NaN info Pandas DataFrame of the input df
+    :param df_nan_table: NaN info Pandas DataFrame of the input df
     :param thresholds: Dictionary {'column_name':column_threshold}, column_threshold has to be an integer.
     :return: Pandas DataFrame
     """
 
     # Check for NaN streaks > threshold and drop them from the df
-    length = len(df_nan_info['Amount of NaNs'])
-    print('df_nan_info length: %s' % length)
+    length = len(df_nan_table['Amount of NaNs'])
+    print('df_nan_table length: %s' % length)
 
     indices_to_drop = []
-    for i, amount in enumerate(df_nan_info['Amount of NaNs']):
-        selected_column = df_nan_info['Column name'][i]
+    for i, amount in enumerate(df_nan_table['Amount of NaNs']):
+        selected_column = df_nan_table['Column name'][i]
         try:
             if amount > thresholds[selected_column]:
-                start_index = (df_nan_info['Start index'][i])
-                stop_index = (df_nan_info['Stop index'][i])
+                start_index = (df_nan_table['Start index'][i])
+                stop_index = (df_nan_table['Stop index'][i])
                 indices = df[start_index:stop_index].index
                 print('Enumeration %s of %s | From \t %s \t to \t %s | column %s | NaN streak length: %s'
                       % (i, length, start_index, stop_index, selected_column, (len(indices))))
@@ -317,6 +317,32 @@ def save_df_not_interpolated(df, dwelling_id):
     return
 
 
+def dwelling_information (smart_gas_weather_resampled_combined, df_nan_table):
+    # create dataframe to store all information from the different files
+    df_dwelling_information = pd.DataFrame(columns={'Dwelling ID', 'file size [MB]', 'initial date', 'final date',
+                                                    'days', 'total amount of NaNs', 'largest max consecutive NaNs',
+                                                    'second largest max consecutive NaNs',
+                                                    'third_largest_max_consecutive_NaNs'})
+
+    # order of column names changed for some reason, line(below) fixes this, although ugly
+    df_dwelling_information = df_dwelling_information[['Dwelling ID', 'file size [MB]', 'initial date', 'final date',
+                                                       'days', 'total amount of NaNs', 'largest max consecutive NaNs',
+                                                       'second largest max consecutive NaNs',
+                                                       'third_largest_max_consecutive_NaNs']]
+
+    # smart needs to be replaced with name of df that is read in (raw, combined)
+    df_dwelling_information.loc[len(df_nan_table.index)] = [dwelling_id,
+                                                 smart_gas_weather_resampled_combined.memory_usage(index=True).sum()/1000000,
+                                                 smart_gas_weather_resampled_combined.index[0],
+                                                 smart_gas_weather_resampled_combined.index[-1],
+                                             smart_gas_weather_resampled_combined.index[-1] - smart_gas_weather_resampled_combined.index[0],
+                                             df_nan_table['Amount of NaNs'].sum(),
+                                                 df_nan_table['Amount of NaNs'].nlargest(1),
+                                             df_nan_table['Amount of NaNs'].nlargest(2),
+                                                 df_nan_table['Amount of NaNs'].nlargest(3)]
+    return df_dwelling_information
+
+
 def read_weather_data():
     """
     Reads in the weather Pandas DataFrame.
@@ -353,8 +379,8 @@ file_paths, dwelling_ids = smartmeter_data()
 
 print(dwelling_ids)
 
-file_paths = file_paths[0:1]  # 10,11 not saved, needs to run for 50+ minutes...
-dwelling_ids = dwelling_ids[0:1]
+#file_paths = file_paths[0:1]
+#dwelling_ids = dwelling_ids[0:1]
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
@@ -376,13 +402,13 @@ for N in range(len(file_paths)):
 
     print('----- smart_gas_nan_checker -----')
     # Resample dataframes (using mean()), then upsample to 10s using ffill and output nan_info
-    smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
+    smart_gas_weather_resampled_combined, df_nan_table, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
     print('----- save_df_not_interpolated -----')
     save_df_not_interpolated(smart_gas_weather_resampled_combined, dwelling_id)
 
-    print('----- df_nan_info.to_csv -----')
-    df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
+    print('----- df_nan_table.to_csv -----')
+    df_nan_table.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
     print(smart_gas_weather_resampled_combined.isnull().sum())
@@ -409,9 +435,14 @@ for N in range(len(file_paths)):
                   'T': 12,
                   'Q': 12}
 
-    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, thresholds)
+    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined,
+                                                                          df_nan_table, thresholds)
 
-    plot_nans(smart_gas_weather_partly_processed, dwelling_id+' NaNs removed')
+    #plot_nans(smart_gas_weather_partly_processed, dwelling_id+' NaN threshold applied')
+
+    print('----- dwelling_information -----')
+    dwelling_info_df = dwelling_information(smart_gas_weather_resampled_combined, df_nan_table)
+    dwelling_info_df.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'.csv', sep='\t')
 
     """
     Resample & interpolate dataframes
@@ -437,3 +468,4 @@ What slows down the code a lot:
 df_nan_checker
 clean_datetime
 """
+
