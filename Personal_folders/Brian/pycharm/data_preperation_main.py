@@ -204,7 +204,7 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, thresholds):
     This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
     :param df: Pandas DataDrame to process NaNs off
     :param df_nan_info: NaN info Pandas DataFrame of the input df
-    :param thresholds: Dictionary {'column_name':column_threshold}
+    :param thresholds: Dictionary {'column_name':column_threshold}, column_threshold has to be an integer.
     :return: Pandas DataFrame
     """
 
@@ -213,16 +213,17 @@ def drop_nan_streaks_above_threshold(df, df_nan_info, thresholds):
     print('df_nan_info length: %s' % length)
 
     indices_to_drop = []
-    no_threshold_detected = []
     for i, amount in enumerate(df_nan_info['Amount of NaNs']):
         selected_column = df_nan_info['Column name'][i]
         try:
             if amount > thresholds[selected_column]:
                 start_index = (df_nan_info['Start index'][i])
                 stop_index = (df_nan_info['Stop index'][i])
-                print('Enumeration %s of %s | start_index stop_index | %s \t %s \t | column %s' % (i, length, start_index, stop_index, selected_column))
+                indices = df[start_index:stop_index].index
+                print('Enumeration %s of %s | From \t %s \t to \t %s | column %s | NaN streak length: %s'
+                      % (i, length, start_index, stop_index, selected_column, (len(indices))))
                 try:
-                    indices_to_drop += df[start_index:stop_index].index
+                    indices_to_drop += indices
                 except:
                     print('Could not add indices to indices_to_drop list')
             else:
@@ -250,8 +251,8 @@ def plot_nans(df, dwelling_id):
     plt.clf()
     df = df.isnull()
     # Downsample to make all data visible
-    #df = df.resample('1T').sum()  # Downsample to make small NaNs visible
-    #df = df.apply(lambda x: x > 0, 1)  # Replace values >0 with 1
+    df = df.resample('1T').sum()  # Downsample to make small NaNs visible
+    df = df.apply(lambda x: x > 0, 1)  # Replace values >0 with 1
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
@@ -386,14 +387,31 @@ for N in range(len(file_paths)):
     print('----- smart_gas_resampled_combined NaNs -----')
     print(smart_gas_weather_resampled_combined.isnull().sum())
 
-
+    """
+    Original sample rate:
+    Electricity: 10 seconds
+    gas: 1 hour
+    weather: 10 minutes. 
+    
+    Everything has been resampled to 10 seconds.
+    
+    So for example setting the thresholds like:
+    eMeter   6 -> equals a 60 seconds gap
+    ePower   6 -> equals a 60 seconds gap
+    gasMeter 360 -> equals a 1 hour gap
+    T       6 -> equals a 1 hour gap
+    Q       6 -> equals a 1 hour gap 
+    """
     print('----- drop_nan_streaks_above_threshold -----')
     thresholds = {'eMeter': 6,
                   'ePower': 6,
-                  'gasMeter': 6,
+                  'gasMeter': 720,
                   'T': 12,
                   'Q': 12}
+
     smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, thresholds)
+
+    plot_nans(smart_gas_weather_partly_processed, dwelling_id+' NaNs removed')
 
     """
     Resample & interpolate dataframes
