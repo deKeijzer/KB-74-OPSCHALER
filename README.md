@@ -96,3 +96,8 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 Location: `/datc/opschaler/nan_information`  
 This folder contains `dwelling_id_threshold_percentage.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
 The notebook in which `dwelling_id_threshold_percentage.csv` is created can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/df_NaN_checker.ipynb).
+
+# EDA results locations
+location: `//datc//opschaler//EDA//`
+The EDA results, saved per dwelling.  
+For example, the Pearson correlation coefficient matrix heatmap is saved in `//datc//opschaler//EDA//Pearson_corr`  
