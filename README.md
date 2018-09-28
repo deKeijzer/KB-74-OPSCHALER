@@ -90,6 +90,7 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 * `dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
+* `df = df.set_index(['datetime'])`
 
 ## NaN Information of not-processed dataframes
 Location: `/datc/opschaler/nan_information`  
