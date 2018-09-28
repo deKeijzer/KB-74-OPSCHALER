@@ -87,7 +87,7 @@ NaNs in the weather data have been forward filled.
 NaNs in `'eMeter', 'eMeterReturn', 'eMeterLowReturn', 'gasMeter'` have been interpolated.
 ePower, ePowerReturn and gasPower might still contain NaNs, drop these after reading in the files (if required).
 More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)  
-* `dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed'`
+* `dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed//'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
 
