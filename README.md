@@ -100,4 +100,4 @@ The notebook in which `dwelling_id_threshold_percentage.csv` is created can be f
 # EDA results locations
 location: `//datc//opschaler//EDA//`
 The EDA results, saved per dwelling.  
-For example, the Pearson correlation coefficient matrix heatmap is saved in `//datc//opschaler//EDA//Pearson_corr`  
+For example, correlation coefficient matrices are saved in `//datc//opschaler//EDA//correlation_matrices`  
