@@ -45,10 +45,9 @@ The KNMI data consists of two dataframes. One is the raw format, this is the way
 Location: `/datc/opschaler/weather_data/knmi_10_min_raw_data`  
 This is the raw 10 minute interval data from 2015 till 2018 as provided by the KNMI (by mail).
 
-### KNMI Processed dataframe
+### KNMI preprocessed dataframe
 Location: `//datc//opschaler//weather_data//weather.csv`  
-The KNMI dataframe (1,82 GB) contains weather data from 2015 to 2018.
-The original resolution was 10 minutes, but this has been resampled to 10 seconds by using interpolation.
+The KNMI dataframe (1,82 GB) contains weather data from 2015 to 2018, with a 10 minute resolution.
 More information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb).  
 Reading in the data is done as follows:  
 * `weather = pd.read_csv('//datc//opschaler//weather_data//weather.csv', delimiter='\t', comment='#', parse_dates=['datetime'])`   
@@ -64,16 +63,35 @@ These are the raw smartmeter dataframes from the TU Delft server.
 They should be in the format `export_dwelling_id.csv`.  
 These files contain the raw electricity and raw gas data.  
 
-### Interpolated dwelling_id dataframes
-Location: `/datc/opschaler/combined_dfs_gas_smart_weather_interpolated`  
+## preprocessed dwelling_id dataframes
+Location: `//datc//opschaler//combined_gas_smart_weather_dfs//unprocessed`  
+The smartmeter, gasmeter and weather dataframes merged into one dataframe.  
+`_hour` has a one hour sample rate, `_10s` has a 10 second sample rate.  
+NaNs are not removed, the following has been done (in order):  
+For `_hour` files:  
+* 1. gasPower calculated by using `.diff()` on gas column.  
+* 2. smartmeter and weather data downsampled to 1 hour, using mean.  
+* 3. merged smartmeter, gas and weather data.  
+  
+For `_10s` files:  
+* 1. gas has been upsampled to 10s by using forward fill (`.ffill()`)  
+* 2. gasPower calculated by using `.diff()` on gas column.  
+* 3. weather upsampled to 10s by using forward fill  
+* 4. merged smartmeter, gas and weather data  
+
+### Processed dwelling_id dataframes (Use these for analysis)
+Location: `/datc/opschaler/combined_gas_smart_weather_dfs/processed`  
 The smartmeter, gasmeter and weather dataframes merged into one dataframe.
-Use these files to do EDA on.
+Rows containing a NaN streak which is higher than accepted have been dropped.
+NaNs in the weather data have been forward filled.
+NaNs in `'eMeter', 'eMeterReturn', 'eMeterLowReturn', 'gasMeter'` have been interpolated.
+ePower, ePowerReturn and gasPower might still contain NaNs, drop these after reading in the files (if required).
 More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)  
-* `dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'`
+* `dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed'`
 * `dwelling_id = 'P01S01W0373'` (for example)
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
 
-## NaN Information of raw dataframes
+## NaN Information of not-processed dataframes
 Location: `/datc/opschaler/nan_information`  
 This folder contains `dwelling_id_threshold_percentage.csv` files together with corresponding plots to get indepth knowledge about the NaNs in all used data.
 The notebook in which `dwelling_id_threshold_percentage.csv` is created can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/df_NaN_checker.ipynb).
