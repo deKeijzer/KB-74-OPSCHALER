@@ -166,6 +166,11 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     Also calculates gasPower.
     Returns (smart_resampled, gas_resampled)
 
+    Original sample rates are as follows:
+    smart: 10 seconds
+    gas: 1 hour
+    weather: 10 minutes
+
     :param smart: Pandas DataFrame
     :param gas: Pandas DataFrame
     :param weather: Pandas DataFrame
@@ -176,19 +181,18 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     print('Resampling smart, gas, weather')
     # For more resampling info see: https://pandas.pydata.org/pandas-docs/stable/api.html#id41
     # Makes missing gaps appear as NaN, these are the general raw dataframes to work with
-    smart = smart.resample('10s').mean()
-    gas = gas.resample('H').mean()
-    weather = weather.resample('10min').mean()
+    smart_10s = smart.resample('10s').mean()
+    gas_h = gas.resample('H').mean()
+    weather_10min = weather.resample('10min').mean()
 
     """
-    Create gas dataframe with a 1 hour sample rate
+    Create a dataframe with a 1 hour sample rate
     """
-    gas_h = gas.resample('H').ffill()
     gas_h['gasPower'] = gas_h['gasMeter'].diff()  # Calculate gasPower column
     gas_h['gasPower'][0] = gas_h['gasPower'][1]  # Replace 1st entry (NaN) with 2nd entry
 
-    smart_h = smart.resample('H').mean()
-    weather_h = weather.resample('H').mean()
+    smart_h = smart_10s.resample('H').mean()  # Down sample smart
+    weather_h = weather_10min.resample('H').mean()  # Down sample weather
 
     # Combine gas, smart, weather
     df_hour = pd.merge(smart_h, gas_h, left_index=True, right_index=True)
@@ -197,34 +201,34 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     """
     Create smartmeter dataframe with a 10s sample rate
     """
-    gas_10s = gas.resample('10s').ffill()
+    gas_10s = gas_h.resample('10s').ffill()  # Up sample gas to 10s
     # Calculate gasPower column, is this rhe right way? Or should we ffill it?
     # Currently this code makes it so there is one gasPower value per hour, we could ffill this also?
     gas_10s['gasPower'] = gas_10s['gasMeter'].diff()
     gas_10s['gasPower'][0] = gas_10s['gasPower'][1]  # Replace 1st entry (NaN) with 2nd entry
 
-    weather_10s = weather.resample('10s').ffill()
+    weather_10s = weather_10min.resample('10s').ffill()  # forward fill because the raw data is the 10 minute mean
 
     # Combine gas, smart, weather
-    df_10s = pd.merge(smart, gas_10s, left_index=True, right_index=True)
+    df_10s = pd.merge(smart_10s, gas_10s, left_index=True, right_index=True)
     df_10s = pd.merge(df_10s, weather_10s, left_index=True, right_index=True)
 
     """
     Do NaN analysis on the 10s and hour sample rate dataframes
     """
-    print('Length of combined df_10s: %s' % len(smart_gas_weather_resampled_combined))
+    print('Length of combined df_10s: %s' % len(df_10s))
     print('df_nan_fig_10s')
-    df_nan_fig_10s = plot_nans(smart_gas_weather_resampled_combined, dwelling_id+' 10s sample rate')
+    df_nan_fig_10s = plot_nans(df_10s, dwelling_id+' 10s sample rate')
     print('df_nan_table_10s')
-    df_nan_table_10s = df_nan_checker(smart_gas_weather_resampled_combined, 0)
+    df_nan_table_10s = df_nan_checker(df_10s, 0)
 
-    print('Length of combined df_10s: %s' % len(smart_gas_weather_resampled_combined))
-    print('df_nan_fig_h')
-    df_nan_fig_10s = plot_nans(smart_gas_weather_resampled_combined, dwelling_id+' 10s sample rate')
-    print('df_nan_table_10s')
-    df_nan_table_10s = df_nan_checker(smart_gas_weather_resampled_combined, 0)
+    print('Length of combined df_hour: %s' % len(df_hour))
+    print('df_nan_fig_hour')
+    df_nan_fig_hour = plot_nans(df_hour, dwelling_id+' 1 hour sample rate')
+    print('df_nan_table_hour')
+    df_nan_table_hour = df_nan_checker(df_hour, 0)
 
-    return df_10s, df_hour, df_nan_table_10s, df_nan_fig_h
+    return df_10s, df_hour, df_nan_table_10s, df_nan_table_hour, df_nan_fig_hour, df_nan_fig_10s
 
 
 def drop_nan_streaks_above_threshold(df, df_nan_table, thresholds):
@@ -320,29 +324,29 @@ def plot_nans(df, dwelling_id):
     return fig
 
 
-def save_df_interpolated(df, dwelling_id):
+def save_df_processed(df, dwelling_id):
     """
     Save interpolated dataframe.
     :param df: Pandas DataFrame
     :param dwelling_id: String
     :return: None
     """
-    dir = '//datc//opschaler//combined_dfs_gas_smart_weather_interpolated//'
+    dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
-    print('Saved interpolated df: %s' % dwelling_id)
+    print('Saved processed df: %s' % dwelling_id)
     return
 
 
-def save_df_not_interpolated(df, dwelling_id):
+def save_df_unprocessed(df, dwelling_id):
     """
-    Save non-interpolated dataframe.
+    Save unprocessed dataframe.
     :param df: Pandas DataFrame
     :param dwelling_id: String
     :return: None
     """
-    dir = '//datc//opschaler//combined_dfs_gas_smart_weather_NOT_interpolated//'
+    dir = '//datc//opschaler//combined_gas_smart_weather_dfs//unprocessed//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
-    print('Saved not interpolated df: %s' % dwelling_id)
+    print('Saved not unprocessed df: %s' % dwelling_id)
     return
 
 
@@ -399,26 +403,33 @@ def smartmeter_data():
     return file_paths, dwelling_ids
 
 
-def process_dfs(smart, gas, weather):
+def process_dfs(df_10s, df_hour):
     """
-    TODO: split smart, gas frames
-    :param smart_gas_weather_resampled_combined:
-    :return:
+    Forward fill all weather data.
+    Interpolate: smart & gas data, except for ePower, ePowerReturn and gasPower.
+    ePower, ePowerReturn and gasPower might still contains NaNs.
+    These can be dropped after reading in the processed df, if required.
+
+    :param df_10s: Pandas DataFrame
+    :param df_hour:  Pandas DataFrame
+    :return: Pandas DataFrame
     """
-    print('Resampling smart, gas, weather')
-    smart = smart.resample('10s').mean()
+    columns_to_ffill = ['DD', 'DR', 'FF', 'FX', 'N', 'P', 'Q', 'RG', 'SQ', 'T', 'T10', 'TD', 'U', 'VV', 'WW']
+    columns_to_interpolate = ['eMeter', 'eMeterReturn', 'eMeterLowReturn', 'gasMeter']
 
-    gas = gas.resample('H').ffill()
-    gas['gasPower'] = gas['gasMeter'].diff()  # Calculate gasPower column
-    gas['gasPower'][0] = gas['gasPower'][1]  # Replace 1st entry (NaN) with 2nd entry
+    print('Processing df_10s')
+    df_10s[columns_to_ffill] = df_10s[columns_to_ffill].fillna(method='ffill')
+    df_10s[columns_to_interpolate] = df_10s[columns_to_interpolate].interpolate(method='time')
+    df_10s_processed = df_10s
+    print('Amount of NaNs left in df_10s_processed: %s' % df_10s_processed.isnull().sum().sum())
 
-    weather = weather.resample('10min').mean()  # Makes missing gaps appear as NaN
-    weather = weather.resample('10s').ffill()  # Forward fill the values, change to mean() later
-    # For more resampling info see: https://pandas.pydata.org/pandas-docs/stable/api.html#id41
+    print('Processing df_hour')
+    df_hour[columns_to_ffill] = df_hour[columns_to_ffill].fillna(method='ffill')
+    df_hour[columns_to_interpolate] = df_hour[columns_to_interpolate].interpolate(method='time')
+    df_hour_processed = df_hour
+    print('Amount of NaNs left in df_hour_processed: %s' % df_hour_processed.isnull().sum().sum())
 
-
-    return df
-
+    return df_10s_processed, df_hour_processed
 
 
 # Start the main loop
@@ -430,8 +441,8 @@ file_paths, dwelling_ids = smartmeter_data()
 
 print(dwelling_ids)
 
-#file_paths = file_paths[0:1]
-#dwelling_ids = dwelling_ids[0:1]
+file_paths = file_paths[0:1]
+dwelling_ids = dwelling_ids[0:1]
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
@@ -453,26 +464,28 @@ for N in range(len(file_paths)):
 
     print('----- smart_gas_nan_checker -----')
     # Resample dataframes (using mean()), then upsample to 10s using ffill and output nan_info
-    smart_gas_weather_resampled_combined, df_nan_table, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
+    df_10s, df_hour, df_nan_table_10s, df_nan_table_hour, df_nan_fig_hhour, df_nan_fig_10s = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
-    print('----- save_df_not_interpolated -----')
-    save_df_not_interpolated(smart_gas_weather_resampled_combined, dwelling_id)
+    print('----- save_df_unprocessed -----')
+    save_df_unprocessed(df_10s, dwelling_id+'_10s')
+    save_df_unprocessed(df_hour, dwelling_id+'_hour')
 
     print('----- df_nan_table.to_csv -----')
-    df_nan_table.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
+    df_nan_table_10s.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_10s.csv', sep='\t')
+    df_nan_table_hour.to_csv('//datc//opschaler//nan_information//' + dwelling_id + '_hour.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
-    print(smart_gas_weather_resampled_combined.isnull().sum())
+    print('df_10s NaNs: %s' % df_10s.isnull().sum())
+    print('df_hour NaNs: %s' % df_10s.isnull().sum())
 
     """
     Original sample rate:
     Electricity: 10 seconds
     gas: 1 hour
-    weather: 10 minutes. 
+    weather: 10 minutes
     
-    Everything has been resampled to 10 seconds.
+    So for example setting the thresholds for the 10s dataframe:
     
-    So for example setting the thresholds like:
     eMeter   6 -> equals a 60 seconds gap
     ePower   6 -> equals a 60 seconds gap
     gasMeter 360 -> equals a 1 hour gap
@@ -480,35 +493,32 @@ for N in range(len(file_paths)):
     Q       6 -> equals a 1 hour gap 
     """
     print('----- drop_nan_streaks_above_threshold -----')
-    thresholds = {'eMeter': 6,
-                  'ePower': 6,
-                  'gasMeter': 720,
-                  'T': 12,
-                  'Q': 12}
+    thresholds_10s = {'eMeter': 6, 'ePower': 6, 'gasMeter': 720, 'T': 12, 'Q': 12}
+    df_10s_partly_processed = drop_nan_streaks_above_threshold(df_10s, df_nan_table_10s, thresholds_10s)
 
-    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined,
-                                                                          df_nan_table, thresholds)
-
-    #plot_nans(smart_gas_weather_partly_processed, dwelling_id+' NaN threshold applied')
+    thresholds_hour = {'eMeter': 2, 'ePower': 2, 'gasMeter': 2, 'T': 2, 'Q': 2}
+    df_hour_partly_processed = drop_nan_streaks_above_threshold(df_hour, df_nan_table_hour, thresholds_hour)
 
     print('----- dwelling_information -----')
-    dwelling_info_df = dwelling_information(smart_gas_weather_resampled_combined, df_nan_table)
-    dwelling_info_df.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'.csv', sep='\t')
+    dwelling_info_df_10s = dwelling_information(df_10s, df_nan_table_10s)
+    dwelling_info_df_10s.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'_10s.csv', sep='\t')
+
+    dwelling_info_df_hour = dwelling_information(df_hour, df_nan_table_hour)
+    dwelling_info_df_hour.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'_hour.csv', sep='\t')
 
     """
     Resample & interpolate dataframes
     Should NOT interpolate ePower, interpolate eMeter... 
     """
 
-    print('----- Interpolate smart_gas_weather_partly_processed -----')
-    # Do you need to resample to 10s again?
-    # Problem with this is that it also interpolates ePower
-    #combined_processed = smart_gas_weather_resampled_combined.resample('10s').interpolate(method='time')
-    smart_processed, gas_processed = process_dfs(smart_gas_weather_resampled_combined)
+    print('----- process_dfs -----')
+    # Process NaNs
+    df_10s_processed, df_hour_processed = process_dfs(df_10s, df_hour)
 
 
     print('----- save_df_interpolated -----')
-    save_df_interpolated(combined_processed, dwelling_id)
+    save_df_processed(df_10s_processed, dwelling_id+'_10s')
+    save_df_processed(df_hour_processed, dwelling_id+'_hour')
 
     t3 = time.time()
     print('------------------------------ FINISHED iteration %s in %.1f [s]' % (N, (t3-t2)))
