@@ -64,8 +64,8 @@ These are the raw smartmeter dataframes from the TU Delft server.
 They should be in the format `dwelling_id.csv`.  
 These files contain the raw electricity and raw gas data.  
 
-### Processed dwelling_id dataframes
-Location: `/datc/opschaler/combined_dfs_gas_smart_weather`  
+### Interpolated dwelling_id dataframes
+Location: `/datc/opschaler/combined_dfs_gas_smart_weather_interpolated`  
 The smartmeter, gasmeter and weather dataframes merged into one dataframe.
 Use these files to do EDA on.
 More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)  
