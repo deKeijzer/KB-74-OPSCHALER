@@ -67,15 +67,15 @@ These files contain the raw electricity and raw gas data.
 Location: `//datc//opschaler//combined_gas_smart_weather_dfs//unprocessed`  
 The smartmeter, gasmeter and weather dataframes merged into one dataframe.
 NaNs are not removed, the following has been done (in order):
-For `_hour` files:
-* 1. gasPower calculated by using `.diff()` on gas column.
-* 2. smartmeter and weather data downsampled to 1 hour, using mean.
-* 3. merged smartmeter, gas and weather data.
-For `_10s` files:
-* 1. gas has been upsampled to 10s by using forward fill (`.ffill()`)
-* 2. gasPower calculated by using `.diff()` on gas column.
-* 3. weather upsampled to 10s by using forward fill
-* 4. merged smartmeter, gas and weather data
+For `_hour` files:  
+* 1. gasPower calculated by using `.diff()` on gas column.  
+* 2. smartmeter and weather data downsampled to 1 hour, using mean.  
+* 3. merged smartmeter, gas and weather data.  
+For `_10s` files:  
+* 1. gas has been upsampled to 10s by using forward fill (`.ffill()`)  
+* 2. gasPower calculated by using `.diff()` on gas column.  
+* 3. weather upsampled to 10s by using forward fill  
+* 4. merged smartmeter, gas and weather data  
 
 ### Processed dwelling_id dataframes (Use these for analysis)
 Location: `/datc/opschaler/combined_gas_smart_weather_dfs/processed`  
