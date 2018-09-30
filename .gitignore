@@ -1,5 +1,7 @@
 data/
 data/*
+datc/
+datc/*
 *csv
 *xlsx
 *xls

@@ -1,5 +1,7 @@
 """
 Shifr+F9 (Debug first, then plots will appear in SciView)
+
+TODO: add legend to plot_nans
 """
 
 import pandas as pd
@@ -14,15 +16,18 @@ import matplotlib as mpl
 mpl.style.use('default')
 
 
-
 def clean_datetime(df):
     """
+    TODO: Speed up the function
     Input should be a df with a column called 'datetime'.
-    This function checks wether a row in the df.datetime column can be parsed to a pandas datetime object,
+    This function checks wether a row in the df.datetime column can be parsed to a Pandas datetime object,
     by trying pd.to_datetime() on it.
     If it fails it will replace that row with np.nan().
     Finally this function will return the df with the NaN rows dropped.
     It only drops the row if the datetime column contains a NaN.
+
+    :param df: Pandas DataFrame containing a datetime column called 'datetime'.
+    :return: Pandas DataFrame
     """
     for i in range(len(df)):
         try:
@@ -40,16 +45,15 @@ def clean_prepare_smart_gas(file_path):
     """
     Input is a dwelling_id.csv file.
     Output are cleaned & prepared dataframes (smart, gas).
-    Return: smart, gas
+
+    :param file_path: path to 'dwelling_id.csv' file
+    :return: Smart and gas Pandas DataFrames
     """
     df = pd.read_csv(file_path, delimiter=';', header=0)
     df = df.rename(index=str, columns={'Timestamp': 'datetime', 'gasTimestamp': 'datetime'})
 
     smart = df.iloc[:, :7]
     gas = df.iloc[:, 7:]
-
-    #smart = clean_datetime(smart)
-    #gas = clean_datetime(gas)
 
     try:
         smart['datetime'] = pd.to_datetime(smart['datetime'])
@@ -72,9 +76,7 @@ def clean_prepare_smart_gas(file_path):
 
 def df_nan_checker(df, threshold_percentage):
     """
-    df: input pandas dataframe
-    threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
-
+    TODO: Parellalize, as in one column per core/worker?
     Checks each column in the input dataframe for NaNs.
     Outputs the amount of NaNs behind each other, including the start and stop index, per column as a sublist.
     For example when the dataframe has three columns.
@@ -83,15 +85,19 @@ def df_nan_checker(df, threshold_percentage):
     With the column_..._info being in the form of:
     [start_index, stop_index, amount_of_NaNs]
 
-    TODO: Parellalize, as in one column per core/worker?
+    :param df: Pandas DataFrame
+    :param threshold_percentage: Filter output based on NaN streaks being larger than x % of the total length of the dataframe.
+    :return: Pandas DataFrame
     """
+
     columns = df.columns
     df = df.isnull()
     output = []
+    length = len(columns)
 
-    for i in range(len(columns)):
+    for i in range(length):
+        #print('At iteration %s of %s' % (i, length))
         column_name = columns[i]
-
         column_info = []
         temp = []
         x = False
@@ -120,23 +126,35 @@ def df_nan_checker(df, threshold_percentage):
     Row per column from the 'output' list
     Columns: start-index, stop-index, NaN streak
     """
-    columns = df.columns
 
     df_info = pd.DataFrame(columns=['Column name', 'Start index', 'Stop index', 'Amount of NaNs'])
+    length = len(output)
+    column_names = []
+    starts = []
+    stops = []
+    amounts = []
 
-    for column in range(len(output)):
+    for column in range(length):
+        #print('At iteration %s of %s' % (column, length))
         for i in range(len(output[column])):
-            column_name = df.columns[column]
-            start = output[column][i][0]
-            stop = output[column][i][1]
-            amount = output[column][i][2]
-            df_info = df_info.append(
-                {'Column name': column_name, 'Start index': start, 'Stop index': stop, 'Amount of NaNs': amount},
-                ignore_index=True)
-        pass
+            column_names.append(df.columns[column])
+            starts.append(output[column][i][0])
+            stops.append(output[column][i][1])
+            amounts.append(output[column][i][2])
+
+    print('Appending NaN info to df')
+    # Convert list to pd series
+    column_names = pd.Series(column_names)
+    starts = pd.Series(starts)
+    stops = pd.Series(stops)
+    amounts = pd.Series(amounts)
+    # Append pd series to a column
+    df_info['Column name'] = column_names.values
+    df_info['Start index'] = starts.values
+    df_info['Stop index'] = stops.values
+    df_info['Amount of NaNs'] = amounts.values
 
     percentage = (df_info['Amount of NaNs'] / len(df)) * 100
-
     df_info.drop(df_info[percentage < threshold_percentage].index, inplace=True)
 
     return df_info
@@ -147,58 +165,127 @@ def smart_gas_nan_checker(smart, gas, weather, dwelling_id):
     Resamples the (smart, gas) dfs to 10s.
     Also calculates gasPower.
     Returns (smart_resampled, gas_resampled)
+
+    Original sample rates are as follows:
+    smart: 10 seconds
+    gas: 1 hour
+    weather: 10 minutes
+
+    :param smart: Pandas DataFrame
+    :param gas: Pandas DataFrame
+    :param weather: Pandas DataFrame
+    :param dwelling_id: String
+    :return: smart_resampled, gas_resampled as a Pandas DataFrame
     """
 
-    # Implement NaN checker here
-    # Resample to the same sampling time, use .mean, that way empty gaps will apear as NaNs
-    # Generalize it for any df? Resample and handle NaNs based on... threshold.. do stuff..
-    print('-- smart, gas resampling --')
-    smart_resampled = smart.resample('10s').mean()
-    gas_resampled = gas.resample('H').mean() #Needs a check wether cols are 0
-    #gas_resampled = gas.resample('10s').mean()
+    print('Resampling smart, gas, weather')
+    # For more resampling info see: https://pandas.pydata.org/pandas-docs/stable/api.html#id41
+    # Makes missing gaps appear as NaN, these are the general raw dataframes to work with
+    smart_10s = smart.resample('10s').mean()
+    gas_h = gas.resample('H').mean()
+    weather_10min = weather.resample('10min').mean()
 
-    # Merge the two dfs
-    print('-- merge smart gas resampled --')
-    smart_gas_resampled_combined = pd.merge(smart_resampled, gas_resampled, left_index=True, right_index=True)
-    smart_gas_weather_resampled_combined = pd.merge(smart_gas_resampled_combined, weather, left_index=True,
-                                                    right_index=True)
+    """
+    Create a dataframe with a 1 hour sample rate
+    """
+    gas_h['gasPower'] = gas_h['gasMeter'].diff()  # Calculate gasPower column
+    gas_h['gasPower'][0] = gas_h['gasPower'][1]  # Replace 1st entry (NaN) with 2nd entry
 
-    print('-- smart,gas nan_fig')
-    df_nan_fig = plot_nans(smart_gas_weather_resampled_combined, dwelling_id)
+    smart_h = smart_10s.resample('H').mean()  # Down sample smart
+    weather_h = weather_10min.resample('H').mean()  # Down sample weather
 
-    print('-- smart, gas nan_info --')
-    df_nan_info = df_nan_checker(smart_gas_weather_resampled_combined, 0)
-    #df_nan_info = pd.DataFrame() #empty placeholder
-    print('-- resampling smart_gas_resampled_merged --')
+    # Combine gas, smart, weather
+    df_hour = pd.merge(smart_h, gas_h, left_index=True, right_index=True)
+    df_hour = pd.merge(df_hour, weather_h, left_index=True, right_index=True)
 
-    return smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig
+    """
+    Create smartmeter dataframe with a 10s sample rate
+    """
+    gas_10s = gas_h.resample('10s').ffill()  # Up sample gas to 10s
+    # Calculate gasPower column, is this rhe right way? Or should we ffill it?
+    # Currently this code makes it so there is one gasPower value per hour, we could ffill this also?
+    gas_10s['gasPower'] = gas_10s['gasMeter'].diff()
+    gas_10s['gasPower'][0] = gas_10s['gasPower'][1]  # Replace 1st entry (NaN) with 2nd entry
+
+    weather_10s = weather_10min.resample('10s').ffill()  # forward fill because the raw data is the 10 minute mean
+
+    # Combine gas, smart, weather
+    df_10s = pd.merge(smart_10s, gas_10s, left_index=True, right_index=True)
+    df_10s = pd.merge(df_10s, weather_10s, left_index=True, right_index=True)
+
+    """
+    Do NaN analysis on the 10s and hour sample rate dataframes
+    """
+    print('Length of combined df_10s: %s' % len(df_10s))
+    print('df_nan_fig_10s')
+    df_nan_fig_10s = plot_nans(df_10s, dwelling_id+' 10s sample rate')
+    print('df_nan_table_10s')
+    df_nan_table_10s = df_nan_checker(df_10s, 0)
+
+    print('Length of combined df_hour: %s' % len(df_hour))
+    print('df_nan_fig_hour')
+    df_nan_fig_hour = plot_nans(df_hour, dwelling_id+' 1 hour sample rate')
+    print('df_nan_table_hour')
+    df_nan_table_hour = df_nan_checker(df_hour, 0)
+
+    return df_10s, df_hour, df_nan_table_10s, df_nan_table_hour, df_nan_fig_hour, df_nan_fig_10s
 
 
-def drop_nan_streaks_above_threshold(df, df_nan_info, threshold):
+def drop_nan_streaks_above_threshold(df, df_nan_table, thresholds):
     """
     Drops NaN streaks from the df when they are larger then the threshold value.
-    This function also inputs df_nan_info because it already has been made in the smart_gas_nan_checker.
-    :param df: Dataframe to process NaNs off
-    :param df_nan_info: NaN info dataframe of the input df
-    :param threshold: Interpolate if 'Amount of NaNs' from detected NaN streak is below this number.
-    :return: dataframe
+    This function also inputs df_nan_table because it already has been made in the smart_gas_nan_checker.
+    :param df: Pandas DataDrame to process NaNs off
+    :param df_nan_table: NaN info Pandas DataFrame of the input df
+    :param thresholds: Dictionary {'column_name':column_threshold}, column_threshold has to be an integer.
+    :return: Pandas DataFrame
     """
 
-    # Check for NaN streaks > threshold and drop them form the df
-    for i, amount in enumerate(df_nan_info['Amount of NaNs']):
-        if amount > threshold:
-            start_index = (df_nan_info['Start index'][i])
-            stop_index = (df_nan_info['Stop index'][i])
-            index_list = df[start_index:stop_index].index
-            df = df.drop(index_list)
+    # Check for NaN streaks > threshold and drop them from the df
+    length = len(df_nan_table['Amount of NaNs'])
+    print('df_nan_table length: %s' % length)
 
+    indices_to_drop = []
+    for i, amount in enumerate(df_nan_table['Amount of NaNs']):
+        selected_column = df_nan_table['Column name'][i]
+        try:
+            if amount > thresholds[selected_column]:
+                start_index = (df_nan_table['Start index'][i])
+                stop_index = (df_nan_table['Stop index'][i])
+                indices = df[start_index:stop_index].index
+                print('Enumeration %s of %s | From \t %s \t to \t %s | column %s | NaN streak length: %s'
+                      % (i, length, start_index, stop_index, selected_column, (len(indices))))
+                try:
+                    indices_to_drop += indices
+                except:
+                    print('Could not add indices to indices_to_drop list')
+            else:
+                #print('amount < threshold')
+                pass
+        except:
+            #print('No threshold detected for %s' % selected_column)
+            pass
+
+    print('Dropping NaN streaks > threshold')
+    l1 = len(df)
+    df = df.drop(indices_to_drop)
+    l2 = len(df)
+    print('Removed %s rows' % (l1-l2))
     return df
 
 
 def plot_nans(df, dwelling_id):
+    """
+    Create a heatmap of the NaNs in the input DataFrame.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: Seaborn heatmap as a Figure
+    """
     plt.clf()
     df = df.isnull()
-    #df = df.resample('10D').sum() #resample make amount of NaNs visible
+    # Downsample to make all data visible
+    df = df.resample('1T').sum()  # Downsample to make small NaNs visible
+    df = df.apply(lambda x: x > 0, 1)  # Replace values >0 with 1
 
     # Reindex datetimes
     # https://stackoverflow.com/questions/41046630/set-time-formatting-on-a-datetime-index-when-plotting-pandas-series
@@ -208,57 +295,92 @@ def plot_nans(df, dwelling_id):
         print('plot_nans could not set df.index.to_period')
 
     # Plot heatmap
+    n = int(len(df)*0.1)  # Choose amount of yticklabels to show
 
-    n = int(len(df)*0.1) # Choose amount of yticklabels to show
-    #fig = sns.heatmap(df, cmap='RdYlGn_r', square=False, yticklabels=n)
-    #fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar_kws={"label": "Amount of NaNs [-]"},
-    #                  yticklabels=n)
     try:
-        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True,
-                      yticklabels=n*2, cbar_kws={})
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=False, yticklabels=n*2, cbar_kws={})
     except TypeError:
         print('plot_nans ValueError')
-        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=True, cbar_kws={})
-
+        fig = sns.heatmap(df, cmap='Reds', square=False, vmin=0, cbar=False, cbar_kws={})
 
     # Set cbar ticks manually
-    cbar = fig.collections[0].colorbar
-    cbar.set_ticks([0, 1])
-    cbar.set_ticklabels(['Not NaN', 'NaN'])
-
-    fig.invert_yaxis()
+    #cbar = fig.collections[0].colorbar
+    #cbar.set_ticks([0, 1])
+    #cbar.set_ticklabels(['Not NaN', 'NaN'])
 
     # Correct layout
+    fig.invert_yaxis()
     fig.tick_params(axis='x', rotation=90)
     fig.tick_params(axis='y', rotation=0)
-    #fig.grid(alpha=1)
     fig.set(xlabel='Column [-]', ylabel='Index [-]')
     plt.title('Dwelling ID: '+dwelling_id)
 
     fig = fig.get_figure()
     fig.tight_layout()
     fig.show()
-    fig.savefig('//datc//opschaler//nan_information//figures//'+dwelling_id+'.png', dpi=1000)
+    print('Saving heatmap')
+    fig.savefig('//datc//opschaler//nan_information//figures//' + dwelling_id + '.png', dpi=1200)
+
     return fig
 
 
-def merge_dfs(df1, df2, df3):
+def save_df_processed(df, dwelling_id):
     """
-    Merges the dataframes, outputs one df.
+    Save interpolated dataframe.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: None
     """
-    df = pd.merge(df1, df2, left_index=True, right_index=True)
-    df = pd.merge(df, df3, left_index=True, right_index=True)
-
-    return df
-
-
-def save_df(df, dwelling_id):
-    dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'
+    dir = '//datc//opschaler//combined_gas_smart_weather_dfs//processed//'
     df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
-    print('Saved %s' % dwelling_id)
+    print('Saved processed df: %s' % dwelling_id)
+    return
+
+
+def save_df_unprocessed(df, dwelling_id):
+    """
+    Save unprocessed dataframe.
+    :param df: Pandas DataFrame
+    :param dwelling_id: String
+    :return: None
+    """
+    dir = '//datc//opschaler//combined_gas_smart_weather_dfs//unprocessed//'
+    df.to_csv(dir + dwelling_id + '.csv', sep='\t', index=True)
+    print('Saved not unprocessed df: %s' % dwelling_id)
+    return
+
+
+def dwelling_information (smart_gas_weather_resampled_combined, df_nan_table):
+    # create dataframe to store all information from the different files
+    df_dwelling_information = pd.DataFrame(columns={'Dwelling ID', 'file size [MB]', 'initial date', 'final date',
+                                                    'days', 'total amount of NaNs', 'largest max consecutive NaNs',
+                                                    'second largest max consecutive NaNs',
+                                                    'third_largest_max_consecutive_NaNs'})
+
+    # order of column names changed for some reason, line(below) fixes this, although ugly
+    df_dwelling_information = df_dwelling_information[['Dwelling ID', 'file size [MB]', 'initial date', 'final date',
+                                                       'days', 'total amount of NaNs', 'largest max consecutive NaNs',
+                                                       'second largest max consecutive NaNs',
+                                                       'third_largest_max_consecutive_NaNs']]
+
+    # smart needs to be replaced with name of df that is read in (raw, combined)
+    df_dwelling_information.loc[len(df_nan_table.index)] = [dwelling_id,
+                                                 smart_gas_weather_resampled_combined.memory_usage(index=True).sum()/1000000,
+                                                 smart_gas_weather_resampled_combined.index[0],
+                                                 smart_gas_weather_resampled_combined.index[-1],
+                                             smart_gas_weather_resampled_combined.index[-1] - smart_gas_weather_resampled_combined.index[0],
+                                             df_nan_table['Amount of NaNs'].sum(),
+                                                 df_nan_table['Amount of NaNs'].nlargest(1),
+                                             df_nan_table['Amount of NaNs'].nlargest(2),
+                                                 df_nan_table['Amount of NaNs'].nlargest(3)]
+    return df_dwelling_information
 
 
 def read_weather_data():
+    """
+    Reads in the weather Pandas DataFrame.
+    :return: Pandas DataFrame
+    """
     # Check if UTC to gmt+1 conversion is being handled correctly
     weather = pd.read_csv('//datc//opschaler//weather_data//knmi_10_min_raw_data//output//df_combined_uncleaned.csv',
                           delimiter='\t', comment='#',
@@ -268,81 +390,145 @@ def read_weather_data():
 
 
 def smartmeter_data():
+    """
+    Reads in the file paths and dwelling id's of the smartmeter data.
+    :return: file_paths, dwelling_ids, both as lists.
+    """
     path = '/datc/opschaler/smartmeter_data'
     file_paths = np.array(glob.glob(path + "/*.csv"))
+
     print('Detected %s smartmeter_data files.' % len(file_paths))
-    #
     dwelling_ids = np.array(list((map(lambda x: x[-15:-4], file_paths))))
 
     return file_paths, dwelling_ids
 
+
+def process_dfs(df_10s, df_hour):
+    """
+    Forward fill all weather data.
+    Interpolate: smart & gas data, except for ePower, ePowerReturn and gasPower.
+    ePower, ePowerReturn and gasPower might still contains NaNs.
+    These can be dropped after reading in the processed df, if required.
+
+    :param df_10s: Pandas DataFrame
+    :param df_hour:  Pandas DataFrame
+    :return: Pandas DataFrame
+    """
+    columns_to_ffill = ['DD', 'DR', 'FF', 'FX', 'N', 'P', 'Q', 'RG', 'SQ', 'T', 'T10', 'TD', 'U', 'VV', 'WW']
+    columns_to_interpolate = ['eMeter', 'eMeterReturn', 'eMeterLowReturn', 'gasMeter']
+
+    print('Processing df_10s')
+    df_10s[columns_to_ffill] = df_10s[columns_to_ffill].fillna(method='ffill')
+    df_10s[columns_to_interpolate] = df_10s[columns_to_interpolate].interpolate(method='time')
+    df_10s_processed = df_10s
+    print('Amount of NaNs left in df_10s_processed: %s' % df_10s_processed.isnull().sum().sum())
+
+    print('Processing df_hour')
+    df_hour[columns_to_ffill] = df_hour[columns_to_ffill].fillna(method='ffill')
+    df_hour[columns_to_interpolate] = df_hour[columns_to_interpolate].interpolate(method='time')
+    df_hour_processed = df_hour
+    print('Amount of NaNs left in df_hour_processed: %s' % df_hour_processed.isnull().sum().sum())
+
+    return df_10s_processed, df_hour_processed
+
+
+# Start the main loop
 t1 = time.time()
+
+print('Reading in weather data')
 weather = read_weather_data()
 file_paths, dwelling_ids = smartmeter_data()
-#file_paths = file_paths[28:29] #10,11 not saved, needs to run for 50+ minutes...
-#dwelling_ids = dwelling_ids[28:29]
 
+print(dwelling_ids)
+
+file_paths = file_paths[0:1]
+dwelling_ids = dwelling_ids[0:1]
 
 """
 index 49 is the 'export_P01S01W0000.csv' test dataframe
 smart/gasMeter contains a NaN streak of 4 NaNs, this is 28.6 % of the total length.
-N=29 is the smallest test df
-N=24 is the smallest real df
-13 is largest real df
+N=27:28 is the smallest test df
+daan 21:22
 """
-for i in range(len(file_paths)):
+for N in range(len(file_paths)):
     t2 = time.time()
-    N = i
-    print('---------- N=%s ----------' % i)
+    print('---------- N=%s ----------' % N)
 
     file_path = file_paths[N]
     dwelling_id = dwelling_ids[N]
     print('Selected dwelling_id: '+dwelling_ids[N])
 
+    print('----- clean_prepare_smart_gas -----')
     # Read in raw smartmeter dataframe, split them into smart, gas df
     smart, gas = clean_prepare_smart_gas(file_path)
 
-    print('----- Resampling -----')
-    # Resample dataframes (using mean()) and output nan_info
-    smart_gas_weather_resampled_combined, df_nan_info, df_nan_fig = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
+    print('----- smart_gas_nan_checker -----')
+    # Resample dataframes (using mean()), then upsample to 10s using ffill and output nan_info
+    df_10s, df_hour, df_nan_table_10s, df_nan_table_hour, df_nan_fig_hhour, df_nan_fig_10s = smart_gas_nan_checker(smart, gas, weather, dwelling_id)
 
-    print('----- Saving NaN information -----')
-    # Save NaN information
-    df_nan_info.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'.csv', sep='\t')
+    print('----- save_df_unprocessed -----')
+    save_df_unprocessed(df_10s, dwelling_id+'_10s')
+    save_df_unprocessed(df_hour, dwelling_id+'_hour')
+
+    print('----- df_nan_table.to_csv -----')
+    df_nan_table_10s.to_csv('//datc//opschaler//nan_information//'+dwelling_id+'_10s.csv', sep='\t')
+    df_nan_table_hour.to_csv('//datc//opschaler//nan_information//' + dwelling_id + '_hour.csv', sep='\t')
 
     print('----- smart_gas_resampled_combined NaNs -----')
-    print(smart_gas_weather_resampled_combined.isnull().sum())
+    print('df_10s NaNs: %s' % df_10s.isnull().sum())
+    print('df_hour NaNs: %s' % df_10s.isnull().sum())
 
+    """
+    Original sample rate:
+    Electricity: 10 seconds
+    gas: 1 hour
+    weather: 10 minutes
+    
+    So for example setting the thresholds for the 10s dataframe:
+    
+    eMeter   6 -> equals a 60 seconds gap
+    ePower   6 -> equals a 60 seconds gap
+    gasMeter 360 -> equals a 1 hour gap
+    T       6 -> equals a 1 hour gap
+    Q       6 -> equals a 1 hour gap 
+    """
+    print('----- drop_nan_streaks_above_threshold -----')
+    thresholds_10s = {'eMeter': 6, 'ePower': 6, 'gasMeter': 720, 'T': 12, 'Q': 12}
+    df_10s_partly_processed = drop_nan_streaks_above_threshold(df_10s, df_nan_table_10s, thresholds_10s)
 
-    print('----- Drop NaN streak above threshold -----')
-    # drop NaN streaks above threshold
-    smart_gas_weather_partly_processed = drop_nan_streaks_above_threshold(smart_gas_weather_resampled_combined, df_nan_info, 6)
+    thresholds_hour = {'eMeter': 2, 'ePower': 2, 'gasMeter': 2, 'T': 2, 'Q': 2}
+    df_hour_partly_processed = drop_nan_streaks_above_threshold(df_hour, df_nan_table_hour, thresholds_hour)
+
+    print('----- dwelling_information -----')
+    dwelling_info_df_10s = dwelling_information(df_10s, df_nan_table_10s)
+    dwelling_info_df_10s.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'_10s.csv', sep='\t')
+
+    dwelling_info_df_hour = dwelling_information(df_hour, df_nan_table_hour)
+    dwelling_info_df_hour.to_csv('//datc//opschaler//dwelling_information//'+dwelling_id+'_hour.csv', sep='\t')
 
     """
     Resample & interpolate dataframes
     Should NOT interpolate ePower, interpolate eMeter... 
     """
 
-    print('----- Interpolating -----')
-    # Do you need to resample to 10s again?
-    # Problem with this is that it also interpolates ePower
-    combined_processed = smart_gas_weather_resampled_combined.resample('10s').interpolate(method='time')
+    print('----- process_dfs -----')
+    # Process NaNs
+    df_10s_processed, df_hour_processed = process_dfs(df_10s, df_hour)
 
-    # After interpolation, ready to combine & save output
-    print('----- merge_dfs -----')
-    #df = pd.merge(combined_processed, weather, left_index=True, right_index=True)
 
-    print('----- save_df -----')
-    save_df(combined_processed, dwelling_id)
+    print('----- save_df_interpolated -----')
+    save_df_processed(df_10s_processed, dwelling_id+'_10s')
+    save_df_processed(df_hour_processed, dwelling_id+'_hour')
 
     t3 = time.time()
-    print('---------- FINISHED iteration %s IN %s ----------' % (i, (t3-t2)))
+    print('------------------------------ FINISHED iteration %s in %.1f [s]' % (N, (t3-t2)))
 
 t4 = time.time()
-print('Total runtime: %s' % (t4-t1))
+print('Total runtime: %.1f [s]' % (t4-t1))
 
 """
 What slows down the code a lot:
 df_nan_checker
 clean_datetime
 """
+
