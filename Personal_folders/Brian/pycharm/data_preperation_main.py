@@ -415,7 +415,7 @@ def process_dfs(df_10s, df_hour):
     :return: Pandas DataFrame
     """
     columns_to_ffill = ['DD', 'DR', 'FF', 'FX', 'N', 'P', 'Q', 'RG', 'SQ', 'T', 'T10', 'TD', 'U', 'VV', 'WW']
-    columns_to_interpolate = ['eMeter', 'eMeterReturn', 'eMeterLowReturn', 'gasMeter']
+    columns_to_interpolate = ['eMeter', 'gasMeter']
 
     print('Processing df_10s')
     df_10s[columns_to_ffill] = df_10s[columns_to_ffill].fillna(method='ffill')
@@ -488,15 +488,15 @@ for N in range(len(file_paths)):
     
     eMeter   6 -> equals a 60 seconds gap
     ePower   6 -> equals a 60 seconds gap
-    gasMeter 360 -> equals a 1 hour gap
-    T       6 -> equals a 1 hour gap
-    Q       6 -> equals a 1 hour gap 
+    gasMeter 36 -> equals a 1 hour gap
+    T       36 -> equals a 1 hour gap
+    Q       18 -> equals a 30 minute gap 
     """
     print('----- drop_nan_streaks_above_threshold -----')
-    thresholds_10s = {'eMeter': 6, 'ePower': 6, 'gasMeter': 720, 'T': 12, 'Q': 12}
+    thresholds_10s = {'eMeter': 6, 'ePower': 6, 'gasMeter': 72, 'T': 36, 'Q': 18}
     df_10s_partly_processed = drop_nan_streaks_above_threshold(df_10s, df_nan_table_10s, thresholds_10s)
 
-    thresholds_hour = {'eMeter': 2, 'ePower': 2, 'gasMeter': 2, 'T': 2, 'Q': 2}
+    thresholds_hour = {'eMeter': 2, 'ePower': 2, 'gasMeter': 2, 'T': 1, 'Q': 1}
     df_hour_partly_processed = drop_nan_streaks_above_threshold(df_hour, df_nan_table_hour, thresholds_hour)
 
     print('----- dwelling_information -----')
@@ -531,4 +531,3 @@ What slows down the code a lot:
 df_nan_checker
 clean_datetime
 """
-
