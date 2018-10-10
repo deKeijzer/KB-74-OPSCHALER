@@ -5,3 +5,6 @@ dwel_path_id('sample_rate', 'folder', 'combined')
         folder: processed/unprocessed
         combined: no/yes
 
+dwel_len(dwelling_id)
+    Returns the length of measurement of the dwelling
+        

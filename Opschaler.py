@@ -39,10 +39,23 @@ def dwel_path_id(sample_rate, folder, combined):
     if sample_rate == '10s':
         dwelling_ids = np.array(list((map(lambda x: x[-19:-8], file_paths)))) # 10s ids slicing
     if combined == 'yes':
-        dwelling_ids = 'Used all dwellings to make this df'
-    
+        dwelling_ids = 'Used all dwellings to make this df'    
     
     return file_paths, dwelling_ids
+    
+# def nan_table(sample_rate):
+#     file_paths, dwelling_ids = dwelling_data_paths(sample_rate)
+#     dfs_nan_table = []
+
+#     for i, path in enumerate(paths):
+#         dwelling_id = dwelling_ids[i]
+#         df = read_combined_df(path, dwelling_id)
+#         dfs_nan_table.append(df)
+        
+#     final_df = pd.concat(dfs_nan_table)
+    
+#     return final_df
+    
 
 
 
@@ -53,13 +66,13 @@ def dwel_path_id(sample_rate, folder, combined):
 
 
 
-def dwel_len(type_, dwelling_id):
+
+def dwel_len(dwelling_id):
     """
-    Get the total amount of days of the unprocessed dwelling_id where type=10s/h.
+    Get the total amount of days of an unprocessed dwelling_id.
     """
     dir = '//datc//opschaler//combined_gas_smart_weather_dfs//unprocessed//'
-    df = pd.read_csv(dir+dwelling_id+'_'+type_+'.csv', delimiter='\t', parse_dates=['datetime'])
-    columns = df.columns
+    df = pd.read_csv(dir+dwelling_id+'_10s.csv', delimiter='\t', parse_dates=['datetime'])
     df = df['datetime'] # only keep the datetime column
     start_date = df.iloc[0]
     stop_date = df.iloc[-1]
@@ -68,7 +81,7 @@ def dwel_len(type_, dwelling_id):
     
     recorded_days = (stop_date - start_date).days # total amount of recorded days
 
-    return recorded_days, start_date, stop_date, columns
+    return recorded_days, start_date, stop_date
 
 
 
