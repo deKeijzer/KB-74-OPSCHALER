@@ -1,6 +1,7 @@
 dwel_path_id('sample_rate', 'folder', 'combined')
     Returns a list with the filepaths of the files + a list of the dwelling id's.
     If combined is called upon (yes), only the combined df's path is given.
+    Use file_paths, dwelling_ids = op.dwel_path_id('sample_rate', 'folder', 'combined') to store the arrays to the right variables
         sample_rate: 10s/hour
         folder: processed/unprocessed
         combined: no/yes
