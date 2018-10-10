@@ -1,0 +1,7 @@
+dwel_path_id('sample_rate', 'folder', 'combined')
+    Returns a list with the filepaths of the files + a list of the dwelling id's.
+    If combined is called upon (yes), only the combined df's path is given.
+        sample_rate: 10s/hour
+        folder: processed/unprocessed
+        combined: no/yes
+
