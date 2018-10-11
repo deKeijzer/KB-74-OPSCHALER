@@ -44,7 +44,6 @@ def dwel_path_id(sample_rate, folder, combined):
         dwelling_ids = 'Used all dwellings to make this df'    
     
     return file_paths, dwelling_ids
-    file_paths, dwelling_ids = op.dwel_path_id('sample_rate', 'folder', 'combined')
 # def nan_table(sample_rate):
 #     file_paths, dwelling_ids = dwelling_data_paths(sample_rate)
 #     dfs_nan_table = []
@@ -75,8 +74,6 @@ def corr_df(len_measurement, dwelling_id):
         df = df.resample('1D').mean()
     if len_measurement == '1w':
         df = df.resample('1W').mean()
-    if len_measurement == '1m':
-        df = df.resample('1M').mean()
     
     rdf = df[df['T'] < 16]
     
