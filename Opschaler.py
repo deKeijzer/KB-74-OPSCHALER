@@ -9,6 +9,7 @@ import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
+%matplotlib inline
 
 
 # In[2]:
@@ -60,7 +61,6 @@ def dwel_path_id(sample_rate, folder, combined):
     
 
 def corr_df(len_measurement, dwelling_id):
-    %matplotlib inline
     plt.style.use('default')
 
     df = pd.read_csv("/datc/opschaler/combined_gas_smart_weather_dfs/processed/"+dwelling_id+"_hour.csv",header=0,delimiter="\t",parse_dates = ['datetime'])
