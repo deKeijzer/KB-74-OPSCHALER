@@ -59,7 +59,7 @@ def dwel_path_id(sample_rate, folder, combined):
 #     return final_df
     
 
-def cor_df(len_measurement, dwelling_id):
+def corr_df(len_measurement, dwelling_id):
     %matplotlib inline
     plt.style.use('default')
 
@@ -93,7 +93,7 @@ def cor_df(len_measurement, dwelling_id):
     plt.title('Correlation Matrix')
     plt.xticks(rotation=90)
     plt.yticks(rotation=0)
-    plt.show()
+    return plt.show()
 
 
 
