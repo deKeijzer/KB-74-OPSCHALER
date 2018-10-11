@@ -9,7 +9,6 @@ import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline
 
 
 # In[2]:
