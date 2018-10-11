@@ -43,6 +43,7 @@ def dwel_path_id(sample_rate, folder, combined):
     if combined == 'yes':
         dwelling_ids = 'Used all dwellings to make this df'    
     
+    file_paths, dwelling_ids = op.dwel_path_id('sample_rate', 'folder', 'combined')
     return file_paths, dwelling_ids
 # def nan_table(sample_rate):
 #     file_paths, dwelling_ids = dwelling_data_paths(sample_rate)
