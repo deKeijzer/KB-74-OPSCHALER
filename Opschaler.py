@@ -13,6 +13,45 @@ import seaborn as sns
 
 # In[2]:
 
+def test(x):
+    def test1(y):
+        y = 'print '
+        return y
+    return y, x
+
+# def datetime_layout(dwelling_id, y, y2=None, y3=None, y4=None):
+#         def layout():
+#             plt.xticks(rotation=45)
+#             plt.grid()
+#             plt.tight_layout()
+
+#     x = df.index
+    
+    
+#     plt.subplot(3,2,1)
+#     plt.plot(x, df[y], '-', color='r', linewidth=0.3)
+#     #plt.xlabel('Date [-]')
+#     plt.ylabel('Global Radiation [J/m$^2$]')
+#     datetime_layout()
+
+#     plt.subplot(3,2,2)
+#     plt.plot(x, data['T'], '-', color='r', linewidth=0.3)
+#     #plt.xlabel('Date [-]')
+#     plt.ylabel('Temperature [°C]')
+#     datetime_layout()
+
+#     plt.subplot(3,2,3)
+#     plt.plot(x, data['ePower'], '-', color='r', linewidth=0.3)
+#     #plt.xlabel('Date [-]')
+#     plt.ylabel('ePower [kWh]')
+#     datetime_layout()
+
+#     plt.subplot(3,2,4)
+#     plt.plot(x, data['gasPower'], '-', color='r', linewidth=0.3)
+#     #plt.xlabel('Date [-]')
+#     plt.ylabel('gasPower [m$^3$]')
+#     datetime_layout()
+
 def dwel_path_id(sample_rate, folder, combined):
     """
     Reads in the file paths and dwelling id's of the combined smartmeter data.
