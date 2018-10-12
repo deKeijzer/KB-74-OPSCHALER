@@ -9,7 +9,7 @@ dwel_path_id('sample_rate', 'folder', 'combined')
 corr_df('len_measurement', 'dwelling_id')
     Returns a heatmap of the processed data, given the resample correlation you want and the dwelling
         len_measurement: 3h/6h/12h/1d/1w
-        dwelling_id: any dwelling id. List of dwelling id's in processed can be accessed with
+        dwelling_id: any dwelling id. List of dwelling id's in processed can be accessed with file_paths, dwelling_ids = op.dwel_path_id('hour', 'processed', 'no') --> file_paths, dwelling_ids = op.dwel_path_id('sample_rate', 'folder', 'combined')
 
 dwel_len(dwelling_id)
     Returns the length of measurement of the dwelling
