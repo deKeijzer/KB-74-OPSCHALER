@@ -97,21 +97,23 @@ def dwel_path_id(sample_rate, folder, combined):
 #     return final_df
     
 
-def corr_df(len_measurement, dwelling_id):
+def corr_df(dwelling_id, corr_dim):
     plt.style.use('default')
 
     df = pd.read_csv("/datc/opschaler/combined_gas_smart_weather_dfs/processed/"+dwelling_id+"_hour.csv",header=0,delimiter="\t",parse_dates = ['datetime'])
     df = df.set_index(['datetime'])
 
-    if len_measurement == '3h':
+    if corr_dim == '1h':
+        df = df
+    if corr_dim == '3h':
         df = df.resample('3H').mean()
-    if len_measurement == '6h':
+    if corr_dim == '6h':
         df = df.resample('6H').mean()
-    if len_measurement == '12h':
+    if corr_dim == '12h':
         df = df.resample('12H').mean()
-    if len_measurement == '1d':
+    if corr_dim == '1d':
         df = df.resample('1D').mean()
-    if len_measurement == '1w':
+    if corr_dim == '1w':
         df = df.resample('1W').mean()
     
     rdf = df[df['T'] < 16]
