@@ -13,17 +13,13 @@ import seaborn as sns
 
 # In[2]:
 
-def test(x):
-    def test1(y):
-        y = 'print '
-        return y
-    return y, x
+
 
 # def datetime_layout(dwelling_id, y, y2=None, y3=None, y4=None):
-#         def layout():
-#             plt.xticks(rotation=45)
-#             plt.grid()
-#             plt.tight_layout()
+#     def layout():
+#         plt.xticks(rotation=45)
+#         plt.grid()
+#         plt.tight_layout()
 
 #     x = df.index
     
@@ -51,6 +47,31 @@ def test(x):
 #     #plt.xlabel('Date [-]')
 #     plt.ylabel('gasPower [m$^3$]')
 #     datetime_layout()
+
+def read_(select, sample_rate='hour',processed=''):
+    path = '//datc//opschaler//combined_gas_smart_weather_dfs//'
+    map_ = 'processed//'
+    sample_rate = '_hour'
+    combined_ = 'P*'
+    if processed == 'raw':
+        map_ = 'unprocessed//'
+    complete_path = path+map_+combined_+sample_rate+".csv"
+    
+    if len(select) > 1:
+        allFiles = glob.glob(complete_path)
+        frame = pd.DataFrame()
+        list_ = []
+        for file_ in allFiles:
+            df = pd.read_csv(file_,sep='\t',index_col=None)
+            list_.append(df)
+        df = pd.concat(list_)
+    if len(select) == 1:
+        df = pd.read_csv(complete_path,sep='\t',index_col=None)
+        
+    return df
+
+#ef store_var():
+    
 
 def dwel_path_id(sample_rate, folder, combined):
     """
