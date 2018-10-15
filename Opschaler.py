@@ -48,7 +48,7 @@ import seaborn as sns
 #     plt.ylabel('gasPower [m$^3$]')
 #     datetime_layout()
 
-def read_(select, sample_rate='hour',processed=True):
+def read_(select, sample_rate='_hour',processed=True):
     path = '//datc//opschaler//combined_gas_smart_weather_dfs//'
     folder_ = 'processed//'
     if processed == False:
