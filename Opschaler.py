@@ -51,24 +51,14 @@ import seaborn as sns
 def read_(select, sample_rate='hour',processed=''):
     path = '//datc//opschaler//combined_gas_smart_weather_dfs//'
     map_ = 'processed//'
-    sample_rate = '_hour'
-    combined_ = 'P*'
     if processed == 'raw':
         map_ = 'unprocessed//'
-    complete_path = path+map_+combined_+sample_rate+".csv"
-    
-    if len(select) > 1:
-        allFiles = glob.glob(complete_path)
-        frame = pd.DataFrame()
-        list_ = []
-        for file_ in allFiles:
-            df = pd.read_csv(file_,sep='\t',index_col=None)
-            list_.append(df)
-        df = pd.concat(list_)
-    if len(select) == 1:
-        df = pd.read_csv(complete_path,sep='\t',index_col=None)
+    if sample_rate == '10s':
+        sample_rate = '_10s'    
+    complete_path = path+map_+select+sample_rate+".csv"
+    df = pd.read_csv(complete_path,sep='\t',index_col=None)
         
-    return df
+    return df, complete_path
 
 #ef store_var():
     
