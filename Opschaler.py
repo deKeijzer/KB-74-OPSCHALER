@@ -10,6 +10,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+global sr
 
 # In[2]:
 
@@ -21,7 +22,7 @@ import seaborn as sns
 #         plt.grid()
 #         plt.tight_layout()
 
-#     x = df.index
+#     x = df[datetime]
     
     
 #     plt.subplot(3,2,1)
@@ -58,10 +59,8 @@ def read_(select, sample_rate='_hour',processed=True):
     complete_path = path+folder_+select+sample_rate+".csv"
     df = pd.read_csv(complete_path,sep='\t',index_col=None)
         
-    return df, complete_path, sample_rate, processed
+    return df, select, complete_path, sample_rate, processed
 
-def store_var(x):
-    df, complete_path, sr, processed = x #use the read_ function as x
 
 def dwel_path_id(sample_rate, folder, combined):
     """

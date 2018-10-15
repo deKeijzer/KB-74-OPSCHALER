@@ -1,17 +1,11 @@
 read_('select', sample_rate='hour', processed=True)
-    Reads in the df, given the Dwelling id. It returns the df + the path of the df.
+    Reads in the df, given the Dwelling id.
         select: dwelling_id
         sample_rate: hour/10s
         processed: False. If False is passed, the df of the raw data is given.
+    Returns: df, select, complete_path, sample_rate, processed
+        
 
-store_var(x)
-    Stores the variables returned by read_ function. This function is mostly handy to use when using other functions on the same df
-        x: the read_ function with the essential variables
-    Returns:
-        df = df from read_
-        complete_path = path used in read_
-        sr = sample_rate used in read_
-        processed = Bolean of processed/unprocessed data used in read_
         
     
 
