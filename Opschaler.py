@@ -60,8 +60,8 @@ def read_(select, sample_rate='hour',processed=''):
         
     return df, complete_path
 
-#ef store_var():
-    
+def store_var(x):
+    df, complete_path = x #use the read_ function as x
 
 def dwel_path_id(sample_rate, folder, combined):
     """
