@@ -1,3 +1,20 @@
+read_('select', sample_rate='hour', processed=True)
+    Reads in the df, given the Dwelling id. It returns the df + the path of the df.
+        select: dwelling_id
+        sample_rate: hour/10s
+        processed: False. If False is passed, the df of the raw data is given.
+
+store_var(x)
+    Stores the variables returned by read_ function. This function is mostly handy to use when using other functions on the same df
+        x: the read_ function with the essential variables
+    Returns:
+        df = df from read_
+        complete_path = path used in read_
+        sr = sample_rate used in read_
+        processed = Bolean of processed/unprocessed data used in read_
+        
+    
+
 dwel_path_id('sample_rate', 'folder', 'combined')
     Returns a list with the filepaths of the files + a list of the dwelling id's.
     If combined is called upon (yes), only the combined df's path is given.

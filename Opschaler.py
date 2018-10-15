@@ -48,20 +48,20 @@ import seaborn as sns
 #     plt.ylabel('gasPower [m$^3$]')
 #     datetime_layout()
 
-def read_(select, sample_rate='hour',processed=''):
+def read_(select, sample_rate='hour',processed=True):
     path = '//datc//opschaler//combined_gas_smart_weather_dfs//'
-    map_ = 'processed//'
-    if processed == 'raw':
-        map_ = 'unprocessed//'
+    folder_ = 'processed//'
+    if processed == False:
+        folder_ = 'unprocessed//'
     if sample_rate == '10s':
         sample_rate = '_10s'    
-    complete_path = path+map_+select+sample_rate+".csv"
+    complete_path = path+folder_+select+sample_rate+".csv"
     df = pd.read_csv(complete_path,sep='\t',index_col=None)
         
-    return df, complete_path
+    return df, complete_path, sample_rate, processed
 
 def store_var(x):
-    df, complete_path = x #use the read_ function as x
+    df, complete_path, sr, processed = x #use the read_ function as x
 
 def dwel_path_id(sample_rate, folder, combined):
     """
