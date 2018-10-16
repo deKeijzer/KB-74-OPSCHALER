@@ -1,13 +1,9 @@
 read_('select', sample_rate='hour', processed=True)
-    Reads in the df, given the Dwelling id.
+    Reads in the df, given the Dwelling id. It returns the df + the path of the df.
         select: dwelling_id
         sample_rate: hour/10s
         processed: False. If False is passed, the df of the raw data is given.
-    Returns: df, select, complete_path, sample_rate, processed
-        
-
-        
-    
+          
 
 dwel_path_id('sample_rate', 'folder', 'combined')
     Returns a list with the filepaths of the files + a list of the dwelling id's.
@@ -16,6 +12,32 @@ dwel_path_id('sample_rate', 'folder', 'combined')
         sample_rate: 10s/hour
         folder: processed/unprocessed
         combined: no/yes
+        
+clean_datetime(df)
+    Returns the df where the DateTime has been "cleaned" (set as a datetime object)
+        df = Any given dataframe
+        
+clean_prepared_smart_gas(file_path)
+    Returns a prepared df for smart and gas (seperated).
+        file_path: a file path to the desired RAW csv file (smartmeter data). 
+        
+resample_smart_gas(smart, gas)
+    Returns smart_resampled and gas_resampled df's
+        smart: the dataframe containing clean smart (electricity) data, output from clean_prepared_smart_gas
+        gas: the dataframe containing clean gas data, output from clean_prepared_smart_gas
+        
+merge_smart_gas_weather(smart_resampled, gas_resampled, weather)
+        Returns a correct merged df of the three inputs.
+            smart_resampled: output of resample_smart_gas
+            gas_resampled: output of resample_smart_gas
+            weather: the KNMI 10m df. This df should be assigned to the variable weather before using this function.
+            
+save_df(df, dwelling_id)
+    Saves the resampled+merged df in the combined gas/smart/weather folder
+        df : output merge_smart_gas_weather
+        dwelling_id: the dwelling id used in making the merged df
+        
+
 
 corr_df('len_measurement', 'dwelling_id')
     Returns a heatmap of the processed data, given the resample correlation you want and the dwelling
