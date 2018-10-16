@@ -13,6 +13,13 @@ import time
 
 # In[2]:
 
+def test1(x):
+    return x
+
+def test2(x):
+    y = test1(x)+test1(x)
+    return y
+    
 
 
 # def datetime_layout(dwelling_id, y, y2=None, y3=None, y4=None):
@@ -166,6 +173,20 @@ def save_df(df, dwelling_id):
     dir = '//datc//opschaler//combined_dfs_gas_smart_weather//'
     df.to_csv(dir+dwelling_id+'.csv', sep='\t', index=True)
     print('Saved %s' % dwelling_id)
+    
+def main_df_prep():
+    for i,file_path in enumerate(file_paths):
+        t1 = time.time()
+        dwelling_id = file_paths[i][-15:-4]
+        print('Started iteration %s, processing dwelling_id: %s' % (i,dwelling_id))
+        
+        smart, gas = clean_prepare_smart_gas(file_paths[i])
+        smart_resampled, gas_resampled = resample_smart_gas(smart, gas)
+        df = merge_smart_gas_weather(smart_resampled, gas_resampled, weather)
+        save_df(df, dwelling_id)
+        t2 = time.time()
+        print('Finished iteration %s in %.1f [s], Finished processing dwelling_id: %s, ' % (i,(t2-t1), dwelling_id))
+        print('-----')
 # def nan_table(sample_rate):
 #     file_paths, dwelling_ids = dwelling_data_paths(sample_rate)
 #     dfs_nan_table = []
