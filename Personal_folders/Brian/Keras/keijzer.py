@@ -202,6 +202,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 
 def df_to_lstm_format(df, test_size=0.5, look_back=5, target_column='target', scale_X=True):
     """
+    TODO: output train and test datetime
     Input is a Pandas DataFrame. 
     Output is a np array in the format of (samples, timesteps, features).
     Currently this function only accepts one target variable.
