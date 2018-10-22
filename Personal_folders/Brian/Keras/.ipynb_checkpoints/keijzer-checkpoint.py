@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from sklearn.preprocessing import StandardScaler
+
 def setup_multi_gpus():
     """
     Setup multi GPU usage
@@ -196,3 +198,67 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
     if dropnan:
         agg.dropna(inplace=True)
     return agg
+
+
+def df_to_lstm_format(df, test_size=0.5, look_back=5, target_column='target', scale_X=True):
+    """
+    Input is a Pandas DataFrame. 
+    Output is a np array in the format of (samples, timesteps, features).
+    Currently this function only accepts one target variable.
+
+    Usage example:
+
+    # variables
+    df = data # should be a pandas dataframe
+    test_size = 0.5 # percentage to use for training
+    target_column = 'c' # target column name, all other columns are taken as features
+    scale_X = False
+    look_back = 5 # Amount of previous X values to look at when predicting the current y value
+    """
+    df = df.copy()
+
+    # Make sure the target column is the last column in the dataframe
+    df['target'] = df[target_column] # Make a copy of the target column
+    df = df.drop(columns=[target_column]) # Drop the original target column
+    
+    target_location = df.shape[1] - 1 # column index number of target
+    split_index = int(df.shape[0]*test_size) # the index at which to split df into train and test
+    
+    # ...train
+    X_train = df.values[:split_index, :target_location]
+    y_train = df.values[:split_index, target_location]
+
+    # ...test
+    X_test = df.values[split_index:, :target_location] # original is split_index:-1
+    y_test = df.values[split_index:, target_location] # original is split_index:-1
+
+    # Scale the features
+    if scale_X:
+        scalerX = StandardScaler(with_mean=True, with_std=True).fit(X_train)
+        X_train = scalerX.transform(X_train)
+        X_test = scalerX.transform(X_test)
+        
+    # Reshape the arrays
+    samples = len(X_train) # in this case 217 samples in the training set
+    num_features = target_location # All columns before the target column are features
+
+    samples_train = X_train.shape[0] - look_back
+    X_train_reshaped = np.zeros((samples_train, look_back, num_features))
+    y_train_reshaped = np.zeros((samples_train))
+
+    for i in range(samples_train):
+        y_position = i + look_back
+        X_train_reshaped[i] = X_train[i:y_position]
+        y_train_reshaped[i] = y_train[y_position]
+
+
+    samples_test = X_test.shape[0] - look_back
+    X_test_reshaped = np.zeros((samples_test, look_back, num_features))
+    y_test_reshaped = np.zeros((samples_test))
+
+    for i in range(samples_test):
+        y_position = i + look_back
+        X_test_reshaped[i] = X_test[i:y_position]
+        y_test_reshaped[i] = y_test[y_position]
+    
+    return X_train_reshaped, y_train_reshaped, X_test_reshaped, y_test_reshaped
