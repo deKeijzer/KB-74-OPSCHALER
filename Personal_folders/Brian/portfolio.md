@@ -1,4 +1,4 @@
-Last update: 29-10-2018
+Last updated: 29-10-2018
 
 # Personal portfolio
 Student name: Brian de Keijzer  
