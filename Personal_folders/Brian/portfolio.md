@@ -1,6 +1,7 @@
 Last updated: 29-10-2018
 
-# Personal portfolio
+# Personal portfolio  
+Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
 Student name: Brian de Keijzer  
 Student number: 16011015
 
