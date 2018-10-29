@@ -9,7 +9,7 @@ Student number: 16011015
 Onlince courses from both DataCamp and Coursera have been followed for this minor.
 
 ### DataCamp
-<center> ![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png) </center>
+<p align="center"> ![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png) </p>
 One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.
 
 Completed courses (not in order):  
@@ -35,7 +35,7 @@ Completed courses (not in order):
 
 
 ### Coursera: Machine Learning by Stanford University
-<center> ![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png) </center>
+<p align="center"> ![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png) </p>
 Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
 
 ## Jargon
