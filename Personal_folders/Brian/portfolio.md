@@ -148,7 +148,7 @@ This folder contains all the notebooks related to deep learning. Note that there
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
--
+Still need to add this (& update scrum from the past 2 weeks).
 
 ## Other
 Other contributions to the project / learning progress, worth mentioning.
