@@ -46,4 +46,9 @@ Did not do a lot of Coursera yet, am planning on finishing it within 7 days from
 ## Scrum
 
 ## Other
-### Github
+Other contributions to the project / learning progress, worth mentioning.
+### GitHub
+Setup a GitHub environment for the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER)  
+Made a README for the project members containing information on how to setup GitHub on the datascience server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
+Made a GitHub push & pull tutorial: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb)  
+Created .bat files to run [jupyter lab](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/jupyterlab.bat), [run notebooks](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/run_notebook.bat) and do [ssh portforwarding](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/ssh%20portforward.bat) for usage at your local computer.
