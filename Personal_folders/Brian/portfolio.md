@@ -51,11 +51,11 @@ Used jargon for Opschaler is listed below.
 
 
 ## Friday presentations  
--
+Need to add these still
 
 
 ## Python notebooks
-All notebooks have been well commented, apart from lines where the programming is basic Python (for data science).
+All notebooks have been commented, apart from lines where the programming is basic Python (for data science).
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
 
