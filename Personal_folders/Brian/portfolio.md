@@ -51,8 +51,8 @@ Used jargon for Opschaler is listed below.
 
 
 ## Friday presentations  
-Our weekly presentations are listed below. Some of the presentations have been made with the complete group, while other presentations have been made only by the people that are presenting that week.
-[Week 1](https://prezi.com/p/28wycwuqqggc/#present)
+Our weekly presentations are listed below. Some of the presentations have been made with the complete group, while other presentations have been made only by the people that are presenting that week.  
+[Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
 [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx)  
