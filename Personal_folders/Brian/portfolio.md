@@ -58,7 +58,7 @@ All notebooks have been well commented, apart from lines where the programming i
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
 ![github_commits](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png)  
 
-Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger notebooks.  
+Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger notebooks. These important notebooks have been marked with a (!). The other notebooks are also relevant for Opschaler, but they are more 'learner' and 'try out' notebooks. Not actual end product.
 In general several notebooks have been created for Opschaler (listed mainly in order or creation):  
 
 * Data preperation  
