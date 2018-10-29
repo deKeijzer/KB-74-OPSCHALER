@@ -103,7 +103,7 @@ Currently (29-10-2018) this is the main notebook for all the data processing don
 
 * Keras  
 
-*Note about shared work: * `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me.  
+**Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
 
