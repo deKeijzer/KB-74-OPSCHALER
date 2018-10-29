@@ -6,6 +6,7 @@ Student number: 16011015
 
 
 ## Online courses
+Onlince courses from both DataCamp and Coursera have been followed for this minor.
 
 ### DataCamp
 ![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png)
@@ -32,17 +33,10 @@ Completed courses (not in order):
 [Preprocessing for Machine Learning in Python Course](https://www.datacamp.com/statement-of-accomplishment/course/f43c37bfe1b7b90f0d9997ea180470e43c8d0b08)  
 [Parallel Computing with Dask Course](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
 
+### Coursera: Machine Learning Stanford University
+![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png)
+Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now.
 
-
-
-
-
-
-
-
-
-
-### Coursera
 
 ## Friday presentations
 
