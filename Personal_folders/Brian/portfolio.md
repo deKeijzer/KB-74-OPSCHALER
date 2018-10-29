@@ -121,9 +121,13 @@ This folder contains all the notebooks related to deep learning. Note that there
     * 8655 seq2seq: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/seq2seq/8655%20seq2seq.ipynb)
     * General seq2seq: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/seq2seq.ipynb)
    * Opschaler LSTM & seq2seq main  
-   These notebooks contain the currently (29-10-2018) being used deep learning models. There also is a notebook where the input data shape of LSTM has been analyzed. This has been done since it was quite unclear how this actually was done, dispite reading a lot of literature about it.  
+   These notebooks contain the currently (29-10-2018) being used deep learning models. There also is a notebook where the input data shape of LSTM has been analyzed. This has made because it was quite unclear how this actually was done, dispite reading a lot of literature about it.  
      * (!) LSTM data preperation: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/LSTM%20data%20preperation.ipynb)
      * (!!) LSTM & seq2seq for gasPower prediction: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/LSTM.ipynb)
+       * Results  
+       Pictures of current results. For 'single layer LSTM' a single LSTM input layer of size 35 has been used. The input data is of an hourly sample rate. The previous 5*24 samples have been used as timesteps (or known as look back). 
+       * Single layer LSTM result hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%2029-10-2018.png> </p>
+       * Single layer LSTM result daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png> </p>
    
 
 
