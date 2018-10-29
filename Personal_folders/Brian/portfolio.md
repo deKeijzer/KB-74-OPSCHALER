@@ -38,6 +38,13 @@ Completed courses (not in order):
 ![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png)  
 Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now.
 
+## Jargon
+Jargon used in the opschaler project.
+* Dwelling: an unique house.  
+* Smartmeter data: Electricity and gas meter data.   
+* gasPower: amount of gas being used at a given time.
+* ePower: amount of electricity being used at a given time.
+
 
 ## Friday presentations
 
@@ -69,15 +76,29 @@ This is the process of preparing the raw data for analysis, getting the data in 
     * Loading combined smart, gas and weather generalized notebook: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/loading_combining_smart_gas_weather_generalized.ipynb)
     * Creating one DataFrame for all dwellings: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/Create%20one%20df%20for%20all%20dwellings.ipynb)
 
-* KNMI
+* KNMI  
 In these notebooks the 10 minute resolution weather data is processed. This data has been received by mail from the KNMI. The raw data consists of a folder with multiple `.csv` files. There are different file types depending on the measured variables and the year in which the values were measured.  
   * Combining DataFrames: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/1.KNMI_high_resolution_combining_dfs.ipynb)
   * Cleaning DataFrames: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/2.KNMI_high_resolution_cleaning_df.ipynb)
   * Exploratory Data Analysis (EDA): [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/KNMI%20visualization.ipynb)
 
-* EDA
+* EDA  
+Notebooks that contain general EDA on the created DataFrames which contain all the combined raw data per dwelling. Plus a table containing usefull information per dwelling has been created. 
+  * EDA on dwelling P01S01W8655: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/EDA%20on%20dwelling%20P01S01W8655.ipynb)
+  * Raw dwelling information table: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/Raw%20dwelling%20information%20table.ipynb)
+  * Reading in all dwellings, plus making correlation matrices: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/reading%20in%20%26%20correlation%20matrices%20on%20processed%20data.ipynb)
+  
+* PyCharm  
+The 'data_preperation_main.py' file used to be the main script to create the prepared dwelling data. Later on Dask has been implemented due to having improved performance because of being able to parallelize tasks on multiple CPU cores.  
+  * Data preperation main script: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/reading%20in%20%26%20correlation%20matrices%20on%20processed%20data.ipynb)
+  * Data preperation main test notebook: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/pycharm/data_preperation_main_test_notebook.ipynb)
+  * EDA on processed data: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/pycharm/EDA%20on%20processed%20data.ipynb)
+ 
+* Dask  
+Currently (29-10-2018) this is the main notebook for all the data processing done for the Opschaler project. This notebook has implemented most relevant functions from previously listed notebooks in a way so they can be run in parallel with Dask. It basically takes all raw data and saves unprocessed and processed (NaNs taken care off) `.csv` files per dwelling, which can be used for analysis.
+  * Dask data processing: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
 
-
+* Keras  
 
 ## Scrum
 
