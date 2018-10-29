@@ -10,7 +10,7 @@ Onlince courses from both DataCamp and Coursera have been followed for this mino
 
 ### DataCamp
 ![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png)
-Am working on finishing the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp, plus did some other courses which seemed usefull for project Opschaler. All mandatory courses have been finished.
+One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.
 
 Completed courses (not in order):  
 [Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)  
@@ -34,12 +34,12 @@ Completed courses (not in order):
 [Parallel Computing with Dask Course](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
 
 
-### Coursera: Machine Learning Stanford University
+### Coursera: Machine Learning by Stanford University
 ![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png)  
-Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now.
+Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
 
 ## Jargon
-Jargon used in the opschaler project.
+Used jargon for Opschaler is used below.
 * Dwelling: a unique house.  
 * Smartmeter data: electricity and gas meter data.   
 * gasPower: amount of gas being used at a given time.
@@ -47,10 +47,12 @@ Jargon used in the opschaler project.
 * smart: electricity DataFrame of a dwelling.
 
 
-## Friday presentations
+## Friday presentations  
+-
+
 
 ## Python notebooks
-Most notebooks are well commented, apart from lines where the programming is basic Python (for data science).
+All notebooks have been well commented, apart from lines where the programming is basic Python (for data science).
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
 ![github_commits](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png)  
 
@@ -100,6 +102,8 @@ Currently (29-10-2018) this is the main notebook for all the data processing don
   * Dask data processing: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
 
 * Keras  
+
+*Note about shared work: * `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me.  
 
 ## Scrum
 
