@@ -49,7 +49,7 @@ Did not do a lot of Coursera yet, am planning on finishing it within 7 days from
 Other contributions to the project / learning progress, worth mentioning.
 
 ### GitHub
-Introduced the group to GitHub and made some resources for them that help them with their setup and usage.  
+Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. 
 
 * Setup a GitHub environment for the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER)  
 * Made a README for the project members containing information on how to setup GitHub on the datascience server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
