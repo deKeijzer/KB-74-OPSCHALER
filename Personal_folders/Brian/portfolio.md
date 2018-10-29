@@ -10,8 +10,9 @@ Onlince courses from both DataCamp and Coursera have been followed for this mino
 
 ### DataCamp
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png"> </p>
+
 One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.  
-  
+
 **Completed courses (not in order)**
 [Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)  
 [Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/246fecb0b112d881f24131944063f3345cbb70d8)  
