@@ -56,7 +56,7 @@ Used jargon for Opschaler is listed below.
 ## Python notebooks
 All notebooks have been well commented, apart from lines where the programming is basic Python (for data science).
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
-![github_commits](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png)  
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
 
 Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with a (!), really important ones are marked with a (!!). These are notebooks that contain main code for Opschaler.
 In general several notebooks have been created for Opschaler (listed mainly in order or creation):  
