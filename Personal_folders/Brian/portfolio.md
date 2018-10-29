@@ -41,9 +41,10 @@ Did not do a lot of Coursera yet, am planning on finishing it within 7 days from
 ## Jargon
 Jargon used in the opschaler project.
 * Dwelling: a unique house.  
-* Smartmeter data: Electricity and gas meter data.   
+* Smartmeter data: electricity and gas meter data.   
 * gasPower: amount of gas being used at a given time.
 * ePower: amount of electricity being used at a given time.
+* smart: electricity DataFrame of a dwelling.
 
 
 ## Friday presentations
