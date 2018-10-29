@@ -142,7 +142,9 @@ This folder contains all the notebooks related to deep learning. Note that there
 Other contributions to the project / learning progress, worth mentioning.
 
 ### GitHub
-Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. 
+Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. It can be clearly seen when project Opschaler has been started, as pointed out by the red arrow below. 
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_start_of_opschaler.png"> </p>
 
 * Setup a GitHub environment for the project, plus keep maintaining it: [link](https://github.com/deKeijzer/KB-74-OPSCHALER)  
 * Made a README for the project members containing information on how to setup GitHub on the datascience server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
