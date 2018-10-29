@@ -126,8 +126,8 @@ This folder contains all the notebooks related to deep learning. Note that there
      * (!!) LSTM & seq2seq for gasPower prediction: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/LSTM.ipynb)
        * Results  
        Pictures of current results. For 'single layer LSTM' a single LSTM input layer of size 35 has been used. The input data is of an hourly sample rate. The previous 5*24 samples have been used as timesteps (or known as look back). 
-       * Single layer LSTM result hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%2029-10-2018.png> </p>
-       * Single layer LSTM result daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png> </p>
+       * Single layer LSTM result hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%2029-10-2018.png"> </p>
+       * Single layer LSTM result daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png"> </p>
    
 
 
