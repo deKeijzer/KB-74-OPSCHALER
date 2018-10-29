@@ -104,8 +104,8 @@ Currently (29-10-2018) this is the main notebook for all the data processing don
   * Dask data processing: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
 
 * Keras  
-This folder contains all the notebooks related to deeplearning. Note that there are multiple notebooks being very similar to each other. Sometimes the only difference inbetween similar notebooks are changes in settings (nodes, layers and selected dwellings). Most notebooks start off with EDA to check if the correct data is being used, then the model is being created and evaluated.
-  * Feedforward ANN  
+This folder contains all the notebooks related to deep learning. Note that there are multiple notebooks being very similar to each other. Sometimes the only difference inbetween similar notebooks are changes in settings (nodes, layers and selected dwellings). Most notebooks start off with EDA to check if the correct data is being used, then the model is being created and evaluated.
+  * Feedforward
     * All dwellings EDA + machine learning: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/feedforward/all%20dwellings%20EDA%20%2B%20machine%20learning.ipynb)
   Notebooks containing feedforward models.
     * 8655 gasPower, sample rate 1 day: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/feedforward/8655%20gasPower%201D.ipynb)
@@ -113,10 +113,12 @@ This folder contains all the notebooks related to deeplearning. Note that there 
   * LSTM  
   Notebook used to learn how LSTM time series prediction works.
     * 8655 RNN LSTM: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/LSTM/8655%20RNN%20LSTM.ipynb)
-  * (old) sequence to sequence  
+  * sequence to sequence  
   Notebook used to learn how sequence to sequence time series prediction works.
     * 8655 seq2seq: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/seq2seq/8655%20seq2seq.ipynb)
-  
+  * Hyper parameter optimization  
+  Notebook that tries out different network architectures and shows all the results. This can be used to evaluate and choose between different architectures and hyperparameters. 
+    * Hyperparameter optimization (Only feedforward for now 29-10-2018): [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/Hyperparameter%20optimization.ipynb)
 
 
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
