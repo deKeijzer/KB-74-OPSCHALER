@@ -110,10 +110,10 @@ This folder contains all the notebooks related to deeplearning. Note that there 
   Notebooks containing feedforward models.
     * 8655 gasPower, sample rate 1 day: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/feedforward/8655%20gasPower%201D.ipynb)
     * 8655 gasPower, higher sample rate: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/feedforward/8655%20gasPower%20higher%20resolution.ipynb)
-  * LSTM
+  * LSTM  
   Notebook used to learn how LSTM time series prediction works.
     * 8655 RNN LSTM: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/LSTM/8655%20RNN%20LSTM.ipynb)
-  * (old) sequence to sequence
+  * (old) sequence to sequence  
   Notebook used to learn how sequence to sequence time series prediction works.
     * 8655 seq2seq: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Keras/seq2seq/8655%20seq2seq.ipynb)
   
