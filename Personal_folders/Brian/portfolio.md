@@ -9,7 +9,7 @@ Student number: 16011015
 Onlince courses from both DataCamp and Coursera have been followed for this minor.
 
 ### DataCamp
-![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png)
+<center> ![DataCamp progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png) </center>
 One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.
 
 Completed courses (not in order):  
@@ -35,11 +35,11 @@ Completed courses (not in order):
 
 
 ### Coursera: Machine Learning by Stanford University
-![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png)  
+<center> ![Coursera progress](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png) </center>
 Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
 
 ## Jargon
-Used jargon for Opschaler is used below.
+Used jargon for Opschaler is listed below.
 * Dwelling: a unique house.  
 * Smartmeter data: electricity and gas meter data.   
 * gasPower: amount of gas being used at a given time.
