@@ -15,9 +15,7 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 |        | Multivariate regression | Fourier series | Neural networks |
 |------|------|------|------|
 | Hourly | 60%                     | ..%            | ..%             |  
-|------|------|------|------|
 | Daily  | 30%                     | ..%            | ..%             |
-|------|------|------|------|
 | Weekly | 10%                     | ..%            | ..%             |
 
 The contents of your personal portfolio should reflect your contribution to the project, your abilities and what you have learned. Your portfolio should consist of materials that you either realized individually, or in case of a group effort, a clear statement of what your contribution is in this group effort.
