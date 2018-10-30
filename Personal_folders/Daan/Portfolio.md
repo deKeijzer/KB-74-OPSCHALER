@@ -38,3 +38,7 @@ The weekly presentations are listed below <br>
 [Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
 [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx)  
 [Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx)  
+
+__Datacamp__
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/datacamp.png"> </p>
