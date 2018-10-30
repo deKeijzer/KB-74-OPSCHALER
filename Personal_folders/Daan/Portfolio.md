@@ -6,7 +6,7 @@ During this minor we tried to answer the following research question:
 
 Is  it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?
 
-After consulation with the OPSCHALER group it was decided to predict the energy consumption for a week ahead with hourly, daily and weekly resolutions. Three different methods were chosen to predict the energy consumption and compare them based on the accuracy:
+After consulation with the OPSCHALER group it was decided to predict the energy consumption for a week ahead with hourly, daily and weekly resolutions. Three different methods were compared based on the accuracy of the prediction:
 
 1. Multivariate regression
 2. Fourier series
@@ -14,10 +14,11 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 
 | Resolution | Multivariate regression | Fourier series | Neural networks |
 |------|------|------|------|
-| Hourly | 60% | ..% | ..% |  
-| Daily  | 30% | ..% | ..% |
-| Weekly | 10% | ..% | ..% |
-| Weekly | 10% | ..% | ..% |
+| Hourly | ..% | ..% | ..% |  
+| Daily  | ..% | ..% | ..% |
+| Weekly | ..% | ..% | ..% |
+
+
 
 The contents of your personal portfolio should reflect your contribution to the project, your abilities and what you have learned. Your portfolio should consist of materials that you either realized individually, or in case of a group effort, a clear statement of what your contribution is in this group effort.
 
