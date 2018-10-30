@@ -29,7 +29,6 @@ My interest in data science began when I first learned about the usage of artifi
 __Weekly presentations__
 
 Our weekly presentations are listed below. 
-
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
