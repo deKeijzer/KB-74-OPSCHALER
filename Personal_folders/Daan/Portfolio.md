@@ -4,7 +4,7 @@ The OPSCHALER group consists of members from the TU Delft, The Hague University 
 
 During this minor we tried to answer the following research question:
 
-Is  it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?
+_Is  it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?_
 
 After consulation with the OPSCHALER group it was decided to predict the energy consumption for a week ahead with hourly, daily and weekly resolutions. Three different methods were compared based on the accuracy of the prediction:
 
