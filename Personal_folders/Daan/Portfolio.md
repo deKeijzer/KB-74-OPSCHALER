@@ -18,7 +18,10 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 | Daily  | ..% | ..% | ..% |
 | Weekly | ..% | ..% | ..% |
 
+It was also important to compare the amount of computing power needed for the prediction. The ultimate goal of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods. 
 
+
+https://medium.com/ibm-data-science-experience/markdown-for-jupyter-notebooks-cheatsheet-386c05aeebed
 
 The contents of your personal portfolio should reflect your contribution to the project, your abilities and what you have learned. Your portfolio should consist of materials that you either realized individually, or in case of a group effort, a clear statement of what your contribution is in this group effort.
 
