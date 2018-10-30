@@ -18,7 +18,10 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 | Daily  | ..% | ..% | ..% |
 | Weekly | ..% | ..% | ..% |
 
-It was also important to compare the amount of computing power needed for the prediction. The ultimate goal of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods. 
+It was also important to compare the amount of computing power needed for the prediction. The ultimate goal of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods due to minimize costs and power consumption. 
+
+__Personal Work__
+
 
 
 https://medium.com/ibm-data-science-experience/markdown-for-jupyter-notebooks-cheatsheet-386c05aeebed
