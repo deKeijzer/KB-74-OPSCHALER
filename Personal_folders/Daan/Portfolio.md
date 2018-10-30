@@ -29,7 +29,7 @@ My interest in data science began when I first learned about the usage of artifi
 __Weekly presentations__
 
 
-The weekly presentations are listed below <br>
+The weekly presentations are listed below: <br>
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
@@ -43,5 +43,10 @@ __Datacamp__
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/datacamp.png"> </p>
 
+Completed courses:
+[Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
+[Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
+[Supervised Learning with scikit-learn Course](link)  
+  
 __Coursera__
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/coursera.png"> </p>
