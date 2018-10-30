@@ -42,3 +42,6 @@ The weekly presentations are listed below <br>
 __Datacamp__
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/datacamp.png"> </p>
+
+__Coursera__
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/coursera.png"> </p>
