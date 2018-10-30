@@ -27,7 +27,9 @@ __Personal Work__
 My interest in data science began when I first learned about the usage of artificial neural networks for pattern recognition. It was amazing to see neural networks being used for many different applications such as autonomous driving, human speech recognition and even the recognition of brain tumors. I really wanted learn this in depth, so the minor Applied Data Science would be a good introduction to the use of machine learning for big data. 
 
 __Weekly presentations__
+
 Our weekly presentations are listed below. 
+
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
