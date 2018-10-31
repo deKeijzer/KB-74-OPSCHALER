@@ -1,4 +1,4 @@
-Last updated: 29-10-2018
+Last updated: 31-10-2018
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
