@@ -77,8 +77,9 @@ Besides commenting code, i try to document all changes by committing small chang
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
   
 Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with a (!), really important ones are marked with a (!!). These are notebooks that contain main code for Opschaler.  
-In general several notebooks have been created for Opschaler (listed mainly in order or creation):  
-
+  
+The notebooks that have been made for Opschaler are:
+  
 * Data preperation  
 This is the process of preparing the raw data for analysis, getting the data in easy useable DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
   * Reading in data 
@@ -155,8 +156,39 @@ This folder contains all the notebooks related to deep learning. Note that there
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
+TODO: In the final portfolio add screenshots of the Task board, instead of linking to the Scrum page of that sprint.   
 The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
-TODO: insert scrum labels  
+* [Sprint 1](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-1/id-84641-11359-18)  
+It seems that a lot of Scrum tickets are missing.
+  * (3h) Datacamp course 1+2
+  * (2h) Visualizing practise data: create practise data for the group, to create visualizations from.
+* [Sprint 2](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-2/id-84641-11359-120)  
+It seems that a lot of Scrum tickets are missing.
+  * (14h) Cleaning data
+* [Sprint 3](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-3/id-84641-11359-158)
+  * (7.5h) NaN information per dwelling, one large table
+  * (33h) Datacamp KB-74 assignments
+  * (4h) NaN streak checker function
+  * (5h) NaN checker plot function
+  * (4h) EDA on dwelling P01S01W8655
+  * (3h) Correlation heatmaps of all dwellings
+  * (2h) EDA + multi variate regression on all dwellings
+  * (8h) Prepare dwelling dataframes (unprocessed)
+  * (1h) Combine dataframes (smartmeter, weather)
+  * (20h) Prepare dwelling dataframes (processed)
+  * (5h) Prepare high resolution weather df
+  * (2h) GitHub README: document important notebooks & datalocations
+  * (1.5h) Create two files which contain all the 'combined_gas_smart_weather_dfs'
+  * (2h) Correctly document my own Scrumwise tasks
+  * (8h) Preprocessing data for deep learning
+* [Sprint 4](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-4/id-84641-11393-72)  
+A lot of time has gone into certain tasks due to searching for literature, reading literature and learning how certain things should be done.
+  * (7.5h) NaN information per dwelling, in one large table
+  * (8h) Preprocessing data for deep learning
+  * (35h) Basic LSTM & seq2seq
+  * (35h) Feedforward NNs
+  * (8h) Hyperparameter optimazation
+  * (18h) Preprocessing for LSTM
 
 ## Other
 Other contributions to the project / learning progress, worth mentioning.
