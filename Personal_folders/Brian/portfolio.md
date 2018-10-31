@@ -155,7 +155,7 @@ This folder contains all the notebooks related to deep learning. Note that there
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
-The minor guidelines make it mandatory to use Scrum. We are doing small sprints of 2 weeks per sprint. Personally like to do the most throughout documentation with GitHub commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
+The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
 TODO: insert scrum labels  
 
 ## Other
