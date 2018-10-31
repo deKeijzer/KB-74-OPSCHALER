@@ -181,7 +181,7 @@ It seems that a lot of Scrum tickets are missing.
   * (2h) Correctly document my own Scrumwise tasks
   * (8h) Preprocessing data for deep learning
 * [Sprint 4](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-4/id-84641-11393-72)  
-A lot of time has gone into certain labels due to searching for literature, reading literature and learning how certain things should be done.
+A lot of time has gone into certain tasks due to searching for literature, reading literature and learning how certain things should be done.
   * (7.5h) NaN information per dwelling, in one large table
   * (8h) Preprocessing data for deep learning
   * (35h) Basic LSTM & seq2seq
