@@ -1,4 +1,4 @@
-Last updated: 29-10-2018
+Last updated: 31-10-2018
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
@@ -155,7 +155,8 @@ This folder contains all the notebooks related to deep learning. Note that there
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
-Still need to add this (& update scrum from the past 2 weeks).
+The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
+TODO: insert scrum labels  
 
 ## Other
 Other contributions to the project / learning progress, worth mentioning.
