@@ -77,8 +77,9 @@ Besides commenting code, i try to document all changes by committing small chang
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
   
 Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with a (!), really important ones are marked with a (!!). These are notebooks that contain main code for Opschaler.  
-In general several notebooks have been created for Opschaler (listed mainly in order or creation):  
-
+  
+The notebooks that have been made for Opschaler are:
+  
 * Data preperation  
 This is the process of preparing the raw data for analysis, getting the data in easy useable DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
   * Reading in data 
