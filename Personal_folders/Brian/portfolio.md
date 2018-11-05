@@ -57,7 +57,7 @@ Press `course description` to see the contents of the course, press `statement o
 
 * Preprocessing for Machine Learning in Python Course: [course description](https://www.datacamp.com/courses/preprocessing-for-machine-learning-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f43c37bfe1b7b90f0d9997ea180470e43c8d0b08)  
 
-**Big data & larallel computing: handling larger than memory data with multiple CPU cores**
+**Big data & parallel computing: handling larger than memory data with multiple CPU cores**
 * Parallel Computing with Dask Course: [course description](https://www.datacamp.com/courses/parallel-computing-with-dask), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
 
 
