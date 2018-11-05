@@ -23,7 +23,6 @@ One of my personal goals is to finish the [Data Scientist with Python](https://w
 ![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p4.png) 
 
 `TODO: Add link to a markdown file that contains all certificates.  `  
-`TODO: Maybe also add a visualization of all completed courses, together with the current list`  
 
 Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course.  
 
