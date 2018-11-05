@@ -59,3 +59,8 @@ As we are working with a large dataset we needed a way to visualize and interact
 -Gas biggest gap (https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/gas_biggest_gap.ipynb)
 After doing a visual inspection of data we identified a big number of gaps we had to deal with. Some of the gaps could be interpolated but some others were to big to do so. This notebook removes gap sizes bigger than a certain amount and also returns some important information abount the size of the file until the first big gap is found. This information is relevant to extract some periodicity patterns used later
 
+-Hour of the day as feature  
+In order to implement hours of the day as new features to feed the models new columns have to be created in dataframes. This notebook isn't finished yet, I'm currently working on it.
+
+-Feed forward NN
+Next step I'd like to work on is the creation of a feed forward NN. This has already been done by Brian de Keijzer but I'd like to replicate it to put in practice the knowledge I acquired in this area.
