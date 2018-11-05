@@ -13,12 +13,18 @@ Onlince courses from both DataCamp and Coursera have been followed for this mino
 ### DataCamp
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png"> </p>
 
-One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.  
+One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
 
 **Completed courses (not in order)**  
+
+![courses part 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p1.png)  
+![courses part 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p2.png)  
+![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p3.png)  
+![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p4.png) 
+
 `TODO: Add link to a markdown file that contains all certificates.  `  
 `TODO: Maybe also add a visualization of all completed courses, together with the current list`  
-All the completed DataCamp courses are listed below.  
+
 Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course.  
 
 **Basic Python**
