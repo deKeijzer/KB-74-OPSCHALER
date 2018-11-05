@@ -19,7 +19,7 @@ One of my personal goals is to finish the [Data Scientist with Python](https://w
 `TODO: Add link to a markdown file that contains all certificates.  `  
 `TODO: Make links [course name](link to course): [certificate](link to certificate)`  
 All the completed DataCamp courses are listed below.  
-Press the course name to see the statement of accomplishment given out by DataCamp upon completing a course.  
+Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course.  
 
 **Basic Python**
 * Intro to Python for Data Science: [course description](https://www.datacamp.com/courses/intro-to-python-for-data-science), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
