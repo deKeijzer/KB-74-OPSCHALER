@@ -24,7 +24,8 @@ Press the course name to see the statement of accomplishment given out by DataCa
 **Basic Python**
 * [Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
 * [Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/246fecb0b112d881f24131944063f3345cbb70d8)  
-**Python for Data Science**
+
+**Python for Data Science**  
 * [Python Data Science Toolbox (Part 1) Course](https://www.datacamp.com/statement-of-accomplishment/course/d07e9a26136fd801656e94bd39049247602fbce1)  
 * [Python Data Science Toolbox (Part 2) Course](https://www.datacamp.com/statement-of-accomplishment/course/f88ff03b0c3bd4f71781cff692a3cbaed61a4be7)  
 
