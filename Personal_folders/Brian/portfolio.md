@@ -22,43 +22,43 @@ All the completed DataCamp courses are listed below.
 Press the course name to see the statement of accomplishment given out by DataCamp upon completing a course.  
 
 **Basic Python**
-* Intro to Python for Data Science: [course info](), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
-* Intermediate Python for Data Science Course: [](https://www.datacamp.com/statement-of-accomplishment/course/246fecb0b112d881f24131944063f3345cbb70d8)  
+* Intro to Python for Data Science: [course description](https://www.datacamp.com/courses/intro-to-python-for-data-science), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
+* Intermediate Python for Data Science Course: [course description](https://www.datacamp.com/courses/intermediate-python-for-data-science), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/246fecb0b112d881f24131944063f3345cbb70d8)  
 
 **Python for Data Science**  
-* Python Data Science Toolbox (Part 1) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/d07e9a26136fd801656e94bd39049247602fbce1)  
-* Python Data Science Toolbox (Part 2) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f88ff03b0c3bd4f71781cff692a3cbaed61a4be7)  
+* Python Data Science Toolbox (Part 1) Course: [course description](https://www.datacamp.com/courses/python-data-science-toolbox-part-1), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/d07e9a26136fd801656e94bd39049247602fbce1)  
+* Python Data Science Toolbox (Part 2) Course: [course description](https://www.datacamp.com/courses/python-data-science-toolbox-part-2), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f88ff03b0c3bd4f71781cff692a3cbaed61a4be7)  
 
 **Importing data**
-* Importing Data in Python (Part 1) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2e6d0dde86e189b3b79328a823104b3937c57b56)  
-* Importing Data in Python (Part 2) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/824adfac50d7835387dc9509863ec42aef63ee16)  
+* Importing Data in Python (Part 1) Course: [course description](https://www.datacamp.com/courses/importing-data-in-python-part-1), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2e6d0dde86e189b3b79328a823104b3937c57b56)  
+* Importing Data in Python (Part 2) Course: [course description](https://www.datacamp.com/courses/importing-data-in-python-part-2), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/824adfac50d7835387dc9509863ec42aef63ee16)  
 
 **Cleaning and transforming data**
-* Cleaning Data in Python Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/7a1c78cc670415289136447878822899ac968543)  
-* pandas Foundations Course: [](https://www.datacamp.com/statement-of-accomplishment/course/95341cab0c49de075afc345533b945176bb92f41)  
-* Manipulating DataFrames with pandas: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/24164e462d63070611fc45ff9349836c3f196551)  
-* Merging DataFrames with pandas Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/673dba72c544df4b977cf6b555d2d6799f81f33e)  
+* Cleaning Data in Python Course: [course description](https://www.datacamp.com/courses/cleaning-data-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/7a1c78cc670415289136447878822899ac968543)  
+* pandas Foundations Course: [course description](https://www.datacamp.com/courses/pandas-foundations), [](https://www.datacamp.com/statement-of-accomplishment/course/95341cab0c49de075afc345533b945176bb92f41)  
+* Manipulating DataFrames with pandas: [course description](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/24164e462d63070611fc45ff9349836c3f196551)  
+* Merging DataFrames with pandas Course: [course description](https://www.datacamp.com/courses/merging-dataframes-with-pandas), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/673dba72c544df4b977cf6b555d2d6799f81f33e)  
 
 **Databases**
-* Introduction to Databases in Python Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/bc8bc8a89124619d48d6338aab461c6177825c1d)  
+* Introduction to Databases in Python Course: [course description](https://www.datacamp.com/courses/introduction-to-relational-databases-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/bc8bc8a89124619d48d6338aab461c6177825c1d)  
 
 **Data visualisation**
-* Introduction to Data Visualization with Python Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/75b9fd93c583c0c0131106ef05b1a52515ccf0e2)  
-* Interactive Data Visualization with Bokeh Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/0b559a1d25a6f3b1260f248838d6f968b22ed727)  
+* Introduction to Data Visualization with Python Course: [course description](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/75b9fd93c583c0c0131106ef05b1a52515ccf0e2)  
+* Interactive Data Visualization with Bokeh Course: [course description](https://www.datacamp.com/courses/interactive-data-visualization-with-bokeh), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/0b559a1d25a6f3b1260f248838d6f968b22ed727)  
 
 **Statistics with Python**
-* Statistical Thinking in Python (Part 1) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/9f6cd5082511ecb5d6b7c6bf9fd053350d3c13af)  
-* Statistical Thinking in Python (Part 2) Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/14f7db481ac78649805ff20d36355693157f2fce)  
+* Statistical Thinking in Python (Part 1) Course: [course description](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/9f6cd5082511ecb5d6b7c6bf9fd053350d3c13af)  
+* Statistical Thinking in Python (Part 2) Course: [course description](https://www.datacamp.com/courses/statistical-thinking-in-python-part-2), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/14f7db481ac78649805ff20d36355693157f2fce)  
 
 **Machine learning**
-* Supervised Learning with scikit-learn Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/8cf4bedbf7fc5cb2d81cf69a97e634fc818cd7a7)  
+* Supervised Learning with scikit-learn Course: [course description](https://www.datacamp.com/courses/supervised-learning-with-scikit-learn), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/8cf4bedbf7fc5cb2d81cf69a97e634fc818cd7a7)  
 
-* Deep Learning in Python Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/c90ac629566673ede129fa1e18fd4e42764cc702)   
+* Deep Learning in Python Course: [course description](https://www.datacamp.com/courses/deep-learning-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/c90ac629566673ede129fa1e18fd4e42764cc702)   
 
-* Preprocessing for Machine Learning in Python Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f43c37bfe1b7b90f0d9997ea180470e43c8d0b08)  
+* Preprocessing for Machine Learning in Python Course: [course description](https://www.datacamp.com/courses/preprocessing-for-machine-learning-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f43c37bfe1b7b90f0d9997ea180470e43c8d0b08)  
 
 **Big data & larallel computing: handling larger than memory data with multiple CPU cores**
-* Parallel Computing with Dask Course: [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
+* Parallel Computing with Dask Course: [course description](https://www.datacamp.com/courses/parallel-computing-with-dask), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
 
 
 ### Coursera: Machine Learning by Stanford University
