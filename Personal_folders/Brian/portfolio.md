@@ -1,4 +1,4 @@
-Last updated: 31-10-2018
+Last updated: 05-11-2018
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
@@ -16,15 +16,20 @@ Onlince courses from both DataCamp and Coursera have been followed for this mino
 One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished.  
 
 **Completed courses (not in order)**  
-[Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)  
+`TODO: Add link to a markdown file that contains all certificates.  `  
+All the completed DataCamp courses are listed below.  
+Press the course name to see the statement of accomplishment.  
+
+[Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
 [Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/246fecb0b112d881f24131944063f3345cbb70d8)  
+
 [Python Data Science Toolbox (Part 1) Course](https://www.datacamp.com/statement-of-accomplishment/course/d07e9a26136fd801656e94bd39049247602fbce1)  
 [Python Data Science Toolbox (Part 2) Course](https://www.datacamp.com/statement-of-accomplishment/course/f88ff03b0c3bd4f71781cff692a3cbaed61a4be7)  
 [Importing Data in Python (Part 1) Course](https://www.datacamp.com/statement-of-accomplishment/course/2e6d0dde86e189b3b79328a823104b3937c57b56)  
 [Importing Data in Python (Part 2) Course](https://www.datacamp.com/statement-of-accomplishment/course/824adfac50d7835387dc9509863ec42aef63ee16)  
 [Cleaning Data in Python Course](https://www.datacamp.com/statement-of-accomplishment/course/7a1c78cc670415289136447878822899ac968543)  
 [pandas Foundations Course](https://www.datacamp.com/statement-of-accomplishment/course/95341cab0c49de075afc345533b945176bb92f41)  
-[Manipulating DataFrames with pandas](https://www.datacamp.com/statement-of-accomplishment/course/24164e462d63070611fc45ff9349836c3f196551)
+[Manipulating DataFrames with pandas](https://www.datacamp.com/statement-of-accomplishment/course/24164e462d63070611fc45ff9349836c3f196551)  
 [Merging DataFrames with pandas Course](https://www.datacamp.com/statement-of-accomplishment/course/673dba72c544df4b977cf6b555d2d6799f81f33e)  
 
 [Introduction to Databases in Python Course](https://www.datacamp.com/statement-of-accomplishment/course/bc8bc8a89124619d48d6338aab461c6177825c1d)  
@@ -46,6 +51,7 @@ One of my personal goals is to finish the [Data Scientist with Python](https://w
 Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
 
 ## Jargon
+`TODO: Add more jargon.  `  
 Used jargon for Opschaler is listed below.
 * Dwelling: a unique house.  
 * Smartmeter data: electricity and gas meter data.   
@@ -57,21 +63,17 @@ Used jargon for Opschaler is listed below.
 
 
 ## Friday presentations  
-Our weekly presentations are listed below. Some of the presentations have been made with the complete group, while other presentations have been made only by the people that are presenting that week. Weeks I presented in: 1, 4, 7  
-[Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
-[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
-[Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
-[Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx)  
-[Week 5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx)  
-[Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
-[Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx)  
-[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx)  
-
-
-
+`TODO: dump as PDF`  
+The weekly Opschaler presentations that I contributed to.
+* [Week 1: made by all group members](https://prezi.com/p/28wycwuqqggc/#present), presented by Megan & Brian. 
+* [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor G. and Brian.
+* [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx), presented by Pol and Brian.
 
 
 ## Python notebooks
+`TODO: Only list relevant notebooks that show what has been learned. For example: do not list 5 notebooks for reading in data.`  
+`TODO: Add screenshots of important code & plots to show the learning progress`  
+`TODO: Clean up and run all notebooks show the correct output is shown.`  
 All notebooks have been commented, apart from lines where the programming is basic Python (for data science).
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
@@ -156,7 +158,9 @@ This folder contains all the notebooks related to deep learning. Note that there
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ## Scrum
-TODO: In the final portfolio add screenshots of the Task board, instead of linking to the Scrum page of that sprint.   
+`TODO: Don't link individual tickets, possibly show a screenshot of each task board.`  
+`TODO: Combine these tickets with the notebooks. `  
+`TODO: Say that after week 10 we stopped using Scrum due to it not being particulary usefull (in the way it should be used) for our research.`  
 The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
 * [Sprint 1](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-1/id-84641-11359-18)  
 It seems that a lot of Scrum tickets are missing.
