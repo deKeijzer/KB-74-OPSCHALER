@@ -25,8 +25,10 @@ Submit your portfolio by the end of week 17.
 The readers guide:
 Summary of the work you did and link it to a notebook. Only link to notebooks which you have contributed to. More notebooks don't equal a better portfolio; probably around 5 contributions are the sweet spot. Comment on the code and execute the code so the teachers don't have to run it themselves. Please make a single reading guide in the github repository so it can be a single click entry to all the documents you provide. 
 
+Jeroen likes to see visualisations. Highlight the code that was important to get some result. 
+
 Also put in some evaluation, which shows the progress.
 
-Scrum: Summary of approach that was chosen, literature that was read etc. If you want to show the individual scrum spints, make sure you combine it with the notebooks. In the current portfolio from Brian, the two are seperated. 
+If you want to show the individual scrum spints, make sure you combine it with the notebooks. In the current portfolio from Brian, the two are seperated. 
 
 Also reference to literature that was used. Put the sources in the bottom of the portfolio and refer to it by using [1] etc. 
