@@ -94,6 +94,7 @@ The weekly Opschaler presentations that I contributed to.
 `TODO: Only list relevant notebooks that show what has been learned. For example: do not list 5 notebooks for reading in data.`  
 `TODO: Add screenshots of important code & plots to show the learning progress`  
 `TODO: Clean up and run all notebooks show the correct output is shown.`  
+`TODO: Dump final versions of notebooks to pdf and link to those.`  
 All notebooks have been commented, apart from lines where the programming is basic Python (for data science).
 Besides commenting code, i try to document all changes by committing small changes to GitHub.  
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
