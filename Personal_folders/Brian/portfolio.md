@@ -6,6 +6,19 @@ Personal portfolio for the minor Applied Data Science at the Hague University of
 Student name: Brian de Keijzer  
 Student number: 16011015
 
+## Introduction
+`TODO: Write a basic introduction about project Opschaler.`  
+
+## Jargon
+`TODO: Add more jargon.  `  
+Used jargon for Opschaler is listed below.
+* Dwelling: a unique house.  
+* Smartmeter data: electricity and gas meter data.   
+* gasPower: amount of gas being used at a given time.
+* ePower: amount of electricity being used at a given time.
+* smart: electricity DataFrame of a dwelling.
+* seq2seq: sequence to sequence
+* LSTM: long short-term memory
 
 ## Online courses
 Onlince courses from both DataCamp and Coursera have been followed for this minor.
@@ -69,17 +82,6 @@ Press `course description` to see the contents of the course, press `statement o
 ### Coursera: Machine Learning by Stanford University
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png"> </p>
 Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
-
-## Jargon
-`TODO: Add more jargon.  `  
-Used jargon for Opschaler is listed below.
-* Dwelling: a unique house.  
-* Smartmeter data: electricity and gas meter data.   
-* gasPower: amount of gas being used at a given time.
-* ePower: amount of electricity being used at a given time.
-* smart: electricity DataFrame of a dwelling.
-* seq2seq: sequence to sequence
-* LSTM: long short-term memory
 
 
 ## Friday presentations  
@@ -173,8 +175,6 @@ This folder contains all the notebooks related to deep learning. Note that there
           * Sequence 2 sequence with a hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/seq2seq%20result%20hourly%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a daile sample rate: still need to create this
    
-
-
 
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
