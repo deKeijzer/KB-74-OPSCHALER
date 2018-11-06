@@ -97,9 +97,9 @@ The weekly Opschaler presentations that I contributed to.
 `TODO: Add screenshots of important code & plots to show the learning progress`  
 `TODO: Clean up and run all notebooks show the correct output is shown.`  
 `TODO: Dump final versions of notebooks to pdf and link to those.`  
-All notebooks have been commented, apart from lines where the programming is basic Python (for data science).
-Besides commenting code, i try to document all changes by committing small changes to GitHub.  
-<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits.png"> </p>
+All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i try to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.  
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits_v2.png"> </p>
   
 Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with a (!), really important ones are marked with a (!!). These are notebooks that contain main code for Opschaler.  
   
