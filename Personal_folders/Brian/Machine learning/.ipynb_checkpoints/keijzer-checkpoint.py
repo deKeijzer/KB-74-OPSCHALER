@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from sklearn.preprocessing import StandardScaler
+from tqdm import tqdm
 
 def setup_multi_gpus():
     """
@@ -106,9 +107,10 @@ def resample_df(df, sample_rate, combine_all_dwellings=False):
     df = df.copy()
     
     def resample_dwelling(df, sample_rate, dwelling_id):
-        df = df.resample(sample_rate).mean() # resample to rest by mean
-        df['dwelling'] = dwelling_id
-        return df
+        new_df = df.resample(sample_rate).mean() # resample to rest by mean
+        new_df['dwelling'] = dwelling_id
+        new_df['gasPower_std'] = df['gasPower'].resample(sample_rate).std() # gives the std (for example that day)
+        return new_df
         
                       
     resampled_dwellings = []
