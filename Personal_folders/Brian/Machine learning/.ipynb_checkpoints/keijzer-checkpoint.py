@@ -56,8 +56,8 @@ def create_corr_matrix(df, dwelling_id, annot, size=(25,25)):
     if annot:
         fig, ax = plt.subplots(figsize=size)
     else:
-        fig, ax = plt.subplots()
-
+        fig, ax = plt.subplots(figsize=size)
+    
     fig = sns.heatmap(corr, mask=mask, square=False, cmap='RdYlGn', annot=annot, ax=ax, 
                 cbar_kws={'label':'Pearson correlation coefficient [-]'})
 
