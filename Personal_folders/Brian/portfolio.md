@@ -91,6 +91,7 @@ The weekly Opschaler presentations that I contributed to.
 * [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor G. and Brian.
 * [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx), presented by Pol and Brian.
 * [Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx), presented by Pol. Slide 2 up to and including 25 are made by me.
+* [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor G. and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor G. Figures from slide 42 are from Daan. The other content is made.
 
 
 ## Python notebooks
