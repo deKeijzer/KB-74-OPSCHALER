@@ -92,7 +92,7 @@ More information can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALE
 * `df = pd.read_csv(dir+dwelling_id+'.csv', delimiter='\t', parse_dates=['datetime'])`
 * `df = df.set_index(['datetime'])`
 
-### Honeywell senso rdata
+### Honeywell sensor data
 Location: `/datc/opschaler/honeywell_sensors_per_dwelling_combined/honeywell_all_dwellings_combined.csv`
 Processed Honeywell sensordata.  
 All sensordata in one dataframe with dwelling labels.  
