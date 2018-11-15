@@ -4,6 +4,9 @@ read_('select', sample_rate='hour', processed=True)
         sample_rate: hour/10s
         processed: False. If False is passed, the df of the raw data is given.
           
+reduce_memory(df)
+    Returns a df where float64's are changed to float32's, which saves a lot of memory
+        df: input df that you want to reduce the memory footprint from
 
 dwel_path_id('sample_rate', 'folder', 'combined')
     Returns a list with the filepaths of the files + a list of the dwelling id's.
@@ -37,8 +40,7 @@ save_df(df, dwelling_id)
         df : output merge_smart_gas_weather
         dwelling_id: the dwelling id used in making the merged df
         
-main_df_prep()
-    Return
+
 
 corr_df('len_measurement', 'dwelling_id')
     Returns a heatmap of the processed data, given the resample correlation you want and the dwelling
