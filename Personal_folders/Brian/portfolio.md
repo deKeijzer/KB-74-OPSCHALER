@@ -36,8 +36,6 @@ One of my personal goals is to finish the [Data Scientist with Python](https://w
 ![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p3.png)  
 ![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p4.png) 
 <br>
-<details>
-
 
 `TODO: Add link to a markdown file that contains all certificates.  `  
 
