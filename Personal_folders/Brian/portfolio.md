@@ -36,8 +36,6 @@ One of my personal goals was to finish the [Data Scientist with Python](https://
 ![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p3.png)  
 ![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p4.png) 
 
-`TODO: Add link to a markdown file that contains all certificates.  `  
-
 Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course. To see everything in one view, you can also look at my DataCamp profile [here](https://www.datacamp.com/profile/BrianDeKeijzer).
 
 **Basic Python**
@@ -60,6 +58,8 @@ Press `course description` to see the contents of the course, press `statement o
 
 **Databases**
 * Introduction to Databases in Python Course: [course description](https://www.datacamp.com/courses/introduction-to-relational-databases-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/bc8bc8a89124619d48d6338aab461c6177825c1d)  
+* Intro to SQL for Data Science Course: [course description](https://www.datacamp.com/courses/intro-to-sql-for-data-science), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/e7264e6e4e916f6f0730027bf2dff39be676454b) 
+* Joining Data in PostgreSQL Course: [course description](https://www.datacamp.com/courses/joining-data-in-postgresql), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/ae1c6e0d5368e0fad21003b42abcb4be88aa5e10)  
 
 **Data visualisation**
 * Introduction to Data Visualization with Python Course: [course description](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/75b9fd93c583c0c0131106ef05b1a52515ccf0e2)  
@@ -69,12 +69,14 @@ Press `course description` to see the contents of the course, press `statement o
 * Statistical Thinking in Python (Part 1) Course: [course description](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/9f6cd5082511ecb5d6b7c6bf9fd053350d3c13af)  
 * Statistical Thinking in Python (Part 2) Course: [course description](https://www.datacamp.com/courses/statistical-thinking-in-python-part-2), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/14f7db481ac78649805ff20d36355693157f2fce)  
 
-**Machine learning**
+**Machine learning & Deep learning**
 * Supervised Learning with scikit-learn Course: [course description](https://www.datacamp.com/courses/supervised-learning-with-scikit-learn), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/8cf4bedbf7fc5cb2d81cf69a97e634fc818cd7a7)  
-
 * Deep Learning in Python Course: [course description](https://www.datacamp.com/courses/deep-learning-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/c90ac629566673ede129fa1e18fd4e42764cc702)   
-
 * Preprocessing for Machine Learning in Python Course: [course description](https://www.datacamp.com/courses/preprocessing-for-machine-learning-in-python), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/f43c37bfe1b7b90f0d9997ea180470e43c8d0b08)  
+* Unsupervised Learning in Python Course: [course description](), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/4b29bc8932dd18603ed8d945d14e478a3cdb2957)  
+* Network Analysis in Python (Part 1) Course: [course description](https://www.datacamp.com/courses/network-analysis-in-python-part-1), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/3414d0b46826e1582680c0257757fe4ee3c886e4)  
+* Machine Learning with the Experts: School Budgets Course: [course description](https://www.datacamp.com/courses/machine-learning-with-the-experts-school-budgets), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2076db5ee5120136404a0311a29164aa8141ab8e)  
+
 
 **Big data & parallel computing**
 * Parallel Computing with Dask Course: [course description](https://www.datacamp.com/courses/parallel-computing-with-dask), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/2c005dbb8743cd4210165c2326863f2dddc5ded7)  
