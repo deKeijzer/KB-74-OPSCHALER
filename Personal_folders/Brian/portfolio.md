@@ -1,4 +1,4 @@
-Last updated: 05-11-2018
+Last updated: 21-11-2018
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
@@ -21,7 +21,7 @@ Used jargon for Opschaler is listed below.
 * LSTM: long short-term memory
 
 ## Online courses
-Onlince courses from both DataCamp and Coursera have been followed for this minor.
+Onlince courses from both DataCamp, Coursera and fast.ai have been followed for this minor.
 
 ### DataCamp
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp_profile.png"> </p>
@@ -80,8 +80,33 @@ Press `course description` to see the contents of the course, press `statement o
 
 
 ### Coursera: Machine Learning by Stanford University
-<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera_progress.png"> </p>
-Did not do a lot of Coursera yet, am planning on finishing it within 7 days from now (29-10-2018).
+The mandatory courses at set by the guidelines of the minor have been completed and are listed below. Programming assignments have not been done. 
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/general.png"> </p>
+
+The weekly overview:  
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%201.png"> </p>
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%202.png"> </p>
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%203.1.png"> </p>
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%203.2.png"> </p>
+
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%206.png"> </p>
+
+### Fast.ai
+`TODO: Start doing Kaggle competitions as proof of having followed these courses?`  
+The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as extra / more advanced material. They offer a Python package that allows the usage of more state of the art deep learnings methods, in a more simple and less code intensive way than is currently (21-11-2018) possible with Keras and TensorFlow. Their course material consists of lectures and example notebooks of the covered material during those lectures. The following courses have been followed.  
+
+* Deep learning part 1
+  * Recognizing cats and dogs (image recognition): [link to course](https://course.fast.ai/lessons/lesson1.html)
+  * Convolutional neural networks: [link to course](https://course.fast.ai/lessons/lesson2.html)
+  * Improving your image classifier: [link to course](https://course.fast.ai/lessons/lesson3.html)
+  * Structured, time series & language models: [link to course](https://course.fast.ai/lessons/lesson4.html)
+
+
+
 
 
 ## Friday presentations  
