@@ -29,13 +29,10 @@ Onlince courses from both DataCamp, Coursera and fast.ai have been followed for 
 One of my personal goals is to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp. Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
 
 **Completed courses (not in order)**  
-<details>
-<summary>Screenshots of the completed courses.</summary>
 ![courses part 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p1.png)  
 ![courses part 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p2.png)  
 ![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p3.png)  
 ![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/p4.png) 
-<br>
 
 `TODO: Add link to a markdown file that contains all certificates.  `  
 
