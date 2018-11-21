@@ -82,8 +82,6 @@ Press `course description` to see the contents of the course, press `statement o
 The mandatory courses as set by the guidelines of the minor have been completed and are listed below. Programming assignments have not been done. 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/general.png"> </p>
 
-The weekly overview:  
-
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%201.png"> </p>
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%202.png"> </p>
