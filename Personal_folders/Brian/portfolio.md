@@ -26,7 +26,7 @@ Onlince courses from both DataCamp, Coursera and fast.ai have been followed for 
 ### DataCamp
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/General.png"> </p>
 
-One of my personal goals was to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp ([statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/track/a5c7f47662f67b9a19bf1a214c3316ecb7573b62). Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
+One of my personal goals was to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp ([statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/track/a5c7f47662f67b9a19bf1a214c3316ecb7573b62)). Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/data_scientist_track.png"> </p>
 
