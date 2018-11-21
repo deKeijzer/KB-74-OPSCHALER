@@ -79,7 +79,7 @@ Press `course description` to see the contents of the course, press `statement o
 
 
 ### Coursera: Machine Learning by Stanford University
-The mandatory courses at set by the guidelines of the minor have been completed and are listed below. Programming assignments have not been done. 
+The mandatory courses as set by the guidelines of the minor have been completed and are listed below. Programming assignments have not been done. 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/general.png"> </p>
 
 The weekly overview:  
