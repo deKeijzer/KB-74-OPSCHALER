@@ -38,7 +38,7 @@ One of my personal goals was to finish the [Data Scientist with Python](https://
 
 `TODO: Add link to a markdown file that contains all certificates.  `  
 
-Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course.  
+Press `course description` to see the contents of the course, press `statement of accomplishment` to see the certificate given out by DataCamp upon completing the course. To see everything in one view, you can also look at my DataCamp profile [here](https://www.datacamp.com/profile/BrianDeKeijzer).
 
 **Basic Python**
 * Intro to Python for Data Science: [course description](https://www.datacamp.com/courses/intro-to-python-for-data-science), [statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/course/01e115bd07164cd840cc41c7fe831ba08d7dca1a)   
