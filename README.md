@@ -97,6 +97,7 @@ Location: `/datc/opschaler/honeywell_sensors_per_dwelling_combined/honeywell_all
 Processed Honeywell sensordata.  
 All sensordata in one dataframe with dwelling labels.  
 Note that the serial data in this file has not yet been converted to the room labels.
+The serial to room datafile `honeywell_serial_to_room.xlsx` can be found in the same folder.
 
 
 ## NaN Information of not-processed dataframes
