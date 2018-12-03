@@ -34,7 +34,7 @@ The weekly presentations I did are listed below: <br>
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present)   
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
 [Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
-[Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx) 
+[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx) 
 
 [First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
