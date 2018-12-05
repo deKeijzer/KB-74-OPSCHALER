@@ -109,3 +109,17 @@ The notebook in which `dwelling_id_threshold_percentage.csv` is created can be f
 location: `//datc//opschaler//EDA//`
 The EDA results, saved per dwelling.  
 For example, correlation coefficient matrices are saved in `//datc//opschaler//EDA//correlation_matrices`  
+
+# Usefull terminal commands
+In Linux:  
+- `top` to see CPU & RAM.
+- `nvidia-smi -l 1' to see GPU usage and refresh this information every second.  
+  
+On Windows:  
+To use `nvidia-smi` first move to:  
+- `cd C:\Program Files\NVIDIA Corporation\NVSMI`  
+Then run `nvidia-smi` by:  
+- `.\nvidia-smi -l 1`.  
+  
+To see the CPU usage:  
+- `wmic cpu get loadpercentage`
