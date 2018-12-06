@@ -55,6 +55,19 @@ def test2(x):
 #     plt.ylabel('gasPower [m$^3$]')
 #     datetime_layout()
 
+def dummies(df):
+    df['T-1'] = df['T'].shift(1)
+
+    #Creating hour of the day and day of the week variables
+    df['hour'] = df.index.hour #creating a column that takes the hour of the day from the DateTime index
+    df['dayofweek'] = df.index.dayofweek #same but with the day of the week, obviously
+
+    #Creating dummyvariables out of the columns above (meaning making a ones-matrix from the columns)
+    add_columns = ['hour', 'dayofweek'] #making variable for the columns
+    df[add_columns] = df[add_columns].astype('category') #in order to make dummy variables, they need to be of the type category
+    df = pd.get_dummies(df, columns=add_columns)
+    return df
+
 def read_(select, sample_rate='_hour',processed=True):
     path = '//datc//opschaler//combined_gas_smart_weather_dfs//'
     folder_ = 'processed//'
