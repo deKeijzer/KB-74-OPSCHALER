@@ -1,0 +1,27 @@
+MULTIVARIATE LINEAR REGRESSION 
+
+Advantages:
+
+-Really easy to implement
+-Fast to implement
+-No need of big hardware behind it
+
+Disadvantages:
+
+-Regression dont understand of human patterns (or even patterns?) 
+-Really difficult to reach a good prediction
+-The use of too many features for getting to a good result may end in overfitting 
+
+
+
+DEEP NEURAL NETWORK
+
+Advantages:
+
+Disadvantages:
+
+RECURRENT NEURAL NETWORKS
+
+Advantages:
+
+Disadvantages:
