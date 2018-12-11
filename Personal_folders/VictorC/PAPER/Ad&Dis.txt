@@ -4,13 +4,17 @@ Advantages:
 
 -Really easy to implement
 -Fast to implement
--No need of big hardware behind it
+-Not computionally expensivee
+-High correlated variables can lead to a good prediction
+-Help us to take a first view of which features might help in other models
+
 
 Disadvantages:
 
--Regression dont understand of human patterns (or even patterns?) 
+-Regression dont understand of human patterns (or even patterns?) Possible solution: creating dummie variables? 
 -Really difficult to reach a good prediction
 -The use of too many features for getting to a good result may end in overfitting 
+-Depends too much in your data (quality, quantity, if its easy to predict or have too many anomalies...)
 
 
 
@@ -18,7 +22,19 @@ DEEP NEURAL NETWORK
 
 Advantages:
 
+-Most simple model of NN
+-Dont need of a high level of coding
+-Can lead to good results 
+-Easy to tune
+-¿Time needed depends on the amount of layers and nodes?
+
 Disadvantages:
+
+-You cannot control what happens inside the DNN
+-Most simple model of NN
+-Need good data
+-Computionally expensive
+
 
 RECURRENT NEURAL NETWORKS
 
