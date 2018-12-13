@@ -32,6 +32,47 @@ Before you start working on code in jupyter, be sure that you have the latest ve
 * `git push`
 More push & pull information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb).
 
+# About the data
+There also is sensor data (occupancy, CO2 values, humidity, temperature and more) from within the dwellings available, this has not been added to this file.
+
+### Smart meter data
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Sample rate</th><th>Description</th></tr></thead><tbody>
+ <tr><td>Timestamp</td><td>-</td><td>10 s</td><td>Timestamp of data telegram (set by smart meter) in local time </td></tr>
+ <tr><td>eMeter</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, normal tariff </td></tr>
+ <tr><td>eMeterReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, normal tariff </td></tr>
+ <tr><td>eMeterLow</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, low tariff </td></tr>
+ <tr><td>eMeterLowReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, low tariff </td></tr>
+ <tr><td>ePower</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered to client </td></tr>
+ <tr><td>ePowerReturn</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered by client </td></tr>
+ <tr><td>gasTimestamp</td><td>-</td><td>1 h</td><td>Timestamp of the gasMeter reading (set by smart meter) in local time </td></tr>
+ <tr><td>gasMeter</td><td>m3</td><td>1 h</td><td>Last hourly value (temperature converted0, gas delivered to client </td></tr>
+</tbody></table>
+
+### Weather data
+This is weather data from the KNMI weather station in Rotterdam with a sample rate of 15 minutes.  
+A representative from OPSCHALER says that this weather station is the most nearby all the dwellings, the exact dwelling locations however are unknown.  
+They probably are in a 25 km radius from this weather station.  
+
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Description</th></tr></thead><tbody>
+ <tr><td>DD</td><td>degrees</td><td>Wind direction</td></tr>
+ <tr><td>DR</td><td>s</td><td>Precipitation time</td></tr>
+ <tr><td>FX</td><td>m/s</td><td>Maximum gust of wind at 10 m</td></tr>
+ <tr><td>FF</td><td>m/s</td><td>Windspeed at 10 m</td></tr>
+ <tr><td>N</td><td>okta</td><td>Cloud coverage</td></tr>
+ <tr><td>P</td><td>hPa</td><td>Outside pressure</td></tr>
+ <tr><td>Q</td><td>W/m2</td><td>Global radiation</td></tr>
+ <tr><td>RG</td><td>mm/h</td><td>Rain intensity</td></tr>
+ <tr><td>SQ</td><td>m</td><td> Sunshine duration (in minutes)</td></tr>
+ <tr><td>T</td><td>deg C</td><td>Temperature at 1,5 m (1 minute mean)</td></tr>
+ <tr><td>T10</td><td>deg C</td><td>Minimum temperature at 10 cm</td></tr>
+ <tr><td>TD</td><td>deg C</td><td>Dew point temperature</td></tr>
+ <tr><td>U</td><td>%</td><td>Relative humidity at 1,5 m</td></tr>
+ <tr><td>VV</td><td>m</td><td>Horizontal sight</td></tr>
+ <tr><td>WW</td><td>-</td><td>Weather- and station-code</td></tr>
+</tbody></table>
+
 # Important data locations
 Below is a list of the most important data locations for the Opschaler project. <b>Make sure to not modify or add any files in the folders listed below.</b> Some notebooks have been programmed in such a way that they expect all files in a folder to have a certain file structure. For example: in the `smartmeter_data folder` the only files in there should be smartmeter files in the format `dwelling_id.csv`. Any other file in there will crash the notebook which uses this folder to process the files.  
 * Only read files, do not write to them.
