@@ -164,13 +164,13 @@ Certain events have been marked with an arrow, to see their description click th
 <details><summary> <b>Click here to see the GitHub commit history description.</b>  </summary>  
   
 <p> 
-- 1. Initial commit of KB74-OPSCHALER and the start of data reading & cleaning.
-- 2. Finished the largest part of data cleaning and started working on MVLR and neural networks.
-- 3. Started creating the personal portfolio.
-- 4. Finished the main models, started working on the multivariate time series in Keras repository. 
-- 5. Polishing all the models and adding explanations to all the models.
-- 6. Mainly finished step 5, found out there is a data leakage. The test set was used as validation set.
-- 7. Fixed the data leakage and started using Hyperas to find model architectures again. This is because the previous architectures are biased due to the previous dataleakage.  
+- 1. Initial commit of KB74-OPSCHALER and the start of data reading & cleaning.  
+- 2. Finished the largest part of data cleaning and started working on MVLR and neural networks.  
+- 3. Started creating the personal portfolio.  
+- 4. Finished the main models, started working on the multivariate time series in Keras repository.   
+- 5. Polishing all the models and adding explanations to all the models.  
+- 6. Mainly finished step 5, found out there is a data leakage. The test set was used as validation set.  
+- 7. Fixed the data leakage and started using Hyperas to find model architectures again. This is because the previous architectures are biased due to the previous dataleakage.    
   
 </p>
 </details>  
