@@ -173,7 +173,7 @@ Certain events have been marked with an arrow, to see their description click th
 
 </details>  
   
-Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models.
+Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models that are used for the gas consumption prediction.
   
 The notebooks that have been made for KB74-OPSCHALER are:
   
