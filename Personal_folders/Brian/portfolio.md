@@ -161,7 +161,7 @@ All notebooks have been commented, apart from lines where the programming is bas
 
 Certain events have been marked with an arrow, to see their description click the dropdown box below. 
 
-<details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
+<details><summary> <b>Click here to see the GitHub commit history description.</b>  </summary>  
   
 <p> 
 - 1. Initial commit of KB74-OPSCHALER and the start of data reading & cleaning.
