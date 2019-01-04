@@ -304,7 +304,7 @@ A lot of time has gone into certain tasks due to searching for literature, readi
   * (18h) Preprocessing for LSTM
 
 ## Other
-Other contributions to the project / learning progress, worth mentioning.
+Other contributions to the project and/or learning progress, worth mentioning.
 
 ### GitHub
 Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. It can be clearly seen when KB74-OPSCHALER has been started, as pointed out by the red arrow below. 
