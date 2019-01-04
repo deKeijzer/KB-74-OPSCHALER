@@ -1,6 +1,15 @@
 # KB-74-OPSCHALER
 This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at The Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week ahead with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
 
+# Personal portfolio's
+Links to the personal portfolio's of the KB-74-OPSCHALER group members are listed below.
+- [Brian de Keijzer](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/portfolio.md)  
+- [Victor Garcia](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/portfolio.md)  
+- Pol de Visser  
+- [Victor Gómez Muñoz](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/VictorPortfolio.md)  
+- [Daan Boesten](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Portfolio.md)  
+- Megan Meezen  
+
 # Setting up GitHub on JupyterHub
 1. Login to JupyterHub on the datascience server. 
 2. In the top right press 'New -> Terminal'. A SSH terminal should pop up in a new window. 
