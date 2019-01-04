@@ -246,6 +246,8 @@ This folder contains all the notebooks related to deep learning. Note that there
           * Single layer LSTM result with a daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/seq2seq%20result%20hourly%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a daile sample rate: still need to create this
+          
+**Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
 ### GitHub repositoy: Multivariate Time Series Models in Keras
 Once the model complexity in Keras kept increasing, i had to think of a way to keep my peers up to date with how all the models work. Along with this, i experienced that it is a great struggle to learn about time series models when starting with no knowledge about them at all. Needing to use Google for weeks and combining the information from tons of resources is a huge hassle for anyone.  
@@ -262,9 +264,7 @@ Therefor i created the repository [Multivariate Time Series Models in Keras](htt
 - [5.2 CNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.2%20CNN.ipynb)   
 - [6. TimeDistributed(CNN)+RNN+DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/6.%20TimeDistributed(CNN)%2BRNN%2BDNN.ipynb)  
 
-Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evalutaions. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model with an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.
-
-**Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
+Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.
 
 ## Scrum
 `TODO: Don't link individual tickets, possibly show a screenshot of each task board.`  
