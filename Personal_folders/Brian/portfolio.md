@@ -1,13 +1,40 @@
-Last updated: 21-11-2018
+Last updated: 04-01-2019 (DD-MM-YYYY)
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
 
 Student name: Brian de Keijzer  
-Student number: 16011015
+Student number: 16011015  
+Email: b.dekeijzer@student.hhs.nl  
 
 ## Introduction
-`TODO: Write a basic introduction about project Opschaler.`  
+This is a general introduction to the KB74-OPSCHALER project and is also intended for people who do not know anything about the Applied Data Science minor.  
+  
+In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information out of the energy usage data of residential houses on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
+The Hague University is one of the collaborators and offers the OPSCHALER data to students in their Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
+  
+<details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
+  
+<p> 
+Our team working on this project consists of 6 students, 2 of which are doing this for their European Project Semester. Everyone of us has different backgrounds. One person has a BSc in telecommunication engineering and is currently doing a masters. The others are studying industrial engineering and management, computer science engineering and engineering physics. Another important note is that most of us have never programmer before, or only in MATLAB. So along with learning the subjects from the minor, most of us had to learn Python from scratch as well.  
+  
+</p>
+</details>  
+  
+  
+Our research goal started out by trying to predict the electricity and gas consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
+Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the gas consumption of houses on the aggregated level, predicting one hour, a day and a week ahead with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 54 houses. These predictions are done by using the different models listed below and are eventually compared to each other.  
+
+- MVLR: Multivariate Linear Regression
+- DNN: Deep Neural Network
+- CNN: Convolutional Neural Network
+- RNN: Recurrent Neural Network
+- LSTM: Long Short-Term Memory
+- GRU: Gated Recurrent Unit
+- TimeDistributed(CNN)+RNN+DNN
+
+Despite these models being based on data on the aggregated level, they should also work for individual houses when trained specifically for that house. Creating an accurate general model, using only weather data is just hard due to each house having a specific gas consumption pattern.  
+
 
 ## Jargon
 `TODO: Add more jargon.  `  
@@ -18,7 +45,6 @@ Used jargon for Opschaler is listed below.
 * ePower: amount of electricity being used at a given time.
 * smart: electricity DataFrame of a dwelling.
 * seq2seq: sequence to sequence
-* LSTM: long short-term memory
 
 ## Online courses
 Onlince courses from both DataCamp, Coursera and fast.ai have been followed for this minor.
@@ -26,7 +52,7 @@ Onlince courses from both DataCamp, Coursera and fast.ai have been followed for 
 ### DataCamp
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/General.png"> </p>
 
-One of my personal goals was to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp ([statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/track/a5c7f47662f67b9a19bf1a214c3316ecb7573b62)). Apart from this I also did some other courses which seemed usefull for project Opschaler. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
+One of my personal goals was to finish the [Data Scientist with Python](https://www.datacamp.com/tracks/data-scientist-with-python) track on DataCamp ([statement of accomplishment](https://www.datacamp.com/statement-of-accomplishment/track/a5c7f47662f67b9a19bf1a214c3316ecb7573b62)). Apart from this I also did some other courses which seemed usefull for KB74-OPSCHALER. All mandatory courses for the minor have been finished. Screenshots of the completed courses are shown below. Links to the course description including the statement of accomplishment can be seen below the screenshots. 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/datacamp/data_scientist_track.png"> </p>
 
@@ -98,27 +124,28 @@ The mandatory courses as set by the guidelines of the minor have been completed 
 
 ### Fast.ai
 `TODO: Start doing Kaggle competitions as proof of having followed these courses?`  
-The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as extra / more advanced material. They offer a Python package that allows the usage of more state of the art deep learnings methods, in a more simple and less code intensive way than is currently (21-11-2018) possible with Keras and TensorFlow. Their course material consists of lectures and example notebooks of the covered material during those lectures. The following courses have been followed.  
+The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as extra and more advanced material. They offer a Python package that allows the usage of more state of the art deep learnings methods, in a more simple and less code intensive way than is currently (21-11-2018) possible with Keras and TensorFlow. Their course material consists of lectures and example notebooks of the covered material during those lectures. The following courses have been followed.  
 
 * Deep learning part 1
   * Recognizing cats and dogs (image recognition): [link to course](https://course.fast.ai/lessons/lesson1.html)
   * Convolutional neural networks: [link to course](https://course.fast.ai/lessons/lesson2.html)
   * Improving your image classifier: [link to course](https://course.fast.ai/lessons/lesson3.html)
   * Structured, time series & language models: [link to course](https://course.fast.ai/lessons/lesson4.html)
+  * Collaborative filtering; inside the training loop: [link to course](https://course.fast.ai/lessons/lesson5.html)
+  * Interpreting embeddings; RNNs from scratch: [link to course](https://course.fast.ai/lessons/lesson6.html)
 
-
-
+These courses have been very usefull to learn more about DNNs and specifically CNNs and RNNs. Certain methods like the learning rate scheduler and transfer learning have been applied in Keras during the project.  
 
 
 ## Friday presentations  
 `TODO: dump as PDF`  
-The weekly Opschaler presentations that I contributed to.
+The weekly KB74-OPSCHALER presentations that I contributed to.
 * [Week 1: made by all group members](https://prezi.com/p/28wycwuqqggc/#present), presented by Megan & Brian. 
 * [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor G. and Brian.
 * [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx), presented by Pol and Brian.
 * [Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx), presented by Pol. Slide 2 up to and including 25 are made by me.
-* [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor G. and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor G. Figures from slide 42 are from Daan. The other content is made.
-* [Week ?](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/07-12-2018.pptx), made & presented by me.
+* [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor G. and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor G. Figures from slide 42 are from Daan. The other content is made by me.
+* [Week ?, contains usefull animations](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/07-12-2018.pptx), made & presented by me.
 
 
 ## Python notebooks
@@ -130,9 +157,9 @@ All notebooks have been commented, apart from lines where the programming is bas
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits_v2.png"> </p>
   
-Quite a lot of notebooks which are relevant for Opschaler have been created. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with a (!), really important ones are marked with a (!!). These are notebooks that contain main code for Opschaler.  
+Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models.
   
-The notebooks that have been made for Opschaler are:
+The notebooks that have been made for KB74-OPSCHALER are:
   
 * Data preperation  
 This is the process of preparing the raw data for analysis, getting the data in easy useable DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
@@ -173,7 +200,7 @@ The 'data_preperation_main.py' file used to be the main script to create the pre
   * EDA on processed data: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/pycharm/EDA%20on%20processed%20data.ipynb)
  
 * Dask  
-Currently (29-10-2018) this is the main notebook for all the data processing done for the Opschaler project. This notebook has implemented most relevant functions from previously listed notebooks in a way so they can be run in parallel with Dask. It basically takes all raw data and saves unprocessed and processed (NaNs taken care off) `.csv` files per dwelling, which can be used for analysis.
+Currently (29-10-2018) this is the main notebook for all the data processing done for KB74-OPSCHALER. This notebook has implemented most relevant functions from previously listed notebooks in a way so they can be run in parallel with Dask. It basically takes all raw data and saves unprocessed and processed (NaNs taken care off) `.csv` files per dwelling, which can be used for analysis.
   * (!!) Dask data processing: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
 
 * Keras  
@@ -203,7 +230,23 @@ This folder contains all the notebooks related to deep learning. Note that there
           * Single layer LSTM result with a daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/seq2seq%20result%20hourly%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a daile sample rate: still need to create this
-   
+
+### GitHub repositoy: Multivariate Time Series Models in Keras
+Once the model complexity in Keras kept increasing, i had to think of a way to keep my peers up to date with how all the models work. Along with this, i experienced that it is a great struggle to learn about time series models when starting with no knowledge about them at all. Needing to use Google for weeks and combining the information from tons of resources is a huge hassle for anyone.  
+
+Therefor i created the repository [Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras), which contains all the models from this project along with an explanation per model. This repository is ment for anyone that has no knowledge about OPSCHALER, it should give a throughout explanation on how each model has been established and why certain choices have been made. The repository contains the following notebooks, they are certainly worth a look (alongside with the repository in general, [link]([Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras))). It is adviced however to look at the notebooks using Jupyter (click: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deKeijzer/Multivariate-time-series-models-in-Keras/master)) and browse to the `notebooks` folder.  
+
+- [1. EDA & Feature engineering](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/1.%20EDA%20%26%20Feature%20engineering.ipynb)  
+- [2. MVLR](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/2.%20MVLR%20.ipynb)  
+- [3. DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/3.%20DNN.ipynb)  
+- [4.1 CNN & RNN Data Preperation](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.1%20CNN%20%26%20RNN%20Data%20Preperation.ipynb)  
+- [4.2 LSTM](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.2%20LSTM.ipynb)  
+- [4.3 GRU](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.3%20GRU.ipynb)  
+- [5.1 Multivariate time-series to images](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.1%20Multivariate%20time-series%20to%20images.ipynb)  
+- [5.2 CNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.2%20CNN.ipynb)   
+- [6. TimeDistributed(CNN)+RNN+DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/6.%20TimeDistributed(CNN)%2BRNN%2BDNN.ipynb)  
+
+Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evalutaions. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model with an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.
 
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
 
@@ -248,7 +291,7 @@ A lot of time has gone into certain tasks due to searching for literature, readi
 Other contributions to the project / learning progress, worth mentioning.
 
 ### GitHub
-Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. It can be clearly seen when project Opschaler has been started, as pointed out by the red arrow below. 
+Introduced the group to GitHub and made some resources that help with the setup and usage of GitHub at the datascience server. It can be clearly seen when KB74-OPSCHALER has been started, as pointed out by the red arrow below. 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_start_of_opschaler.png"> </p>
 
@@ -256,3 +299,6 @@ Introduced the group to GitHub and made some resources that help with the setup 
 * Made a README for the project members containing information on how to setup GitHub on the datascience server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
 * Made a GitHub push & pull tutorial: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb)  
 * Created .bat files to run [jupyter lab](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/jupyterlab.bat), [run notebooks](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/run_notebook.bat) and do [ssh portforwarding](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/ssh%20portforward.bat) for usage at your local computer.
+
+### New datascience server
+...
