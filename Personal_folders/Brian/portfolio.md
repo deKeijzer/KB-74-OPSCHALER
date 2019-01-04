@@ -1,3 +1,4 @@
+`TODO: check spelling`  
 Last updated: 04-01-2019 (DD-MM-YYYY)
 
 # Personal portfolio  
@@ -8,22 +9,23 @@ Student number: 16011015
 Email: b.dekeijzer@student.hhs.nl  
 
 ## Introduction
-This is a general introduction to the KB74-OPSCHALER project and is also intended for people who do not know anything about the Applied Data Science minor.  
+This is a general introduction to the KB74-OPSCHALER project and it is also intended for people who do not know anything about the Applied Data Science minor.  
   
 In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information out of the energy usage data of residential houses on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
+
 The Hague University is one of the collaborators and offers the OPSCHALER data to students in their Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
   
 <details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
   
 <p> 
-Our team working on this project consists of 6 students, 2 of which are doing this for their European Project Semester. Everyone of us has different backgrounds. One person has a BSc in telecommunication engineering and is currently doing a masters. The others are studying industrial engineering and management, computer science engineering and engineering physics. Another important note is that most of us have never programmer before, or only in MATLAB. So along with learning the subjects from the minor, most of us had to learn Python from scratch as well.  
+Our team consists of 6 students, 2 of which are doing this for their European Project Semester. Every one of us has different backgrounds. One person has a BSc in telecommunication engineering and is currently doing a masters. The others are studying industrial engineering and management, computer science engineering and engineering physics. Another important note is that most of us have never programmer before, or only in MATLAB. So along with learning the subjects from the minor, most of us had to learn Python from scratch aswell.  
   
 </p>
 </details>  
   
   
-Our research goal started out by trying to predict the electricity and gas consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
-Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the gas consumption of houses on the aggregated level, predicting one hour, a day and a week ahead with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 54 houses. These predictions are done by using the different models listed below and are eventually compared to each other.  
+Our research started out by trying to predict the electricity and gas consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
+Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the gas consumption of houses on the aggregated level, predicting one hour, a day and a week ahead with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 54 houses and could represent a block of houses. These predictions are done by using the different models listed below and are eventually compared to each other.  
 
 - MVLR: Multivariate Linear Regression
 - DNN: Deep Neural Network
@@ -39,7 +41,7 @@ Despite these models being based on data on the aggregated level, they should al
 ## Jargon
 `TODO: Add more jargon.  `  
 Used jargon for Opschaler is listed below.
-* Dwelling: a unique house.  
+* Dwelling: an unique house.  
 * Smartmeter data: electricity and gas meter data.   
 * gasPower: amount of gas being used at a given time.
 * ePower: amount of electricity being used at a given time.
@@ -123,7 +125,6 @@ The mandatory courses as set by the guidelines of the minor have been completed 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/coursera/week%206.png"> </p>
 
 ### Fast.ai
-`TODO: Start doing Kaggle competitions as proof of having followed these courses?`  
 The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as extra and more advanced material. They offer a Python package that allows the usage of more state of the art deep learnings methods, in a more simple and less code intensive way than is currently (21-11-2018) possible with Keras and TensorFlow. Their course material consists of lectures and example notebooks of the covered material during those lectures. The following courses have been followed.  
 
 * Deep learning part 1
@@ -153,9 +154,26 @@ The weekly KB74-OPSCHALER presentations that I contributed to.
 `TODO: Add screenshots of important code & plots to show the learning progress`  
 `TODO: Clean up and run all notebooks show the correct output is shown.`  
 `TODO: Dump final versions of notebooks to pdf and link to those.`  
-All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i try to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.  
+`TODO: Update github history timeline once everything is done.`  
+All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i try to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.
 
-<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_commits_v2.png"> </p>
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_timeline.png"> </p>
+
+Certain events have been marked with an arrow, to see their description click the dropdown box below. 
+
+<details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
+  
+<p> 
+- 1. Initial commit of KB74-OPSCHALER and the start of data reading & cleaning.
+- 2. Finished the largest part of data cleaning and started working on MVLR and neural networks.
+- 3. Started creating the personal portfolio.
+- 4. Finished the main models, started working on the multivariate time series in Keras repository. 
+- 5. Polishing all the models and adding explanations to all the models.
+- 6. Mainly finished step 5, found out there is a data leakage. The test set was used as validation set.
+- 7. Fixed the data leakage and started using Hyperas to find model architectures again. This is because the previous architectures are biased due to the previous dataleakage.  
+  
+</p>
+</details>  
   
 Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models.
   
