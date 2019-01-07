@@ -46,7 +46,7 @@ __Datacamp__
 Completed courses:  
 [Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
 [Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
-[Supervised Learning with scikit-learn Course](link)  
+[Supervised Learning with scikit-learn Course](link) (Chapter 1,2) 
  
 __Coursera__
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/Screenshot_10.png"> </p>
