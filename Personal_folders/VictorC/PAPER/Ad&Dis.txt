@@ -5,7 +5,6 @@ Advantages:
 -Really easy to implement
 -Fast to implement
 -Not computionally expensivee
--High correlated variables can lead to a good prediction
 -Help us to take a first view of which features might help in other models
 
 
@@ -26,7 +25,6 @@ Advantages:
 -Dont need of a high level of coding
 -Can lead to good results 
 -Easy to tune
--¿Time needed depends on the amount of layers and nodes?
 
 Disadvantages:
 
