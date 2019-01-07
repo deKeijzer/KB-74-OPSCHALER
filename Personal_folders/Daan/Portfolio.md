@@ -49,4 +49,4 @@ Followed courses:
 [Supervised Learning with scikit-learn Course](link) (Chapter 1,2) 
  
 __Coursera__
-<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/Screenshot_10.png"> </p>
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/stanford.png"> </p>
