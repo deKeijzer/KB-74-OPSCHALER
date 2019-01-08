@@ -21,7 +21,7 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 
 
 
-It was also important to compare the amount of computing power needed for the prediction. The ultimate goal of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
+It was also important to compare the amount of computing time needed for each prediction model. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
     
 __Personal Work__
   
