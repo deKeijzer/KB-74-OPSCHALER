@@ -59,7 +59,9 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 
 I still have to finish the compulsory *Coursera* weeks, and work on it, I will try to get it finish for this week. Right now this is my progress:
 
-<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera.JPG">
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera1.JPG">
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera2.JPG">
+
 
 ## Friday Presentations
 
