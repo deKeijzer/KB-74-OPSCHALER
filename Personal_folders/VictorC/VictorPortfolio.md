@@ -54,6 +54,9 @@ The [research paper]() was the main goal of this project. The parts I have writt
 <p>-*Conclusions* (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
 <p>-*Results from MVLR,DNN, and GRU* (First time we wrote this part, it was done by Megan. However, results changed a lot because a validation problem we had,so I rewrote everything again.)</p>
 
+Furthermore, we created an excel with references, were we all added the ones that could be usefull or related to our project.
+This is the [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/References.xlsx).
+
 ## Python Notebooks
 
 This image show the commitments I did during the project:
