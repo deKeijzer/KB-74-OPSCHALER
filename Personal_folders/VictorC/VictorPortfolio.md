@@ -57,7 +57,7 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 
 ## Coursera: Machine Learning by Stanford University
 
-I still have to finish the compulsory *Coursera* weeks, and work on it, I will try to get it finish for this week. Right now this is my progress:
+I finished the compulsory *Coursera* weeks 1,2,3 and 6:
 
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera1.JPG">
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera2.JPG">
@@ -65,7 +65,7 @@ I still have to finish the compulsory *Coursera* weeks, and work on it, I will t
 
 ## Friday Presentations
 
-In the list below you find all the presentations of *Opshaler* group. For each of the presentations we chose two different persons so that everyone is involved. The presentations I presented are: 2,8
+In the list below you find all the presentations of *Opshaler* group I took part in. For each of the presentations we chose two different persons so that everyone is involved.
 
  
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
