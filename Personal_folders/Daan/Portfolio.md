@@ -1,14 +1,14 @@
 __Introduction__
 
-This portfolio describes the work I (Daan Boesten, 16021665) have done during the minor Applied Data Science. The minor was held in the period from September 2018 to January 2019 at The Hague University of Applied Sciences. With a project group of 6 students we were assigned to the OPSCHALER project, a measurement campaign on the influence of housing characteristics on energy costs and comfort. Our goal was to predict the energy consumption of residential dwellings using several machine learning methods.
+This portfolio describes the work I (Daan Boesten, 16021665) have done during the minor Applied Data Science. The minor was held in the period from September 2018 to January 2019 at The Hague University of Applied Sciences. With a group of 6 students we were assigned to the OPSCHALER project, a measurement campaign on the influence of housing characteristics on energy costs and comfort. Our goal was to predict the energy consumption of residential dwellings using several machine learning methods.
 
 The OPSCHALER group consists of members from the TU Delft, The Hague University and several companies which can be found here http://www.opschaler.nl/partners/. Thus far the TU Delft has recorded energy consumption data from 52 residential dwellings. This data has been used as training data for the machine learning models. 
 
 During this minor we tried to answer the following research question:
 
-_Is  it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?_
+_Is it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?_
 
-After consulation with the OPSCHALER group it was decided to predict the energy consumption for a week ahead with hourly and daily  resolutions. Three different methods were compared based on the accuracy of the prediction:
+After consulation with the OPSCHALER group it was decided to aim to predict the energy consumption for a week ahead with hourly and daily resolutions. Three different methods were compared based on the accuracy of the prediction:
 
 1. Multivariate regression
 2. Fourier series
@@ -18,10 +18,12 @@ After consulation with the OPSCHALER group it was decided to predict the energy 
 |------|------|------|------|
 | Hourly | ..% | ..% | ..% |  
 | Daily  | ..% | ..% | ..% |
+| Weekly  | ..% | ..% | ..% | 
 
 
+In addition to the prediction accuracy, it was also important to compare the computing time needed for each prediction model. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
 
-In addition to the accuracy, it was also important to compare the amount of computing time needed for each prediction model. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
+During the minor we learned about several deep learning models, each with its own pros and cons. It was decided to focus on
     
 __Personal Work__
   
