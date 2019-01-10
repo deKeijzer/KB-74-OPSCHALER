@@ -1,0 +1,27 @@
+CNN
+---------------
+Advantages:
+- Currently it is one of the most developed technology in the state of art of Machine Learning
+- Mostly useful for identifying patterns 
+- Other models could be adopted and trained in our data
+
+
+
+Disadvantages:
+- Data preprocessing and transformation to image
+- Results not as good as expected, MAPE of 51% achieved.
+- Training time high compared to previous methods, the accuracy/time required ratio is low
+- Time series information not considered in the process, to address this problem the next model that includes CNN + RNN + DNN is used
+
+
+
+Mixed CNN and RNN
+-------------------
+Advantages:
+- Main advantage 
+
+
+
+Disadvantages:
+
+
