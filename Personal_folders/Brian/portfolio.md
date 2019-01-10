@@ -1,5 +1,5 @@
 `TODO: check spelling`  
-Last updated: 04-01-2019 (DD-MM-YYYY)
+Last updated: 10-01-2019 (DD-MM-YYYY)
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
@@ -308,18 +308,10 @@ This folder contains all the notebooks related to deep learning. Note that there
 </p>
 </details>      
 
-  
-  
-  
-  
-------------------
-  
-
-
 ## Scrum
 Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory.  
 Once we found this wasn't the case, we decided to drop it.  
-This decision has been made because doing sprints the correct SCRUM way did not really apply to our research.  
+This decision has been made because doing sprints the correct SCRUM way did not really apply to our research in a usable and user friendly way.  
 
 ## Other
 Other contributions to the project and/or learning progress, worth mentioning.
@@ -334,5 +326,9 @@ Introduced the group to GitHub and made some resources that help with the setup 
 * Made a GitHub push & pull tutorial: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb)  
 * Created .bat files to run [jupyter lab](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/jupyterlab.bat), [run notebooks](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/run_notebook.bat) and do [ssh portforwarding](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/ssh%20portforward.bat) for usage at your local computer.
 
-### New datascience server
-...
+### New GPU server for Applied Data Science
+During the final weeks of this minor fundings became available from within The Hague University of Applied Sciences. These fundings were purposed for an additional GPU server for the Applied Data Science projects. In this period I have been Collaborating with Senior Lecturer J.B.P. Vuurens to compose a costum server configuration.  
+
+Two main things to take into acount are the server having the best possible price to performance ratio and future expension posibilities available at this time (10-01-2019). Literature research had to be done on how state of the art models perform when trained on different floating point bit precisions, e.g. FP16, FP32 and FP64.  
+
+Knowing this, decisions about different types of GPUs could be made. Besides the GPUs, which hardware is commonly used and why also had to be researched. This includes the current market prices and availability. The (storage) usage and computation capability of the current server also had to be taken into account. This played a role in choosing the CPU model and helped estimating of the amound off HDD and SSD storage required. All of this has led to a new custom (yet to be build by us) GPU server. This server is planned to be build and installed by us somewhere in februari 2019. [Server architecture has been left out, contact j.b.p.vuurens@hhs.nl for details]
