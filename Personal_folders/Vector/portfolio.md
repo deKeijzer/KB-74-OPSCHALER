@@ -29,9 +29,17 @@ We will organize a few feedback moments before the final assessment to make you 
 
 This document gathers the most important steps taken during the Data Analisys course performed by the student Víctor García Romillo. With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
 
-## DATACAMP COURSES
+## Datacamp courses
+
+![Summary](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2013.29.57.png)
 
 I finished the mandatory courses that the minor assigns and I also took part in a Bokeh visualization course that helped me to develop one of my finished python notebooks.
+
+![courses part 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.32.56.png)
+![courses part 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.40.43.png)
+![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.40.53.png)
+![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.41.05.png)
+
 
 ## Coursera: Machine Learning by Stanford University
 This is my progress in the mandatory coursera program, I still have to work on it
