@@ -11,9 +11,9 @@ Email: b.dekeijzer@student.hhs.nl
 ## Introduction
 This is a general introduction to the KB74-OPSCHALER project and it is also intended for people who do not know anything about the Applied Data Science minor.  
   
-In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information from the energy usage data of residential houses, on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
+In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information out of the energy usage data of residential houses on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
 
-The Hague University is one of the collaborators and OPSCHALER has put its data available to students following the Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
+The Hague University is one of the collaborators and offers the OPSCHALER data to students in their Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
   
 <details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
   
@@ -24,8 +24,8 @@ Our team consists of 6 students, 2 of which are doing this for their European Pr
 </details>  
   
   
-Our research started out by trying to predict the electricity and gas power consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
-Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the mean gas consumption on the aggregated level by making predictions with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 52 houses and thus could represent a block of houses. In a real life scenario, the amount of time the models are able to predict ahead is limited by how far the used weather forecasts go. These predictions are done by using the different models listed below and are eventually compared to each other. The hourly predictions are also downsample to one day and one week resolution, to evaluate the models on different resolutions.  
+Our research started out by trying to predict the electricity and gas consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
+Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the gas consumption of houses on the aggregated level, predicting one hour, a day and a week ahead with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 54 houses and could represent a block of houses. These predictions are done by using the different models listed below and are eventually compared to each other.  
 
 - MVLR: Multivariate Linear Regression
 - DNN: Deep Neural Network
@@ -34,6 +34,9 @@ Due to model complexity, time, and scarce messy data, the research got narrowed 
 - LSTM: Long Short-Term Memory
 - GRU: Gated Recurrent Unit
 - TimeDistributed(CNN)+RNN+DNN
+
+Despite these models being based on data on the aggregated level, they should also work for individual houses when trained specifically for that house. Creating an accurate general model, using only weather data is just hard due to each house having a specific gas consumption pattern.  
+
 
 ## Jargon
 `TODO: Add more jargon.  `  
@@ -132,7 +135,7 @@ The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as
   * Collaborative filtering; inside the training loop: [link to course](https://course.fast.ai/lessons/lesson5.html)
   * Interpreting embeddings; RNNs from scratch: [link to course](https://course.fast.ai/lessons/lesson6.html)
 
-These courses have been very usefull to learn more about DNNs and specifically CNNs and RNNs. Certain methods like the learning rate scheduler and transfer learning have been applied in Keras during the project.  
+These courses have been very usefull to learn more about DNNs and specifically CNNs and RNNs. Certain methods like the learning rate scheduler and transfer learning have been applied in Keras during the project.
 
 
 ## Friday presentations  
@@ -205,7 +208,7 @@ With notebook two being done, the final DataFrames can be used to train the diff
 ### GitHub repositoy: Multivariate Time Series Models in Keras
 Once the model complexity in Keras kept increasing, i had to think of a way to keep my peers up to date with how all the models work. Along with this, i experienced that it is a great struggle to learn about time series models when starting with no knowledge about them at all. Needing to use Google for weeks and combining the information from tons of resources is a huge hassle for anyone.  
 
-Therefor i created the repository [Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras), which contains all the models from this project along with an explanation per model. This repository is ment for anyone that has no knowledge about OPSCHALER, it should give a throughout explanation on how each model has been established and why certain choices have been made. The repository contains the following notebooks, they are certainly worth a look (alongside with the repository in general, [link](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras)). It is adviced however to look at the notebooks using Jupyter (click: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deKeijzer/Multivariate-time-series-models-in-Keras/master)) and browse to the `notebooks` folder.  
+Therefor i created the repository [Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras), which contains all the models from this project along with an explanation per model. This repository is ment for anyone that has no knowledge about OPSCHALER, it should give a throughout explanation on how each model has been established and why certain choices have been made. The repository contains the following notebooks, they are certainly worth a look (alongside with the repository in general, [link](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras)). It is adviced however to look at the notebooks using Jupyter (click: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deKeijzer/Multivariate-time-series-models-in-Keras/master)) and browse to the `notebooks` folder. Commonly used functions in multiple notebooks are found in my `keijzer.py` file [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/keijzer.py).   
 
 - [1. EDA & Feature engineering](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/1.%20EDA%20%26%20Feature%20engineering.ipynb)  
 - [2. MVLR](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/2.%20MVLR%20.ipynb)  
@@ -217,7 +220,7 @@ Therefor i created the repository [Multivariate Time Series Models in Keras](htt
 - [5.2 CNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.2%20CNN.ipynb)   
 - [6. TimeDistributed(CNN)+RNN+DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/6.%20TimeDistributed(CNN)%2BRNN%2BDNN.ipynb)  
 
-Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.
+Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.  
 
 
 ## Complete list of all my notebooks & contributions to the project
@@ -314,41 +317,9 @@ This folder contains all the notebooks related to deep learning. Note that there
 
 
 ## Scrum
-`TODO: Don't link individual tickets, possibly show a screenshot of each task board.`  
-`TODO: Combine these tickets with the notebooks. `  
-`TODO: Say that after week 10 we stopped using Scrum due to it not being particulary usefull (in the way it should be used) for our research.`  
-The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
-* [Sprint 1](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-1/id-84641-11359-18)  
-It seems that a lot of Scrum tickets are missing.
-  * (3h) Datacamp course 1+2
-  * (2h) Visualizing practise data: create practise data for the group, to create visualizations from.
-* [Sprint 2](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-2/id-84641-11359-120)  
-It seems that a lot of Scrum tickets are missing.
-  * (14h) Cleaning data
-* [Sprint 3](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-3/id-84641-11359-158)
-  * (7.5h) NaN information per dwelling, one large table
-  * (33h) Datacamp KB-74 assignments
-  * (4h) NaN streak checker function
-  * (5h) NaN checker plot function
-  * (4h) EDA on dwelling P01S01W8655
-  * (3h) Correlation heatmaps of all dwellings
-  * (2h) EDA + multi variate regression on all dwellings
-  * (8h) Prepare dwelling dataframes (unprocessed)
-  * (1h) Combine dataframes (smartmeter, weather)
-  * (20h) Prepare dwelling dataframes (processed)
-  * (5h) Prepare high resolution weather df
-  * (2h) GitHub README: document important notebooks & datalocations
-  * (1.5h) Create two files which contain all the 'combined_gas_smart_weather_dfs'
-  * (2h) Correctly document my own Scrumwise tasks
-  * (8h) Preprocessing data for deep learning
-* [Sprint 4](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-4/id-84641-11393-72)  
-A lot of time has gone into certain tasks due to searching for literature, reading literature and learning how certain things should be done.
-  * (7.5h) NaN information per dwelling, in one large table
-  * (8h) Preprocessing data for deep learning
-  * (35h) Basic LSTM & seq2seq
-  * (35h) Feedforward NNs
-  * (8h) Hyperparameter optimazation
-  * (18h) Preprocessing for LSTM
+Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory.  
+Once we found this wasn't the case, we decided to drop it.  
+This decision has been made because doing sprints the correct SCRUM way did not really apply to our research.  
 
 ## Other
 Other contributions to the project and/or learning progress, worth mentioning.
