@@ -11,9 +11,9 @@ Email: b.dekeijzer@student.hhs.nl
 ## Introduction
 This is a general introduction to the KB74-OPSCHALER project and it is also intended for people who do not know anything about the Applied Data Science minor.  
   
-In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information out of the energy usage data of residential houses on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
+In the OPSCHALER project multiple universities and (energy) companies collaborate in developing methods and tools to extract useful information from the energy usage data of residential houses, on different aggregation levels. For more information on OPSCHALER itself, see their website: [www.opschaler.nl]( http://www.opschaler.nl/).  
 
-The Hague University is one of the collaborators and offers the OPSCHALER data to students in their Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
+The Hague University is one of the collaborators and OPSCHALER has put its data available to students following the Applied Data Science minor, which takes one semester (30 ECT). This leads us to the KB74-OPSCHALER project.  
   
 <details><summary> <b>Click here for information regarding the KB74-OPSCHALER team.</b>  </summary>  
   
@@ -24,8 +24,8 @@ Our team consists of 6 students, 2 of which are doing this for their European Pr
 </details>  
   
   
-Our research started out by trying to predict the electricity and gas consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
-Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the gas consumption of houses on the aggregated level, predicting one hour, a day and a week ahead with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 54 houses and could represent a block of houses. These predictions are done by using the different models listed below and are eventually compared to each other.  
+Our research started out by trying to predict the electricity and gas power consumption of individual residential houses on a 10 second and one-hour resolution, respectively. The time we wanted to predict ahead was one hour to a week, by using as less data as possible. 
+Due to model complexity, time, and scarce messy data, the research got narrowed down to predicting the mean gas consumption on the aggregated level by making predictions with an hourly resolution. This is done by only using historical and future weather information. Whereas the aggregated level in our case consists of the mean gas usage of 52 houses and thus could represent a block of houses. In a real life scenario, the amount of time the models are able to predict ahead is limited by how far the used weather forecasts go. These predictions are done by using the different models listed below and are eventually compared to each other. The hourly predictions are also downsample to one day and one week resolution, to evaluate the models on different resolutions.  
 
 - MVLR: Multivariate Linear Regression
 - DNN: Deep Neural Network
@@ -34,9 +34,6 @@ Due to model complexity, time, and scarce messy data, the research got narrowed 
 - LSTM: Long Short-Term Memory
 - GRU: Gated Recurrent Unit
 - TimeDistributed(CNN)+RNN+DNN
-
-Despite these models being based on data on the aggregated level, they should also work for individual houses when trained specifically for that house. Creating an accurate general model, using only weather data is just hard due to each house having a specific gas consumption pattern.  
-
 
 ## Jargon
 `TODO: Add more jargon.  `  
