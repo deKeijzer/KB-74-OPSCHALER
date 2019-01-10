@@ -1,9 +1,6 @@
 # Portfolio Megan Meezen KB-74-OPSCHALER
 
 
-
-
-
   <p align="center">
   <b>Welcome reader, feel free to have a look around</b><br>
   <a href="#">This is my portfolio for the minor Applied data science from the Hague University of applied sciences. I was assigned with other fellow students to project OPSCHALER from the TU Delft. The project OPSCHALER started in September. The goal for project OPSCHALER</a> 
