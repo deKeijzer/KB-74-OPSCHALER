@@ -176,10 +176,13 @@ Certain events have been marked with an arrow, to see their description click th
 Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models that are used for the gas consumption prediction.
 
 ## Presentable (final) notebooks in order
-* Data preperation & cleaning
-  * Reading in the KNMI weather data files, combining them into one DataFrame and transforming datetime information using Pandas and glob. Link to the notebook: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/1.KNMI_high_resolution_combining_dfs.ipynb)  
+* Data preparation & cleaning
+  * Reading in the KNMI weather data files, combining them into one DataFrame and transforming datetime information using Pandas and glob. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/1.KNMI_high_resolution_combining_dfs.ipynb)  
   
-  * The main data preperation notebook where Dask has been used to run as many parts of the code in parallel over multiple CPU cores. The list below contains the things that have been done in this notebook. Link to the notebook: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
+  * The main data preperation notebook, here Dask has been used to run as many parts of the code in parallel over multiple CPU cores. This parallelization is visualized in a gif below. The list below contains the things that have been done in this notebook. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
+      
+      <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/dask.gif"> </p>
+  
     - Reading in the previously created weather data.  
     - Reading in the smart meter data per dwelling using glob.  
     - Splitting the smart meter data into a smart (electricity) and gas DataFrame because they are on a 10 second and 1 hour resolution respectively.  
@@ -187,8 +190,7 @@ Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created
     - Combining the three DataFrames on a 10 second and hourly resolution. In the 10 second DataFrame the weather and gas values have been resampled by forward filling the values. In the 1 hour resolution the mean of the weather data and the sum of the electrical power consumption has been taken.  
     - Creating informative NaN plots and NaN information dataframes per dwelling. More indepth information about the NaN information table can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/Raw%20dwelling%20information%20table.ipynb).
         - The NaN figure has partly been made by Pol, his version can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Sensor_data_NaN_vis_if_in_rows.ipynb).
-        - My version has problems with the original function fixed, but also contains some layout changes
-    [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
+        - My version  is displayed below. It contains fixed of some problems with the original function, but also contains layout changes.
     
     <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/P01S02W6848_hour.png"> </p>
     
