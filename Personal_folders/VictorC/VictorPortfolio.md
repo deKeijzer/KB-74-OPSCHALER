@@ -24,12 +24,6 @@ Feedback moments
 We will organize a few feedback moments before the final assessment to make you aware of how your portfolio may be improved. We will announce these feedback moments. Meanwhile, we recommend to keep your portfolio up to date, to fully benefit form the opportunity to receive feedback.
 
 
-
-
-
-
-
-
 # PERSONAL PORTFOLIO
 
 This personal portofolio performs the analysis of the contribution of Víctor Gómez Muñoz, exchange student studying *Applied Data Science* in *The Hague University of Applied Science*, to the project *Opschaler*. 
@@ -57,7 +51,7 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 
 ## Coursera: Machine Learning by Stanford University
 
-I finished the compulsory *Coursera* weeks 1,2,3 and 6:
+I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests:
 
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera1.JPG">
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera2.JPG">
@@ -67,16 +61,23 @@ I finished the compulsory *Coursera* weeks 1,2,3 and 6:
 
 In the list below you find all the presentations of *Opshaler* group I took part in. For each of the presentations we chose two different persons so that everyone is involved.
 
- 
-[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
-[Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
-[Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx)  
-[Week 5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
-[Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
-[Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx)  
-[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) 
+[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/7-9-2018.pptx)   
+[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/17-10-2018%20good.pptx) 
+[Week 13](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/23-11-2018%20(2).pptx) 
 
-## Python Notebooks 
+## Python Notebooks
+
+This image show the commitments I did during the project:
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/github.JPG">
+
+
+The notebooks I have work on are the ones listed below:
+
+-This notebook was done at the beginning of the project with the help of brian. It was the first time we were cleaning and processing data.[-Load_Files.ipynb](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/Load_Files.ipynb)
+
+-This notebook reproduce multivariate linear regression for the forecasting of gas usage.[-REGRESSION.ipynb](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/REGRESSION/REGRESSION.ipynb)
+
+-This notebook reproduce a Deep neural network for the forecasting of gas usage.[-DNN.ipynb](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/NEURAL/DNN.ipynb)
 
 
 
