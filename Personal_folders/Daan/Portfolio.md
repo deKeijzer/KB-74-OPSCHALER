@@ -36,7 +36,8 @@ __Team 2__: Reading literature on other forecasting studies
 *lots of research on mvlr, deep neural networks but no on fourier transforms, but we tried anyway.. will be shown later*
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
   
-__Weekly presentations__
+__Presentations__  
+[First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
 The weekly presentations I did are listed below: <br>
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present)   
@@ -44,7 +45,6 @@ The weekly presentations I did are listed below: <br>
 [Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
 [Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx) 
 
-[First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
 __Datacamp__
 
