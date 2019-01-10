@@ -1,6 +1,7 @@
+`TODO: Comment code, Add references I found and read, fix datacamp, improve notebooks`
 # PERSONAL PORTFOLIO
 
-This document gathers the most important steps taken during the Data Analisys course performed by the student Víctor García Romillo. With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
+This document gathers the most important steps taken during the Applied Data Science course performed by the student Víctor García Romillo (18076033). With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
 
 ## Datacamp courses
 
@@ -49,14 +50,14 @@ This is the list of the presentations we created until the moment (4-11-2018):
 
 These are the Python Notebooks I finished containing the code I wrote for the Opschaler project:
 
--Bokeh visualization (https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Bokeh_graphs.ipynb)
+- Bokeh visualization [Github link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Bokeh_graphs.ipynb)  
 As we are working with a large dataset we needed a way to visualize and interact with a huge amount of data. This notebook is meant to represent information from the whole dataset, before and after processing it. It was helpful to identify NaN gaps so that the processing of data could fix this problem
 
--Gas biggest gap (https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/gas_biggest_gap.ipynb)
+- Gas biggest gap [Github link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/gas_biggest_gap.ipynb)  
 After doing a visual inspection of data we identified a big number of gaps we had to deal with. Some of the gaps could be interpolated but some others were to big to do so. This notebook removes gap sizes bigger than a certain amount and also returns some important information abount the size of the file until the first big gap is found. This information is relevant to extract some periodicity patterns used later
 
--Hour of the day as feature  
-In order to implement hours of the day as new features to feed the models new columns have to be created in dataframes. This notebook isn't finished yet, I'm currently working on it.
+- Multivariate Linear Regression [Github link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/MVR.ipynb)  
+This notebook was already created by Brian de Keijzer but started over in order to put in practice the knowledge I acquired in this area during the minor.
 
--Feed forward NN
-Next step I'd like to work on is the creation of a feed forward NN. This has already been done by Brian de Keijzer but I'd like to replicate it to put in practice the knowledge I acquired in this area.
+- Feed forward DNN [Github link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/DNN.ipynb)  
+This notebook was already created by Brian de Keijzer but started over in order to put in practice the knowledge I acquired in this area during the minor.
