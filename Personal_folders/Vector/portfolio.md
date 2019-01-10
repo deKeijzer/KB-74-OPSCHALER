@@ -1,30 +1,3 @@
-Assessment of your personal portfolio
-
-The personal portfolio's are assessed individually. The contents of your personal portfolio should reflect your contribution to the project, your abilities and what you have learned. Your portfolio should consist of materials that you either realized individually, or in case of a group effort, a clear statement of what your contribution is in this group effort.
-
-It is important to write your (digital) portfolio in a very easily accessible way. The main document should be like a reader's guide that shortly introduces your contributions and links to pages where the contributions are described in detail. Every contribution should be accessible from the reader's guide in a single click. We are not going to browse the folder, so if you do not link to a document from the reader's guide, we will not include it in the assessment.
-
-For us, it is perfectly acceptable if you write down your portfolio in Github using Markdown, no need to do fancy markups.
-
-Additional portfolio requirements:
-
-    Include your Friday presentations
-    Add screenshots of the online courses you have finished (DataCamp, Coursera, etc)
-    Link to the Python Notebooks you have finished (you can dump them to PDF)
-    List the tickets from the Scrum backlog that you worked on, linked to deliverables, own experiments, etc.
-    Add any other assignment you feel is evidence of your abilities
-
-Deadline
-
-Submit your portfolio by the end of week 17.
-
-
-Feedback moments
-
-We will organize a few feedback moments before the final assessment to make you aware of how your portfolio may be improved. We will announce these feedback moments. Meanwhile, we recommend to keep your portfolio up to date, to fully benefit form the opportunity to receive feedback.
-
-
-
 # PERSONAL PORTFOLIO
 
 This document gathers the most important steps taken during the Data Analisys course performed by the student Víctor García Romillo. With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
@@ -42,20 +15,35 @@ I finished the mandatory courses that the minor assigns and I also took part in 
 
 
 ## Coursera: Machine Learning by Stanford University
-This is my progress in the mandatory coursera program, I still have to work on it
-<insert photo>
+I have completed all mandatory Coursera courses. Green ticks are quizes taken. Programming assingments are not done. Sorry for language missmatch (Semana = Week, Cuestionario = Quiz, Preguntas = Questions).
+
+![Coursera](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/coursera.png)
+
+![1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Intro.png)<br/> 
+![2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Linear%20reg%20with%20one.png)<br/> 
+![3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Linear%20Alg.png)<br/>
+![4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Linear%20reg%20with%20mult.png)<br/>
+![5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/octave.png)<br/>
+![6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Logistic%20reg.png)<br/>
+![7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Regularization.png)<br/>
+![8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/advice%20for%20ML.png)<br/>
+![9](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/ML%20syst%20design.png)<br/> 
+
+
 ## Friday Presentations
 
 This is the list of the presentations we created until the moment (4-11-2018):
 
-[Week 1](https://prezi.com/p/28wycwuqqggc/#present)  
-[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx)  
-[Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx)  
-[Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx)  
-[Week 5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx)  
-[Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx)  
-[Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx)  
-[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) 
+[Week 1](https://prezi.com/p/28wycwuqqggc/#present): All the group edited this presentation.<br/>
+[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx): presented by Víctor Gómez and me.<br/>
+[Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx): presented by Brian de Keijzer and me.<br/>
+[Week 5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx): presented by Daan Boesten and me.<br/>
+[Week 6](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/05-10-2018.pptx): presented by Daan Boesten and me.<br/>
+[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/02-11-2018%20(1).pptx): presented by Daan Boesten and me.<br/>
+[Week 13](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx): presented by Brian de Keijzer and me at TU Delft.<br/>
+[Week 14](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/30-11-2018.pptx): presented by me.<br/>
+[Week 17](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-11-2018.pptx): presented by me.<br/>
+
 
 ## Python Notebooks 
 
