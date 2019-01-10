@@ -199,8 +199,6 @@ This is the process of preparing the raw data for analysis, getting the data in 
   * (3)    EDA on dwelling P01S01W8655: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/EDA%20on%20dwelling%20P01S01W8655.ipynb)
     - Contains a modified version of the gas consumption plot made by Daan. His version can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/correlationships.ipynb).
   * (4)    Pearson correlation matrices: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/reading%20in%20%26%20correlation%20matrices%20on%20processed%20data.ipynb)
-    
-      <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/P01S02W6848_hour.png"> </p>
 
 With notebook two being done, the final DataFrames can be used to train the different models that are used. In our case the one hour DataFrame is used for the models. At first different models have been made in my `Machine & Deep learning` folder, in this repository. But after a while i decided to change that, which leads to the next subchapter.
 
@@ -222,6 +220,7 @@ Therefor i created the repository [Multivariate Time Series Models in Keras](htt
 
 Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.  
 
+`TODO: add not used notebooks, like transferlearning`
 
 ## Complete list of all my notebooks & contributions to the project
 This list contains all my notebooks and contributions to the project. Note that these notebooks have not been made representable, e.g. they are not cleaned up. It just contains all the work done during the project. The relevant notebooks (for teachers to review this portfolio) have already been listed above. The dropdown list however, does give an overview of the jobs done for the project from start to end.
