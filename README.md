@@ -1,14 +1,21 @@
+`TODO: Add Keras multi var. description parts here`
+
 # KB-74-OPSCHALER
 This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at The Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week ahead with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
 
 # Personal portfolio's
 Links to the personal portfolio's of the KB-74-OPSCHALER group members are listed below.
 - [Brian de Keijzer](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/portfolio.md)  
+- [Pol de Visser](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/portfolio.md)  
 - [Victor Garcia](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/portfolio.md)  
-- Pol de Visser  
 - [Victor Gómez Muñoz](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/VictorPortfolio.md)  
 - [Daan Boesten](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Portfolio.md)  
-- Megan Meezen  
+- [Megan Meezen](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/Portfolio%20Megan%20Meezen.md)
+
+
+
+# ----- Notes for the group members are listed below -----
+All (sub)chapters below are ment for the KB74-Opschaler group members.
 
 # Setting up GitHub on JupyterHub
 1. Login to JupyterHub on the datascience server. 
