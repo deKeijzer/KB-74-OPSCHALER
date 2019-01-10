@@ -9,6 +9,7 @@ When I applied to this minor my first priority was learning python. I have worke
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamppoints.JPG">
 
 Now I wil display a list with all my complete *Datacamp* courses (all compulsory courses are completed):
+
 #### Finished Courses:
 
 [Intro to Python for Data Science](https://www.datacamp.com/courses/intro-to-python-for-data-science)  
@@ -23,6 +24,11 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)  
 [Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1)  
 
+![Parte 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp1.JPG)
+![Parte 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp2.JPG)
+![Parte 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp3.JPG)
+![Parte 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp4.JPG)
+
 ## Coursera: Machine Learning by Stanford University
 
 I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests:
@@ -35,9 +41,18 @@ I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives t
 
 In the list below you find all the presentations of *Opshaler* group I took part in. For each of the presentations we chose two different persons so that everyone is involved.
 
-[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/7-9-2018.pptx)   
-[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/17-10-2018%20good.pptx) 
-[Week 13](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/23-11-2018%20(2).pptx) 
+<p>[Week 1](https://prezi.com/p/28wycwuqqggc/#present), presented by Megan & Brian, made by all group members.</p>
+<p>[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/7-9-2018.pptx).</p>   
+<p>[Week 8](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/17-10-2018%20good.pptx).</p>
+<p>[Week 13](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/23-11-2018%20(2).pptx).</p> 
+
+## Paper Contibution
+
+The [research paper]() was the main goal of this project. The parts I have written are :
+
+<p>-*DNN methodology part* (suffered changes made by brian and group suggestions. Also figures are not done by me).</p>
+<p>-*Conclusions* (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
+<p>-*Results from MVLR,DNN, and GRU* (First time we wrote this part, it was done by Megan. However, results changed a lot because a validation problem we had,so I rewrote everything again.)</p>
 
 ## Python Notebooks
 
@@ -53,6 +68,8 @@ The notebooks I have work on are the ones listed below:
 
 -This notebook reproduce a Deep neural network for the forecasting of gas usage.[-DNN.ipynb](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/NEURAL/DNN.ipynb)
 
+-This notebook was the first time I tried MVLR. Its not finsihed, but I used different librarys to the other notebooks.
+[-Gaspower_Linearregression](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/REGRESSION/gaspower_linearregression.ipynb)
 
 
 Student name: Víctor Goméz Muñoz  
