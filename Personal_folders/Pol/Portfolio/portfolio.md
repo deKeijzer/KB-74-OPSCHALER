@@ -12,13 +12,16 @@ Dwelling: A house where residents live.
 ## Short introduction
 In this minor, I have been working on the OPSCHALER project. The main goal of the OPSCHALER project is to measure energy consumption in a smarter and a more efficient way. The team consists of multiple interested parties. The Hague University of Applied Sciences is one of them.  
 The OPSCHALER team managed to gather data of residential dwellings of smart meter data and additional charastaristics of the specific resident dwelling, such as amount of square feet.  
-We were asked to study at the data and come up with a smart way of extracting useful information from the data.  
+We were asked to study at the data and come up with a smart way of extracting useful information from the data. We ended it with different machine learning models to evaluate the accuracy of predicting the natural gas consumption of the residents.  
+   
+[The complete paper can be read here.](**enter link to paper here**)
   
 
 
 ## Online courses
 ### Datacamp
-Personally, I had no knowledge about programming whatsoever before starting this minor. In the first eight weeks, the main goal for myself was learning to program in order to do some data cleaning and EDA on the given data. I completed the following datacamp courses in order to crank up my programming skills:
+Personally, I had no knowledge about programming whatsoever before starting this minor. In the first eight weeks, the main goal for myself was learning to program in order to do some data cleaning and EDA on the given data. I completed the following datacamp courses in order to crank up my programming skills. Apart from the mandatory courses, I did an additional Bokeh course, just for fun.  
+All the Datacamp images are clickable for the respectable state of accomplishments.
 
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/overview.jpg?raw=true">  
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/introduction_python.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/introduction_to_python.jpg?raw=true" /></a>
@@ -31,4 +34,12 @@ Personally, I had no knowledge about programming whatsoever before starting this
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/python_toolbox2.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/python_toolbox2.jpg?raw=true" /></a>
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/statistical_thinking.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/statistical_thinking.jpg?raw=true" /></a>
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/scikit.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/scikit.jpg?raw=true" /></a>
-<a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/interactive_bokeh.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/interactive_bokeh.jpg?raw=true" /></a>
+<a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/interactive_bokeh.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/interactive_bokeh.jpg?raw=true" /></a>  
+  
+### Coursera   
+   
+## Notebooks
+### EDA
+### Models
+## Presentations
+## Meeting notes
