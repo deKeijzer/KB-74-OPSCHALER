@@ -31,7 +31,7 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 
 ## Coursera: Machine Learning by Stanford University
 
-I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests:
+I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests (None of the programing tasks were completed):
 
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera1.JPG">
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera2.JPG">
