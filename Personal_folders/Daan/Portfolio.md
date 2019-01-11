@@ -57,12 +57,12 @@ __Team 2__: Reading literature on other forecasting studies
   
   We also noticed that most dwellings seem to stop heating when the outside temperature is above around 16.5 °C. This property was used to create a simple linear regression using the gas consumption when the outside temperature was lower than 16.5 °C. The result can be seen in the following plot:
       <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp1d%20(1).png"  width="700"> </p>
-  When this is extrapolated, an estimation can be calculated for the gas consumption at temperatures below  16.5 °C. When the outside temperature is higher than this value, the only gas consumped could be due to human behaviors such as taking showers and cooking. To get insight into this value, I wrote a simple code that calculates the mean gas consumption of outside tmeperatures above 16.5 °C, which can be seen below:
+  When this is extrapolated, an estimation can be calculated for the gas consumption at temperatures below  16.5 °C. When the outside temperature is higher than this value, the only gas consumped could be due to human behaviors such as taking showers and cooking. To get insight into this value, I wrote a simple code that calculates the mean gas consumption when the average outside tmeperatures is above 16.5 °C, which can be seen below:
   
     bias = rdf[rdf['T'] > 16.5] #defines a bias for temperatures above 16.5 Degrees 
     bias = bias['gasPower'].mean() #takes the average of gasPower when T > 16.5
     print(bias)
-  For dwelling W8655, the offset (called bias) is around 0.012. This value could be used as the bias in the regression formula y = ax + __b__. 
+  For dwelling W8655, the offset (called bias) is around 0.012 m3.  
   
 Around this time, our project member Brian started advancing in machine learning and got forecasts that could actually be used in the research paper. Instead of trying to keep up with Brian's achievements, I decided to focus on using Fourier Transforms to recognize human patterns. 
     
