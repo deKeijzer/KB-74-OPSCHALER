@@ -145,6 +145,14 @@ The weekly KB74-OPSCHALER presentations that I contributed to. The presentations
 * [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor G. and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor G. Figures from slide 42 are from Daan. The other content is made by me.
 * [Week ? (07-12-2018), contains useful animations](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/07-12-2018.pptx), made & presented by me.
 
+## Research paper
+My contributions to the research paper have been broadly spread out. Most of my contributions where general minor layout, grammar, consistency and paragraph changes. The methodology has partly been written by me. In specific the parts about the Pearson correlation coefficients. Most thing about the models have been written in collaboration with Victor Garcia. The research paper can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Opschaler%20paper%20-%2011-01-2019.pdf).  
+
+Chapter 2.2, 2.3, 2.4, 2.5, 2.6, 2.7 and 2.8 have been written by me.  
+Figure 2 - 4 have been made by Victor Garcia and me, 6 - 14 have been made by me.  
+Table 2 design is by me.  
+
+
 
 ## Python notebooks
 All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i try to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.
@@ -315,3 +323,4 @@ Introduced the group to GitHub and made some resources that help with the setup 
 * Made a README for the project members containing information on how to setup GitHub on the data science server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
 * Made a GitHub push & pull tutorial: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb)  
 * Created .bat files to run [jupyter lab](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/jupyterlab.bat), [run notebooks](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/run_notebook.bat) and do [ssh portforwarding](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/ssh%20portforward.bat) for usage at your local computer.
+
