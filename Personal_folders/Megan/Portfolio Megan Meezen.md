@@ -44,6 +44,11 @@ This paper wil include information on the following subject:
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
 
 ```python
-s = "Python syntax highlighting"
-print s
+
 ```
+
+
+
+#### Communication
+
+As In have mentioned in the beginnen of my portfolio. Before I started this minor I didn't have any programming background. I have done a lot of research in the first couple of weeks on different topics regarding data science. I made a couple of documents containing helpfull information about: Fourier, Linear Regression, Regressional types, Neural networks, Seaborn, guide on how to use Pandas. I created these documents for me to better understand Python and machine learnng and so my groupmates could also benefit from the documents. I have also created a Flow-chart based on the main code from OPSCHALER which has been changed over time. It was quite important for the progress of the group to have an overview of what we we're exactly doing at the time. 
