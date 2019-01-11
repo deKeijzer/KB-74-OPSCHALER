@@ -82,8 +82,12 @@ The result after the FFT can be seen below:
   
   My contributions in our [research paper](https://dehaagsehogeschool.sharepoint.com/:b:/s/opschaler_groups/EUN5AGB4gv9MiwaNT-xZIdsBMhppiggJydM8LWwQN51ZVw?e=Jd7kvz) were in the following (sub)chapters:
     
+  * Abstract (fully written)
+  * Methodology:  
+    CNN (partly written)
     
-    
+  In addition to this, I added most references to the paper and made sure they were displayed correctly.   
+
   __Presentations__  
   
 [First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
