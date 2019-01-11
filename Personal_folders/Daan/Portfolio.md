@@ -39,9 +39,11 @@ __Team 2__: Reading literature on other forecasting studies
   
   Alongside the literature, all project members focused on machine learning in Python. This was mostly done using Datacamp and Coursera. The courses and weeks in which I participated can be found at the bottom of the portfolio. Due to my background in Physics, I had a pretty solid knowledge of Matlab, which is my opinion pretty similar to Python. 
   
-  Due to the impressive  motivation and contribution in machine learning by our group member Brian, my focus during this minor was mainly around understanding and visualizing the data. Thus, this portfolio will mostly show the contributions I did in terms of getting to know the fundementals behind the data.
+  Due to the impressive  motivation and contribution in machine learning by our group member Brian, my focus during this minor was mainly around understanding and visualizing the data. Thus, this portfolio will mostly show the contributions I did in terms of getting to know the fundementals behind the data. 
   
+  __Understanding and visualizing the data__
   
+ To reach our goal of using as less building characteristics and climate data as possible, I decided to look what could be done with just the outside temperature and gas consumption data from multiple dwellings. 
   __
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
