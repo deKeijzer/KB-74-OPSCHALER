@@ -43,8 +43,8 @@ __Team 2__: Reading literature on other forecasting studies
   
   __Understanding and visualizing the data__
   
- To reach our goal of using as less building characteristics and climate data as possible, I decided to look what could be done with just the outside temperature and gas consumption data from multiple dwellings. 
-  __
+ 
+ To reach our goal of using as less building characteristics and climate data as possible, I decided to look what could be done with just the outside temperature and gas consumption data from multiple dwellings. After team 2 had finished cleaning and preparing the data, I wrote a code to visualize the temperature and gas consumption at different time frames. The following plot shows the result:
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
   
