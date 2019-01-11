@@ -8,7 +8,7 @@ During this minor we tried to answer the following research question:
 
 _Is it possible to accurately predict the house energy consumption with few physical building parameters and the climate data with use of multivariate regression models and neural network models?_
 
-After consulation with the OPSCHALER group it was decided to aim to predict the energy consumption for a week ahead with hourly and daily resolutions. Three different methods were compared based on the accuracy of the prediction:
+After consulation with the OPSCHALER group it was decided to aim to predict the energy consumption for a week ahead with hourly and daily resolutions. Three different methods were going to be compared based on the accuracy of the prediction:
 
 1. Multivariate regression
 2. Fourier series
