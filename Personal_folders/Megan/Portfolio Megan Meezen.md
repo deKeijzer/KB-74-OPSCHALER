@@ -19,16 +19,25 @@
 This paper wil include information on the following subject:
 
 - Completed courses: Datacamp, Coursera
-- Data preperation/cleaning
-- Data visualization/collection
-- Predictive models
-- Evaluation
+- Data preperation&cleaning
+- Data visualization&collection
+- predictive models research&Evaluation
 - Communication: Presentation, summaries, paper etc.
 - Domain knowledge
 
+###
+
+  -Dwellings: Residential houses in the area of Rotterdam the Netherlands
+  -Smartmeter data: data from smartmeters from dwellings
+  -gasPower: Amount of gas used
+  -Also two papers were mostly used to do inquistry research(dutch translation: vooronderzoek):
+  
+  -Seaborn: Is een correlatiemap 
+  -Fourier: Wiskundige manier om patronen 
+
 ### Completed Courses
 
-#### Datacamp
+### Datacamp
   I have completed the mandatory Datacamp courses. Which I found very helpfull for beginning programmers. Below you can see my score and completed chapters:
 
 
@@ -36,7 +45,7 @@ This paper wil include information on the following subject:
    Here is more insight in which courses/chapters I completed:
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp21.png"> </p>
 
-#### Coursera
+### Coursera
   I have also completed the mandatory Coursera machine learning courses by Stanford university from Andrew Ng. 
  
 
@@ -47,6 +56,15 @@ This paper wil include information on the following subject:
 Starter Basic data cleaning dummy set: 
 
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb)  
+
+  I have also created a flowchart to have an insight in what the main code does. A flowchart has contributed to make the code clear for all groupmembers. See flowchart below. I used draw.io to create it.
+  
+  
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Flowchart%20cleaning.png"> </p>
+ 
+ [Click the link for the notebook on which the flowchart is based:)]( 
+ https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/data_preperation_main.ipynb)  
+
 
 ### Data visualization
   In last couple of weeks of the first semester of the project. The best available dwelling was dwelling ID: 378, currently this dwelling has changed and the best dwelling is now dwelling ID: 8655. The primairy focus was to try to visualize the gasPower. The graph should've been more accurate since the dataset still consisted of NaN's and no mean values were taken. [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/First_visuals.ipynb) 
@@ -82,6 +100,10 @@ Fourier methhod 2
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/Fourier2.ipynbb)
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/fourier1_2.png"> </p>
+
+### Conducted research on predictive models/NN
+
+During the project different predictive models were used. The project team was divided into two teams those who researched and those who created the models. I researched LSTM and GRU which are both neural networks which belonged to RNN. I also researched DNN and MVLR. There are multiple ways of interpreting these models and different was to compute them. Below I will link to the research I conducted. I would've linked my all my bookmarks/refrences in this git hub portfolio which I read, but there are hundreds of them. So to keep this my github portfolio ordened I inserted the documents I made regarding the machine learning topics. 
 
 #### Communication
 
