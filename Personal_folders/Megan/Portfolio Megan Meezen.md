@@ -38,15 +38,22 @@ This paper wil include information on the following subject:
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp21.png"> </p>
 
 #### Coursera
-  I have also completed the mandatory Coursera machine learning courses by Stanford university from Andrew Ng. 
+  I have also completed the mandatory Coursera machine learning courses by Stanford university from Andrew Ng. Even though 
  
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
 
+### Data preperation and cleaning
+  Data preperation and cleaning are known in data science as very time consuming tasks. Since I didn't have any experience with Python I searched the internet for usefull guides on how to prep and clean the data we had. At first we only had smart meter data from 60 dwellings which now have been reduced to 52 dwellings. There were quite a lot of problems with the data sets from smart meter data and KNMI data. Before I even attempted in cleaning & prepping the "real" smartmeter data I searched for a random dataset and started prepping and cleaning to practice and develop my skills. See the link to my basic data prep&clean code on a IMDB movie rating.
+  
+[https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb]
+  
+  
+  
 ```python
+  
 
 ```
-
 
 
 #### Communication
