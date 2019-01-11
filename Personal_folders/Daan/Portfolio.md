@@ -44,12 +44,15 @@ __Team 2__: Reading literature on other forecasting studies
   __Understanding and visualizing the data__
   
  
- To reach our goal of using as less building characteristics and climate data as possible, I decided to look at what could be done with just the outside temperature and gas consumption data from multiple dwellings. After team 2 had finished cleaning and preparing the data, I [wrote a code](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) to visualize the temperature and gas consumption at different time frames. The following gif shows the result:
+ To reach our goal of using as less building characteristics and climate data as possible, I decided to look at what could be done with just the outside temperature and gas consumption data from multiple dwellings. After team 2 had finished collecting the smart meter data from the OPSCHALER database and weather data from KNMI, I [wrote a code](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) to visualize the temperature and gas consumption at different time frames. The following gif shows the result:
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
     
  The first plot is the (almost) raw data with a resolution of 1 hour. Mainly due to human patterns and day/night diffference, the data fluctuates a lot. However, when the data is resampled to different time frames, an inversely proportional correlation between gas consumption and temperature begins to show up. Although this is intuitive, showing this correlation with data is pretty convincing. 
-  
+   
+   To show this in another way, [in the same notebook](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) I used Seaborn heatmap to plot the correlation between all variables from the KNMI data and dwelling energy consumptions. The correlation between outside temperature (T) and gas consumption (gasMeter) was calculated at different times frames, which can be seen in the follow plot: 
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/correlatie.png"  width="700"> </p>
+    
 __Presentations__  
 [First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
