@@ -49,14 +49,24 @@ Starter Basic data cleaning dummy set:
 
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb)  
 
-#### Data visualization
+### Data visualization
   In last couple of weeks of the first semester of the project. The best available dwelling was dwelling ID: 378, currently this dwelling has changed and the best dwelling is now dwelling ID: 8655. The primairy focus was to try to visualize the gasPower. The graph should've been more accurate since the dataset still consisted of NaN's and no mean values were taken. 
   
+  Below is a piec of the code which created the graph(with NaN's and no mean)
 ```python
+  import pandas as pd
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import seaborn as sns 
+  #To check the dataset select the first few columns
   
+  df.head()
+
+  df = pd.read_csv('/datc/opschaler/output/P01S01W0378_gas_electricity_weather.csv',header = 0, delimiter="\t")
 
 ```
 
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/firstplot378withnans.png"> </p>
 
 #### Communication
 
