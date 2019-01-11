@@ -1,5 +1,5 @@
 `TODO: check spelling`  
-Last updated: 04-01-2019 (DD-MM-YYYY)
+Last updated: 10-01-2019 (DD-MM-YYYY)
 
 # Personal portfolio  
 Personal portfolio for the minor Applied Data Science at the Hague University of Applied Sciences.  
@@ -135,7 +135,7 @@ The courses from [fast.ai](https://www.fast.ai/) got recommended by a teacher as
   * Collaborative filtering; inside the training loop: [link to course](https://course.fast.ai/lessons/lesson5.html)
   * Interpreting embeddings; RNNs from scratch: [link to course](https://course.fast.ai/lessons/lesson6.html)
 
-These courses have been very usefull to learn more about DNNs and specifically CNNs and RNNs. Certain methods like the learning rate scheduler and transfer learning have been applied in Keras during the project.  
+These courses have been very usefull to learn more about DNNs and specifically CNNs and RNNs. Certain methods like the learning rate scheduler and transfer learning have been applied in Keras during the project.
 
 
 ## Friday presentations  
@@ -173,13 +173,14 @@ Certain events have been marked with an arrow, to see their description click th
 
 </details>  
   
-Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models that are used for the gas consumption prediction.
+Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models that are used for the gas consumption prediction. The most relevant and important notebooks are listed below.  
 
-## Presentable (final) notebooks in order
-* Data preparation & cleaning
-  * Reading in the KNMI weather data files, combining them into one DataFrame and transforming datetime information using Pandas and glob. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/1.KNMI_high_resolution_combining_dfs.ipynb)  
+## Most relevant notebooks
+* Data preparation & cleaning  
+This is the process of preparing the raw data for analysis, getting the data in user friendly DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
+  * (1)    Reading in the KNMI weather data files, combining them into one DataFrame and transforming datetime information using Pandas and glob. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/KNMI/1.KNMI_high_resolution_combining_dfs.ipynb)  
   
-  * The main data preperation notebook, here Dask has been used to run as many parts of the code in parallel over multiple CPU cores. This parallelization is visualized in a gif below. The list below contains the things that have been done in this notebook. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
+  * (2)     The main data preperation notebook, here Dask has been used to run as many parts of the code in parallel over multiple CPU cores. This parallelization is visualized in a gif below. The list below contains the things that have been done in this notebook. [Link to the notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Dask/Dask%20data%20processing.ipynb)
       
       <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/dask.gif"> </p>
   
@@ -190,30 +191,49 @@ Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created
     - Combining the three DataFrames on a 10 second and hourly resolution. In the 10 second DataFrame the weather and gas values have been resampled by forward filling the values. In the 1 hour resolution the mean of the weather data and the sum of the electrical power consumption has been taken.  
     - Creating informative NaN plots and NaN information dataframes per dwelling. More indepth information about the NaN information table can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/Raw%20dwelling%20information%20table.ipynb).
         - The NaN figure has partly been made by Pol, his version can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Sensor_data_NaN_vis_if_in_rows.ipynb).
-        - My version  is displayed below. It contains fixed of some problems with the original function, but also contains layout changes.
+        - My version  is displayed below. It contains fixed of some problems with the original function, but also contains layout changes.  
     
     <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/P01S02W6848_hour.png"> </p>
     
-    `TODO: Add dask gif from presentation in here`.  
-    
-* (!) EDA  
-Notebooks that contain general EDA on the created DataFrames which contain all the combined raw data per dwelling. Plus a table containing usefull information per dwelling has been created. 
-  * EDA on dwelling P01S01W8655: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/EDA%20on%20dwelling%20P01S01W8655.ipynb)
-    - Contains a modified version of the gas consumption plot made by Daan.  
-    `ADD my plot here`
-  * Pearson correlation matrices: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/reading%20in%20%26%20correlation%20matrices%20on%20processed%20data.ipynb)
-    
-      <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/P01S02W6848_hour.png"> </p>
+* Exploratory Data Analysis (EDA)  
+  * (3)    EDA on dwelling P01S01W8655: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/EDA%20on%20dwelling%20P01S01W8655.ipynb)
+    - Contains a modified version of the gas consumption plot made by Daan. His version can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/correlationships.ipynb).
+  * (4)    Pearson correlation matrices: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/EDA/reading%20in%20%26%20correlation%20matrices%20on%20processed%20data.ipynb)
+
+With notebook two being done, the final DataFrames can be used to train the different models that are used. In our case the one hour DataFrame is used for the models. At first different models have been made in my `Machine & Deep learning` folder, in this repository. But after a while i decided to change that, which leads to the next subchapter.
+
+
+### GitHub repositoy: Multivariate Time Series Models in Keras
+Once the model complexity in Keras kept increasing, i had to think of a way to keep my peers up to date with how all the models work. Along with this, i experienced that it is a great struggle to learn about time series models when starting with no knowledge about them at all. Needing to use Google for weeks and combining the information from tons of resources is a huge hassle for anyone.  
+
+Therefor i created the repository [Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras), which contains all the models from this project along with an explanation per model. This repository is ment for anyone that has no knowledge about OPSCHALER, it should give a throughout explanation on how each model has been established and why certain choices have been made. The repository contains the following notebooks, they are certainly worth a look (alongside with the repository in general, [link](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras)). It is adviced however to look at the notebooks using Jupyter (click: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deKeijzer/Multivariate-time-series-models-in-Keras/master)) and browse to the `notebooks` folder. Commonly used functions in multiple notebooks are found in my `keijzer.py` file [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/keijzer.py).   
+
+- [1. EDA & Feature engineering](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/1.%20EDA%20%26%20Feature%20engineering.ipynb)  
+- [2. MVLR](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/2.%20MVLR%20.ipynb)  
+- [3. DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/3.%20DNN.ipynb)  
+- [4.1 CNN & RNN Data Preperation](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.1%20CNN%20%26%20RNN%20Data%20Preperation.ipynb)  
+- [4.2 LSTM](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.2%20LSTM.ipynb)  
+- [4.3 GRU](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.3%20GRU.ipynb)  
+- [5.1 Multivariate time-series to images](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.1%20Multivariate%20time-series%20to%20images.ipynb)  
+- [5.2 CNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.2%20CNN.ipynb)   
+- [6. TimeDistributed(CNN)+RNN+DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/6.%20TimeDistributed(CNN)%2BRNN%2BDNN.ipynb)  
+
+Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.  
+
+`TODO: add not used notebooks, like transferlearning`
+
+## Complete list of all my notebooks & contributions to the project
+This list contains all my notebooks and contributions to the project. Note that these notebooks have not been made representable, e.g. they are not cleaned up. It just contains all the work done during the project. The relevant notebooks (for teachers to review this portfolio) have already been listed above. The dropdown list however, does give an overview of the jobs done for the project from start to end.
+
+<details><summary> <b>Click here to expand this list.</b>  </summary>  
   
-  
-  
-  
-------------------
+<p> 
+Quite a lot of notebooks which are relevant for KB74-OPSCHALER have been created by me. Most started out as smaller notebooks, to learn the programming techniques required for the job. Later on a lot of the smaller notebooks have been combined in larger important notebooks. Important notebooks have been marked with (!), really important ones are marked with (!!). These (!!) are notebooks that contain main code for KB74-OPSCHALER. I basically have done everything from extracting the raw data from multiple sources, to cleaning and combining it to two usable Pandas DataFrame (10s and 1H resolution). Besides this i also did all the preprocessing and created all the models that are used for the gas consumption prediction.  
   
 The notebooks that have been made for KB74-OPSCHALER are:
   
 * Data preperation  
-This is the process of preparing the raw data for analysis, getting the data in easy useable DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
+This is the process of preparing the raw data for analysis, getting the data in user friendly DataFrames. The raw data consists of sensor data per dwelling, smartmeter data per dwelling and KNMI weather data of a station in Rotterdam. The smartmeter dataframes consists of merged electricity and gasmeter frames. Certain datafiles are in nested folders, with each file having a uniqiue name. The file types are both `.csv` and `.xlsx`. 
   * Reading in data 
     * Reading in raw sensor + excel data: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/Reading%20_in_data/reading_in_raw_sensor%2Bexcel_data.ipynb)
     * Reading in raw smartmeter data: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/Data_preperation/Reading%20_in_data/reading_in_raw_smartmeter_data.ipynb)
@@ -281,62 +301,17 @@ This folder contains all the notebooks related to deep learning. Note that there
           * Single layer LSTM result with a daily sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/LSTM%20result%20hourly%20resampled%20to%20daily%20by%20sum%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a hourly sample rate: <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/seq2seq%20result%20hourly%2029-10-2018.png"> </p>
           * Sequence 2 sequence with a daile sample rate: still need to create this
+* These model notebooks are out of date. The most recent ones are found in the `Multivariate Time Series Models in Keras` subchapter.  
           
 **Note about shared work:** `PyCharm: Data preperation main script` and `Dask: Dask data processing` contain functions which were made by other group members. Some of these functions (NaN figure for example) have been adapted and changed by me. Besides that, all listed notebooks are made by me.
-
-### GitHub repositoy: Multivariate Time Series Models in Keras
-Once the model complexity in Keras kept increasing, i had to think of a way to keep my peers up to date with how all the models work. Along with this, i experienced that it is a great struggle to learn about time series models when starting with no knowledge about them at all. Needing to use Google for weeks and combining the information from tons of resources is a huge hassle for anyone.  
-
-Therefor i created the repository [Multivariate Time Series Models in Keras](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras), which contains all the models from this project along with an explanation per model. This repository is ment for anyone that has no knowledge about OPSCHALER, it should give a throughout explanation on how each model has been established and why certain choices have been made. The repository contains the following notebooks, they are certainly worth a look (alongside with the repository in general, [link](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras)). It is adviced however to look at the notebooks using Jupyter (click: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deKeijzer/Multivariate-time-series-models-in-Keras/master)) and browse to the `notebooks` folder.  
-
-- [1. EDA & Feature engineering](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/1.%20EDA%20%26%20Feature%20engineering.ipynb)  
-- [2. MVLR](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/2.%20MVLR%20.ipynb)  
-- [3. DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/3.%20DNN.ipynb)  
-- [4.1 CNN & RNN Data Preperation](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.1%20CNN%20%26%20RNN%20Data%20Preperation.ipynb)  
-- [4.2 LSTM](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.2%20LSTM.ipynb)  
-- [4.3 GRU](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/4.3%20GRU.ipynb)  
-- [5.1 Multivariate time-series to images](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.1%20Multivariate%20time-series%20to%20images.ipynb)  
-- [5.2 CNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/5.2%20CNN.ipynb)   
-- [6. TimeDistributed(CNN)+RNN+DNN](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/6.%20TimeDistributed(CNN)%2BRNN%2BDNN.ipynb)  
-
-Note that the repository also contain `Hyperas MODEL_NAME.py` files. These are Python scripts that use [Hyperas](https://github.com/maxpumperla/hyperas) (which is a wrapper around Hyperopt), for hyperparameter optimization and architecture space evaluations. One example on the usage of Hyperas can be found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras/blob/master/notebooks/Hyperas%20CNN.py). The total amount of space evaluations is set so it takes about 24 hours per model, running on a system that has an Intel i7-6700HQ CPU and NVIDIA GeForce 960M GPU.
+  
+</p>
+</details>      
 
 ## Scrum
-`TODO: Don't link individual tickets, possibly show a screenshot of each task board.`  
-`TODO: Combine these tickets with the notebooks. `  
-`TODO: Say that after week 10 we stopped using Scrum due to it not being particulary usefull (in the way it should be used) for our research.`  
-The guidelines set up by the minor make it mandatory to use Scrum. We are doing small sprints with a length of 2 weeks. Personally I like to do the most throughout documentation in GitHub with for example commits. However, I did use Scrum to document my time spend on tasks related to the minor.  
-* [Sprint 1](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-1/id-84641-11359-18)  
-It seems that a lot of Scrum tickets are missing.
-  * (3h) Datacamp course 1+2
-  * (2h) Visualizing practise data: create practise data for the group, to create visualizations from.
-* [Sprint 2](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-2/id-84641-11359-120)  
-It seems that a lot of Scrum tickets are missing.
-  * (14h) Cleaning data
-* [Sprint 3](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-3/id-84641-11359-158)
-  * (7.5h) NaN information per dwelling, one large table
-  * (33h) Datacamp KB-74 assignments
-  * (4h) NaN streak checker function
-  * (5h) NaN checker plot function
-  * (4h) EDA on dwelling P01S01W8655
-  * (3h) Correlation heatmaps of all dwellings
-  * (2h) EDA + multi variate regression on all dwellings
-  * (8h) Prepare dwelling dataframes (unprocessed)
-  * (1h) Combine dataframes (smartmeter, weather)
-  * (20h) Prepare dwelling dataframes (processed)
-  * (5h) Prepare high resolution weather df
-  * (2h) GitHub README: document important notebooks & datalocations
-  * (1.5h) Create two files which contain all the 'combined_gas_smart_weather_dfs'
-  * (2h) Correctly document my own Scrumwise tasks
-  * (8h) Preprocessing data for deep learning
-* [Sprint 4](https://www.scrumwise.com/scrum/#/taskboard/sprint/sprint-4/id-84641-11393-72)  
-A lot of time has gone into certain tasks due to searching for literature, reading literature and learning how certain things should be done.
-  * (7.5h) NaN information per dwelling, in one large table
-  * (8h) Preprocessing data for deep learning
-  * (35h) Basic LSTM & seq2seq
-  * (35h) Feedforward NNs
-  * (8h) Hyperparameter optimazation
-  * (18h) Preprocessing for LSTM
+Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory.  
+Once we found this wasn't the case, we decided to drop it.  
+This decision has been made because doing sprints the correct SCRUM way did not really apply to our research in a usable and user friendly way.  
 
 ## Other
 Other contributions to the project and/or learning progress, worth mentioning.
@@ -350,6 +325,3 @@ Introduced the group to GitHub and made some resources that help with the setup 
 * Made a README for the project members containing information on how to setup GitHub on the datascience server, plus general important information about the project: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/README.md)  
 * Made a GitHub push & pull tutorial: [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb)  
 * Created .bat files to run [jupyter lab](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/jupyterlab.bat), [run notebooks](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/run_notebook.bat) and do [ssh portforwarding](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/ssh%20portforward.bat) for usage at your local computer.
-
-### New datascience server
-...

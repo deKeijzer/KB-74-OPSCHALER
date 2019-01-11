@@ -37,9 +37,12 @@ All the Datacamp images are clickable for the respectable state of accomplishmen
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/interactive_bokeh.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/interactive_bokeh.jpg?raw=true" /></a>  
   
 ### Coursera   
+The mandatory coursera courses have been completed. I must admit I had some difficulty understanding everything perfectly at the end (week 6). The programming assignments have not been completed.   
+
    
 ## Notebooks
-### EDA
-### Models
 ## Presentations
+The friday presentations have been equally shared (as much as possible) between the teammembers. I contributed/did the following presentations:  
 ## Meeting notes
+During this minor, we often had meetings with Baldiri. All the meetings, except one or two where I was feeling ill, have been duely noted and organised. The reason being that we all could look back at our progress and appointments/deadlines we set for ourselves. Here is the list of all the meetings:  
+

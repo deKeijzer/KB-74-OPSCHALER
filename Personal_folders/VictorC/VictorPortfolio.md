@@ -31,7 +31,7 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 
 ## Coursera: Machine Learning by Stanford University
 
-I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests:
+I finished the compulsory *Coursera* weeks 1,2,3 and 6, with their respectives tests (None of the programing tasks were completed):
 
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera1.JPG">
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/coursera2.JPG">
@@ -54,6 +54,9 @@ The [research paper]() was the main goal of this project. The parts I have writt
 <p>-*Conclusions* (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
 <p>-*Results from MVLR,DNN, and GRU* (First time we wrote this part, it was done by Megan. However, results changed a lot because a validation problem we had,so I rewrote everything again.)</p>
 
+Furthermore, we created an excel with references, were we all added the ones that could be usefull or related to our project.
+This is the [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/References.xlsx).
+
 ## Python Notebooks
 
 This image show the commitments I did during the project:
@@ -70,6 +73,10 @@ The notebooks I have work on are the ones listed below:
 
 -This notebook was the first time I tried MVLR. Its not finsihed, but I used different librarys to the other notebooks.
 [-Gaspower_Linearregression](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/REGRESSION/gaspower_linearregression.ipynb)
+
+## SCRUM 
+
+Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory. Once we found this wasn't the case, we decided to drop it. This decision has been made because doing sprints the correct SCRUM way did not really apply to our research in a usable and user friendly way. This [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/SCRUM%20ESSAY.docx) takes to the assigned task from the Scrum workshop.
 
 
 Student name: Víctor Goméz Muñoz  
