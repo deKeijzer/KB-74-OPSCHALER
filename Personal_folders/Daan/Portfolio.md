@@ -76,7 +76,7 @@ The result after the FFT can be seen below:
 
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/fourier.png"  width="700"> </p>
   
-  Unfortunately, we couldn't detect any useful frequencies (except for 0) which could show the human patterns. Multiple time frames were analyzed by adjusting the data range, but none seemed to show any useful results. This could explain why we couldn't find any existing research papers on using fourier transforms to forecast energy consumption. Most papers seemed to focus on machine learning, mainly neural networks. After consulation with Baldiri, it was decided to focus on optimizing the neural networks and leave out the fourier transform forecasting. 
+  Unfortunately, we couldn't detect any useful frequencies (except for 0) which could show the human patterns. Multiple time frames were analyzed by adjusting the data range, but none seemed to show any useful results. This can explain why we couldn't find any research papers on using fourier transforms to forecast energy consumption. Most related papers applied machine learning, mainly neural networks. After consulation with Baldiri, it was decided to focus on optimizing the neural networks and leave out the fourier transform forecasting. 
   
   __Reaearch paper__
   
