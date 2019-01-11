@@ -48,7 +48,7 @@ __Team 2__: Reading literature on other forecasting studies
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
     
- The first plot is the (almost) raw data with a resolution of 1 hour. Mainly due to human patterns and day/night diffference, the data fluctuates a lot. However, when the data is resampled to different time frames, an inversely proportional correlation between gas consumption and temperature begins to show up. Although this is intuitive, showing this correlation with data is pretty convincing. 
+ The first plot is the (almost) raw data with a resolution of 1 hour. Mainly due to human patterns and day/night diffference, the data fluctuates a lot. However, when the data is resampled to different time frames, an inversely proportional correlation between gas consumption and temperature begins to show up. Although this is intuitive, showing this correlation with data is pretty amazing. 
    
    To show this in another way, [in the same notebook](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) I used Seaborn heatmap to plot the correlation between all variables from the KNMI data and dwelling energy consumptions. The correlation between outside temperature (T) and gas consumption (gasMeter) was calculated at different times frames, which can be seen in the following plot: 
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/correlatie.png"  width="700"> </p>  
