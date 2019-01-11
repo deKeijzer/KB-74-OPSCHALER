@@ -138,8 +138,7 @@ These courses have been very useful to learn more about DNNs and specifically CN
 
 
 ## Friday presentations  
-`TODO: dump as PDF`  
-The weekly KB74-OPSCHALER presentations that I contributed to.
+The weekly KB74-OPSCHALER presentations that I contributed to. The presentations are ment to be viewed in presentation mode since some of them contain useful animations.
 * [Week 1: made by all group members](https://prezi.com/p/28wycwuqqggc/#present), presented by Megan & Brian. 
 * [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor G. and Brian.
 * [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx), presented by Pol and Brian.
