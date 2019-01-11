@@ -1,6 +1,6 @@
 __Introduction__
 
-This portfolio describes the work I (Daan Boesten, 16021665) have done during the minor Applied Data Science. The minor was held in the period from September 2018 to January 2019 at The Hague University of Applied Sciences. With a group of 6 students we were assigned to the OPSCHALER project, a measurement campaign on the influence of housing characteristics on energy costs and comfort. Our goal was to predict the energy consumption of residential dwellings using several machine learning methods.
+This portfolio describes the work I (Daan Boesten, 16021665) have done during the minor Applied Data Science. The minor was held in the period from September 2018 to January 2019 at The Hague University of Applied Sciences. With a group of 6 students we were assigned to the OPSCHALER project, a measurement campaign on the influence of housing characteristics on energy costs and comfort. Our goal was to predict the energy consumption of residential dwellings using several machine learning methods. Gaining insight into the energy consumption that will be used by residents in the near future can be helpful in balancing the grid. 
 
 The OPSCHALER group consists of members from the TU Delft, The Hague University and several companies which can be found here http://www.opschaler.nl/partners/. Thus far the TU Delft has recorded energy consumption data from 52 residential dwellings. This data has been used as training data for the machine learning models. 
 
