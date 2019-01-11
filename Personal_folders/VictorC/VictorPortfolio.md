@@ -53,7 +53,7 @@ In the list below you find all the presentations of *Opshaler* group I took part
 
 ## Paper Contibution
 
-The [research paper](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/paper.pdf) was the main goal of this project. The parts I have written are :
+The [research paper](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/Opschaler%20paper%20-%2011-01-2019.pdf) was the main goal of this project. The parts I have written are :
 
 <p>-<b>DNN methodology part</b>(suffered changes made by brian and group suggestions. Also figures are not done by me).</p>
 <p>-<b>Conclusions</b> (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
