@@ -37,7 +37,7 @@ __Team 2__: Reading literature on other forecasting studies
   
   Most of the research was based around either multivariate linear regression (MVLR) or deep neural networks (DNN). We weren't able find any papers that applied Fourier Transforms to recognize certain human patterns, which we thought could help with the forecasting accuracy. We saw this as an oppertunity to try something new, which will be shown later in the portfolio (spoiler alert: didn't work as well as expected). 
   
-  Alongside the literature, all project members focused on machine learning in Python. This was mostly done using Datacamp and Coursera. The courses and weeks in which I participated can be found at the bottom of the portfolio. Due to my background in Physics, I had a pretty solid knowledge of Matlab, which is my opinion pretty similar to Python. 
+  Alongside the literature, all project members focused on machine learning in Python. This was mostly done using Datacamp and Coursera. The courses and weeks in which I participated can be found at the bottom of the portfolio. 
   
   Due to the impressive  motivation and contribution in machine learning by our group member Brian, my focus during this minor was mainly around understanding and visualizing the data. Thus, this portfolio will mostly show the contributions I did in terms of getting to know the fundementals behind the data. 
   
