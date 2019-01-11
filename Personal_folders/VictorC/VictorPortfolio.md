@@ -22,7 +22,10 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 [Deep Learning in Python](https://www.datacamp.com/courses/deep-learning-in-python)  
 [Cleaning Data in Python](https://www.datacamp.com/courses/cleaning-data-in-python)  
 [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)  
-[Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1)  
+[Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1) 
+[Network Analysis in Python (Part 1)](https://www.datacamp.com/courses/network-analysis-in-python-part-1)  
+[Machine Learning with the Experts: School Budgets](https://www.datacamp.com/courses/machine-learning-with-the-experts-school-budgets)  
+
 
 ![Parte 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses1.jpg)
 ![Parte 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses2.jpg)
