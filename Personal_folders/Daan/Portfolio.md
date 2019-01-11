@@ -69,10 +69,9 @@ Around this time, our project member Brian started advancing in machine learning
   __Fourier Transform__
     
   During my main study I've used the fast fourier transform (FFT) to remove background noise from a an audio sample. The FFT is a mathematical way to go from the time to the frequency domain. Each frequency has its own magnitude which can be analyzed and changed. 
-  I tried to apply this method to recognize human patterns such as taking a shower in the morning, cooking when coming home etc. Those patterns can be seen in the following plot:  
-  <p align="center"> <img src=" https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/humanpatronen.png"  width="700"> </p>
+  I tried to apply this method to recognize human patterns such as taking a shower in the morning. These patterns can be seen in the following plot:  
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/humanpatronen.png"  width="700"> </p>
 
-  
   
   __Presentations__  
   
