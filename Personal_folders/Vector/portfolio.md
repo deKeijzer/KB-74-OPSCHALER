@@ -5,14 +5,14 @@ This document gathers the most important steps taken during the Applied Data Sci
 
 ## Datacamp courses
 
-![Summary](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2013.29.57.png)
+![Summary](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/GeneralDatacam.png)
 
 I finished the mandatory courses that the minor assigns and I also took part in a Bokeh visualization course that helped me to develop one of my finished python notebooks.
 
-![courses part 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.32.56.png)
-![courses part 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.40.43.png)
-![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.40.53.png)
-![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Captura%20de%20pantalla%202019-01-10%20a%20las%2012.41.05.png)
+![courses part 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Parte1.png)
+![courses part 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Parte2.png)
+![courses part 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Parte3.png)
+![courses part 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/Parte4.png)
 
 
 ## Coursera: Machine Learning by Stanford University
