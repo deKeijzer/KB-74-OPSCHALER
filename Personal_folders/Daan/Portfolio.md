@@ -80,7 +80,9 @@ The result after the FFT can be seen below:
   
   __Reaearch paper__
   
-  
+  My contributions in our [research paper](https://dehaagsehogeschool.sharepoint.com/:b:/s/opschaler_groups/EUN5AGB4gv9MiwaNT-xZIdsBMhppiggJydM8LWwQN51ZVw?e=Jd7kvz) were in the following (sub)chapters:
+    
+    
     
   __Presentations__  
   
