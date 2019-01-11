@@ -38,6 +38,7 @@ All the Datacamp images are clickable for the respectable state of accomplishmen
   
 ### Coursera   
 The mandatory coursera courses have been completed. I must admit I had some difficulty understanding everything perfectly at the end (week 6). The programming assignments have not been completed.   
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/coursera.jpg?raw=true" />
 
    
 ## Notebooks
