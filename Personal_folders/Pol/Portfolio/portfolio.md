@@ -42,6 +42,16 @@ The mandatory coursera courses have been completed. I must admit I had some diff
 
    
 ## Notebooks
+During the minor, I always tried to stay up with the insane knowledge of Brian. Obviously, I never quite reached his level (not even close), but I did my best. The following notebooks are generated to try to contribute something to Brian's work.  
+
+
+[Data preperation](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Data_Prep_Pol.ipynb)  
+[The NaN visualiser](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Sensor_data_NaN_vis_if_in_rows.ipynb) is the first actual useful thing I have made for the project. Now it looks extremely easy to me, but at the time I had just started programming and I was actually really proud.  
+[MVLR model](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/LR_MVR.ipynb)  
+[DNN model](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/DNN.ipynb)  
+  
+At one point, Victor Garcias and me were working on Bokeh visualisation. Unfortunately, there went something wrong with the server, deleting our shared Bokeh visualisation of our data. I know this is not completely finished now, but this is all that there is left of it:  
+[Bokeh (or what is left of it)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Bokeh_graphs.ipynb)  
 ## Presentations
 The friday presentations have been equally shared (as much as possible) between the teammembers. I contributed/did the following presentations:  
 [Week 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx) I helped making the presentation.  
