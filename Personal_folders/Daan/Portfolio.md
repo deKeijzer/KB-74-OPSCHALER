@@ -84,7 +84,12 @@ The result after the FFT can be seen below:
     
   * Abstract (fully written)
   * Methodology:  
-    CNN (partly written)
+    DNN (partly written)
+    LSTM and GRU (partly written)
+    CNN (partly written)  
+  * Results:
+    Added table 2.
+  * Conclusion (partly written)
     
   In addition to this, I added most references to the paper and made sure they were displayed correctly.   
 
