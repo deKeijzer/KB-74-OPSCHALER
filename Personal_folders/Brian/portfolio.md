@@ -38,7 +38,6 @@ Despite these models being based on data on the aggregated level, they should al
 
 
 ## Jargon
-`TODO: Add more jargon.  `  
 Used jargon for Opschaler is listed below.
 * Dwelling: an unique house.  
 * Smart meter data: electricity and gas meter data.   
