@@ -1,4 +1,4 @@
-`TODO: Comment code, Add references I found and read, fix datacamp, improve notebooks, Scrum and Paper`
+
 # PERSONAL PORTFOLIO
 
 This document gathers the most important steps taken during the Applied Data Science course performed by the student Víctor García Romillo (18076033). With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
@@ -70,3 +70,9 @@ This decision has been made because doing sprints the correct SCRUM way did not 
 The assigned task from the Scrum workshop can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/How%20does%20SCRUM%20comply%20Agile%20manifesto%20values.pdf) 
 
 ## Paper
+
+In order to finish this portfolio I will state my contributions to the [paper](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Opschaler%20paper%20-%2011-01-2019.pdf).
+
+This paper was a common effort from all the members of the group. We all tried to improve each part, but in order to set some tasks at the beginning of the writing we agreed to divide the work in different parts. I contributed in the metholodogy part with Brian de Keijzer.
+
+I also did some research tasks to find useful papers related with the project. They can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/tree/master/Personal_folders/Vector/Resources_portfolio/20%20articles)
