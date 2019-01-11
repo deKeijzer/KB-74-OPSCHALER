@@ -45,10 +45,12 @@ This paper wil include information on the following subject:
 
 ### Data preperation and cleaning
   Data preperation and cleaning are known in data science as very time consuming tasks. Since I didn't have any experience with Python I searched the internet for usefull guides on how to prep and clean the data we had. At first we only had smart meter data from 60 dwellings which now have been reduced to 52 dwellings. There were quite a lot of problems with the data sets from smart meter data and KNMI data. Before I even attempted in cleaning & prepping the "real" smartmeter data I searched for a random dataset and started prepping and cleaning to practice and develop my skills. See the link to my basic data prep&clean code on a IMDB movie rating.
-  
-[https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb]
-  
-  
+Starter Basic data cleaning dummy set: 
+
+[Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb)  
+
+#### Data visualization
+  In last couple of weeks of the first semester of the project. The best available dwelling was dwelling ID: 378, currently this dwelling has changed and the best dwelling is now dwelling ID: 8655. The primairy focus was to try to visualize the gasPower. The graph should've been more accurate since the dataset still consisted of NaN's and no mean values were taken. 
   
 ```python
   
