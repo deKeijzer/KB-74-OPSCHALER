@@ -1,5 +1,7 @@
-`TODO: Add Keras multi var. description parts here`
+`TODO: Add Keras multi var. description parts here`  
+-----
 All up-to-date models are found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras).
+-----
 
 # KB-74-OPSCHALER
 This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at The Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week ahead with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
