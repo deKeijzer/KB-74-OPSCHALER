@@ -45,7 +45,7 @@ The mandatory coursera courses have been completed. I must admit I had some diff
 ## Presentations
 The friday presentations have been equally shared (as much as possible) between the teammembers. I contributed/did the following presentations:  
 [Week 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx) I helped making the presentation.  
-[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx) I helped with the making of the presentation.
+[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx) I helped with the making of the presentation.  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx) I made and did the presentation with Daan Boesten.  
 [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) Presented by Brian and me.  
 [Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Briand made the presentation. 
