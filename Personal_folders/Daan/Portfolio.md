@@ -72,6 +72,9 @@ Around this time, our project member Brian started advancing in machine learning
  I tried to apply this method to recognize human patterns such as taking a shower in the morning. The code can be [seen here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Fourier.ipynb) and the patterns in the time domain can be seen in the following plot:  
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/humanpatronen.png"  width="700"> </p>
 
+The result after the FFT can be seen below: 
+
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/fourier.png"  width="700"> </p>
     
   __Presentations__  
   
