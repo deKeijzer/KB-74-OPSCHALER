@@ -21,7 +21,7 @@ After consulation with the OPSCHALER group it was decided to aim to predict the 
 | Weekly  | ..% | ..% | ..% | 
 
 
-In addition to the prediction accuracy, it was also important to compare the computing time needed for each prediction model. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
+In addition to the prediction accuracy, it was also important to compare the computing time needed for each prediction method. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
 
 During the minor we learned about several deep learning models, each with its own pros and cons. We encountered some of those models in other research papers on forecasting energy (mainly university buildings), during the guest lectures and weekly presentations. It was decided to focus our research on trying out and comparing those deep learning models instead of using just one neural network.
     
@@ -33,7 +33,10 @@ During the first 2 weeks our project group was split into two teams:
 __Team 1__: Data cleaning & preparation  
 __Team 2__: Reading literature on other forecasting studies  
   
-*lots of research on mvlr, deep neural networks but no on fourier transforms, but we tried anyway.. will be shown later*
+  I was part of the second team, which meant we had to search for related research papers on forecasting energy consumption. We noticed straight away that most of the research has been done on universtity buildings, probably due to privacy issues regarding the data collection of residential dwellings. By collaborating with OPSCHALER, we had access to 52 dwellings with up to 9 months of data. This was pretty cool. 
+  
+  Most of the research was based around either multivariate linear regression (MVLR) or deep neural networks (DNN). However, we couldn't find any papers which have applied Fourier Transforms to recognize certain human patterns, which could help with the forecasting accuracy. We saw this as an oppertunity to try something new, which will be shown later in the portfolio (spoiler alert: didn't work as well as expected). 
+  
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
   
 __Presentations__  
