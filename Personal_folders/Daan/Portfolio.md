@@ -69,6 +69,7 @@ Around this time, our project member Brian started advancing in machine learning
   __Fourier Transform__
     
   __Presentations__  
+  
 [First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
 The weekly presentations I did are listed below: <br>
