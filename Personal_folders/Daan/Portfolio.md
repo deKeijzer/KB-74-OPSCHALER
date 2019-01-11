@@ -62,7 +62,8 @@ __Team 2__: Reading literature on other forecasting studies
     bias = rdf[rdf['T'] > 16.5] #defines a bias for temperatures above 16.5 Degrees 
     bias = bias['gasPower'].mean() #takes the average of gasPower when T > 16.5
     print(bias)
-    
+  For dwelling W8655, the offset (called bias) is around 0.012. This value could be used as the bias in the regression formula _y = ax + __b_. 
+  
 Around this time, our project member Brian started advancing in machine learning and got forecasts that could actually be used in the research paper. Instead of trying to keep up with Brian's achievements, I decided to focus on using Fourier Transforms to recognize human patterns. 
     
   __Fourier Transform__
