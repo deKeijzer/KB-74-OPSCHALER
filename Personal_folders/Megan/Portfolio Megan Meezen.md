@@ -37,5 +37,10 @@ This paper wil include information on the following subject:
    Here is more insight in which courses/chapters I completed:
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp21.png"> </p>
 
+#### Coursera
+  I have also completed the mandatory Coursera machine learning courses by Stanford university from Andrew Ng. 
+ 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
+
+
