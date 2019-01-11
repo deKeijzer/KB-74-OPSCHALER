@@ -57,7 +57,7 @@ __Datacamp__
 
 Followed courses:  
 [Intro to Python for Data Science](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
-[Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/f8e37c6eb334a741da23db6990d164c06bd249ff)  
+[Intermediate Python for Data Science Course](https://www.datacamp.com/statement-of-accomplishment/course/4690bbe3cc8780040feb0ff962fd0df8b4aea56d)  
 [Supervised Learning with scikit-learn Course](link) (Chapter 1,2) 
  
 __Coursera__
