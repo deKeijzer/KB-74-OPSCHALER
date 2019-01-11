@@ -103,8 +103,25 @@ Fourier methhod 2
 
 ### Conducted research on predictive models/NN
 
-During the project different predictive models were used. The project team was divided into two teams those who researched and those who created the models. I researched LSTM and GRU which are both neural networks which belonged to RNN. I also researched DNN and MVLR. There are multiple ways of interpreting these models and different was to compute them. Below I will link to the research I conducted. I would've linked my all my bookmarks/refrences in this git hub portfolio which I read, but there are hundreds of them. So to keep this my github portfolio ordened I inserted the documents I made regarding the machine learning topics. 
+  During the project different predictive models were used. The project team was divided into two teams those who researched and those who created the models. I researched LSTM and GRU which are both neural networks which belonged to RNN. I also researched DNN and MVLR. There are multiple ways of interpreting these models and different was to compute them. Below I will link to the research I conducted. I would've linked my all my bookmarks/refrences in this git hub portfolio which I read, but there are hundreds of them. So to keep this my github portfolio ordened I inserted the documents I made regarding the machine learning topics. 
 
 #### Communication
 
-As In have mentioned in the beginnen of my portfolio. Before I started this minor I didn't have any programming background. I have done a lot of research in the first couple of weeks on different topics regarding data science. I made a couple of documents containing helpfull information about: Fourier, Linear Regression, Regressional types, Neural networks/machine learning (DNN/GRU/MVLR), Seaborn. I created these documents for me to better understand Python and machine learnng and so my groupmates could also benefit from the documents. I have also created a Flow-chart based on the main code from OPSCHALER which has been changed over time. It was quite important for the progress of the group to have an overview of what we we're exactly doing at the time. 
+  As In have mentioned in the beginnen of my portfolio. Before I started this minor I didn't have any programming background. I have    done a lot of research in the first couple of weeks on different topics regarding data science. I made a couple of documents containing helpfull information about: Fourier, Linear Regression, Regressional types, Neural networks/machine learning (DNN/GRU/MVLR), Seaborn. I created these documents for me to better understand Python and machine learnng and so my groupmates could also benefit from the documents. I have also created a Flow-chart based on the main code from OPSCHALER which has been changed over time. It was quite important for the progress of the group to have an overview of what we we're exactly doing at the time. I was really focused on datacamp the first couple of weeks and struggles with programming. I know some basics, but I am stil not as skilled as some of my other teammates. I have also read the most papers on understanding machine learning and it's uses and advantages. 
+
+
+# Presentions
+
+  I have also done a couple of presentations alone and together with teammates. I will post a link to my teammates portfolio for the rest of the presentations in which I participated. The presentations down below are the ones I created and performed. 
+
+[1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/16-11-2018.pdf)
+[2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-10-2018%20good.pdf)
+[3)](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-12-2018.pdf)
+
+# Papers and research
+
+Here are the papers and conducted research links as discussed above. I added the links to the rough paper drafts and findings which I mainly created and the final paper were the whole team worked on. The table we created which shows the machine learning models performance is also in the final paper.
+
+[1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Findings_methodology.pdf)
+[2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/GRU.pdf)
+[3)](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-12-2018.pdf)
