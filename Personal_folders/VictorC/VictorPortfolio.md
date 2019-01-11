@@ -74,6 +74,10 @@ The notebooks I have work on are the ones listed below:
 -This notebook was the first time I tried MVLR. Its not finsihed, but I used different librarys to the other notebooks.
 [-Gaspower_Linearregression](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/REGRESSION/gaspower_linearregression.ipynb)
 
+## SCRUM 
+
+Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory. Once we found this wasn't the case, we decided to drop it. This decision has been made because doing sprints the correct SCRUM way did not really apply to our research in a usable and user friendly way. This [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/SCRUM%20ESSAY.docx) takes to the assigned task from the Scrum workshop.
+
 
 Student name: Víctor Goméz Muñoz  
 Student number: 18088589
