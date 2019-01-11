@@ -57,7 +57,7 @@ __Team 2__: Reading literature on other forecasting studies
   
   We also noticed that most dwellings seem to stop heating when the outside temperature is above around 16.5 °C. This property was used to create a simple linear regression using the gas consumption when the outside temperature was lower than 16.5 °C. The result can be seen in the following plot:
       <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp1d.png"  width="700"> </p>  
-    
+    When this is extrapolated, an estimation can be calculated for the gas consumption at temperatures below  16.5 °C
 __Presentations__  
 [First presentation TU Delft](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/28-09-2018%20(TU%20delft%20meeting).pptx) 
 
