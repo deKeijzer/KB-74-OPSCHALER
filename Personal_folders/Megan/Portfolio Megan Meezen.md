@@ -110,7 +110,7 @@ Fourier methhod 2
   As In have mentioned in the beginnen of my portfolio. Before I started this minor I didn't have any programming background. I have    done a lot of research in the first couple of weeks on different topics regarding data science. I made a couple of documents containing helpfull information about: Fourier, Linear Regression, Regressional types, Neural networks/machine learning (DNN/GRU/MVLR), Seaborn. I created these documents for me to better understand Python and machine learnng and so my groupmates could also benefit from the documents. I have also created a Flow-chart based on the main code from OPSCHALER which has been changed over time. It was quite important for the progress of the group to have an overview of what we we're exactly doing at the time. I was really focused on datacamp the first couple of weeks and struggles with programming. I know some basics, but I am stil not as skilled as some of my other teammates. I have also read the most papers on understanding machine learning and it's uses and advantages. 
 
 
-# Presentions
+# Presentations
 
   I have also done a couple of presentations alone and together with teammates. I will post a link to my teammates portfolio for the rest of the presentations in which I participated.  [Link teammate](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/portfolio.md)
   
