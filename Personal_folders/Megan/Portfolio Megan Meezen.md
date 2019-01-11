@@ -33,6 +33,9 @@ This paper wil include information on the following subject:
   I have completed the mandatory Datacamp courses. Which I found very helpfull for beginning programmers. Below you can see my score and completed chapters:
 
 
+<p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp.png"> </p>
+   Here is more insight in which courses/chapters I completed:
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp2.png"> </p>
 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
