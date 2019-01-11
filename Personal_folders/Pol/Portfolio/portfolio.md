@@ -14,7 +14,7 @@ In this minor, I have been working on the OPSCHALER project. The main goal of th
 The OPSCHALER team managed to gather data of residential dwellings of smart meter data and additional charastaristics of the specific resident dwelling, such as amount of square feet.  
 We were asked to study at the data and come up with a smart way of extracting useful information from the data. We ended it with different machine learning models to evaluate the accuracy of predicting the natural gas consumption of the residents.  
    
-[The complete paper can be read here.](**enter link to paper here**)
+[The complete paper can be read here.](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/Opschaler%20paper%20final%20version.pdf)
   
 
 
@@ -37,7 +37,8 @@ All the Datacamp images are clickable for the respectable state of accomplishmen
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/interactive_bokeh.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/interactive_bokeh.jpg?raw=true" /></a>  
   
 ### Coursera   
-The mandatory coursera courses have been completed. I must admit I had some difficulty understanding everything perfectly at the end (week 6). The programming assignments have not been completed.   
+The mandatory coursera courses have been completed. I must admit I had some difficulty understanding everything perfectly at the end (week 6), that's why my last quiz did not go too well (three times). I wish I aced that quiz as well.  
+The programming assignments have not been completed.   
 <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/coursera.jpg?raw=true" />
 
    
@@ -58,10 +59,15 @@ The friday presentations have been equally shared (as much as possible) between 
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx) I helped with the making of the presentation.  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx) I made and did the presentation with Daan Boesten.  
 [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) Presented by Brian and me.  
-[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Briand made the presentation. 
+[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Briand made the presentation.  
+  
+## Paper contribution
+I've put a lot of work into the paper. I started with writing the introduction and the results. The results are also written by Brian. After this I put in over 30 hours of correcting/helping the others.  
+  
+The full paper can be read [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/Opschaler%20paper%20final%20version.pdf).  
 
 ## Meeting notes
-During this minor, we often had meetings with Baldiri. All the meetings, except one or two where I was feeling ill, have been duely noted and organised. The reason being that we all could look back at our progress and appointments/deadlines we set for ourselves. Here is the list of all the meetings:  
+During this minor, we often had meetings with Baldiri. All the meetings, except one or two where I was feeling ill, have been duely noted and organised. The reason being that we all could look back at our progress and appointments/deadlines we set for ourselves. I tried to maintain a vocal point in the group as far as management/appointments/etc goes. [Here is the list of all the meetings](https://github.com/deKeijzer/KB-74-OPSCHALER/tree/master/Personal_folders/Pol/Portfolio/Images/notes).
 
 
 
