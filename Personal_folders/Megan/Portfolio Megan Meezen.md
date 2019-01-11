@@ -120,8 +120,18 @@ Fourier methhod 2
 
 # Papers and research
 
-Here are the papers and conducted research links as discussed above. I added the links to the rough paper drafts and findings which I mainly created and the final paper were the whole team worked on. The table we created which shows the machine learning models performance is also in the final paper.
+  Here are the papers and conducted research links as discussed above. I added the links to the rough paper drafts I made and findings which I mainly created and the final paper were the whole team worked on. The table we created which shows the machine learning models performance is also in the final paper.
 
-[1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Findings_methodology.pdf)
-[2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/GRU.pdf)
-[3)](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-12-2018.pdf)
+  1 = This paper draft contains my first findings based on reseaches conducted on machine learning methods
+  [1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Findings_methodology.pdf)
+  2 = A paper which explains the Gated Recurrent Unit
+  [2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/GRU.pdf)
+  3 = A paper I made based on the differnt types of regressional methods
+  [3](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/methods%20for%20regression.pdf)
+  4 = A rough draft in which I added unfinished parts of the final paper and applied some feedback to it. 
+  [4](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Paper_rough_draft.pdf)
+ 
+   Final team opschaler paper paper
+ [5]()
+  
+  
