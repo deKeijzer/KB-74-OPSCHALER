@@ -23,7 +23,7 @@ After consulation with the OPSCHALER group it was decided to aim to predict the 
 
 In addition to the prediction accuracy, it was also important to compare the computing time needed for each prediction model. One of the end goals of OPSCHALER is to locally predict the energy consumption using smartmeter data, with a preference for low computing power methods to minimize costs and power consumption. 
 
-During the minor we learned about several deep learning models, each with its own pros and cons. We encountered some of those models in other research papers on forecasting energy (mainly university buildings), during the guest lectures and weekly presentations. It was decided to focus our research on trying out and comparing those deep learning models.
+During the minor we learned about several deep learning models, each with its own pros and cons. We encountered some of those models in other research papers on forecasting energy (mainly university buildings), during the guest lectures and weekly presentations. It was decided to focus our research on trying out and comparing those deep learning models instead of using just one neural network.
     
 __Personal Work__
   
