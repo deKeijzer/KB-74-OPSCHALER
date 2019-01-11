@@ -37,9 +37,31 @@ All the Datacamp images are clickable for the respectable state of accomplishmen
 <a href="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/accomplishments/interactive_bokeh.pdf"><img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/datacamp/images/interactive_bokeh.jpg?raw=true" /></a>  
   
 ### Coursera   
+The mandatory coursera courses have been completed. I must admit I had some difficulty understanding everything perfectly at the end (week 6). The programming assignments have not been completed.   
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/Images/coursera.jpg?raw=true" />
+
    
 ## Notebooks
-### EDA
-### Models
+During the minor, I always tried to stay up with the insane knowledge of Brian. Obviously, I never quite reached his level (not even close), but I did my best. The following notebooks are generated to try to contribute something to Brian's work.  
+
+
+[Data preperation](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Data_Prep_Pol.ipynb)  
+[The NaN visualiser](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Sensor_data_NaN_vis_if_in_rows.ipynb) is the first actual useful thing I have made for the project. Now it looks extremely easy to me, but at the time I had just started programming and I was actually really proud.  
+[MVLR model](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/LR_MVR.ipynb)  
+[DNN model](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/DNN.ipynb)  
+  
+At one point, Victor Garcias and me were working on Bokeh visualisation. Unfortunately, there went something wrong with the server, deleting our shared Bokeh visualisation of our data. I know this is not completely finished now, but this is all that there is left of it:  
+[Bokeh (or what is left of it)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Old_files/Bokeh_graphs.ipynb)  
 ## Presentations
+The friday presentations have been equally shared (as much as possible) between the teammembers. I contributed/did the following presentations:  
+[Week 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx) I helped making the presentation.  
+[Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx) I helped with the making of the presentation.  
+[Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx) I made and did the presentation with Daan Boesten.  
+[Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) Presented by Brian and me.  
+[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Briand made the presentation. 
+
 ## Meeting notes
+During this minor, we often had meetings with Baldiri. All the meetings, except one or two where I was feeling ill, have been duely noted and organised. The reason being that we all could look back at our progress and appointments/deadlines we set for ourselves. Here is the list of all the meetings:  
+
+
+

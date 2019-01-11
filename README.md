@@ -1,14 +1,63 @@
+All up-to-date models are found [here](https://github.com/deKeijzer/Multivariate-time-series-models-in-Keras).  
+-----
+The research paper is found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Opschaler%20paper%20-%2011-01-2019.pdf).
+
 # KB-74-OPSCHALER
 This repository contains code for the KB-74-OPSCHALER project. KB-74 stands for the minor Applied Data Science at The Hague University of Applied Sciences, with Opschaler being the project name. The goal of this project is to predict the energy usage of houses, 1 week ahead with a 10 second resolution. More information about Opschaler can be found at their [website](http://www.opschaler.nl/). 
 
 # Personal portfolio's
 Links to the personal portfolio's of the KB-74-OPSCHALER group members are listed below.
 - [Brian de Keijzer](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/portfolio.md)  
+- [Pol de Visser](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Pol/Portfolio/portfolio.md)  
 - [Victor Garcia](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/portfolio.md)  
-- Pol de Visser  
 - [Victor Gómez Muñoz](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/VictorPortfolio.md)  
 - [Daan Boesten](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Portfolio.md)  
-- Megan Meezen  
+- [Megan Meezen](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/Portfolio%20Megan%20Meezen.md)
+
+# About the data
+There also is sensor data (occupancy, CO2 values, humidity, temperature and more) from within the dwellings available, this has not been added to this file.
+
+### Smart meter data
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Sample rate</th><th>Description</th></tr></thead><tbody>
+ <tr><td>Timestamp</td><td>-</td><td>10 s</td><td>Timestamp of data telegram (set by smart meter) in local time </td></tr>
+ <tr><td>eMeter</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, normal tariff </td></tr>
+ <tr><td>eMeterReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, normal tariff </td></tr>
+ <tr><td>eMeterLow</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, low tariff </td></tr>
+ <tr><td>eMeterLowReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, low tariff </td></tr>
+ <tr><td>ePower</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered to client </td></tr>
+ <tr><td>ePowerReturn</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered by client </td></tr>
+ <tr><td>gasTimestamp</td><td>-</td><td>1 h</td><td>Timestamp of the gasMeter reading (set by smart meter) in local time </td></tr>
+ <tr><td>gasMeter</td><td>m3</td><td>1 h</td><td>Last hourly value (temperature converted0, gas delivered to client </td></tr>
+</tbody></table>
+
+### Weather data
+This is weather data from the KNMI weather station in Rotterdam with a sample rate of 15 minutes.  
+A representative from OPSCHALER says that this weather station is the most nearby all the dwellings, the exact dwelling locations however are unknown.  
+They probably are in a 25 km radius from this weather station.  
+
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Description</th></tr></thead><tbody>
+ <tr><td>DD</td><td>degrees</td><td>Wind direction</td></tr>
+ <tr><td>DR</td><td>s</td><td>Precipitation time</td></tr>
+ <tr><td>FX</td><td>m/s</td><td>Maximum gust of wind at 10 m</td></tr>
+ <tr><td>FF</td><td>m/s</td><td>Windspeed at 10 m</td></tr>
+ <tr><td>N</td><td>okta</td><td>Cloud coverage</td></tr>
+ <tr><td>P</td><td>hPa</td><td>Outside pressure</td></tr>
+ <tr><td>Q</td><td>W/m2</td><td>Global radiation</td></tr>
+ <tr><td>RG</td><td>mm/h</td><td>Rain intensity</td></tr>
+ <tr><td>SQ</td><td>m</td><td> Sunshine duration (in minutes)</td></tr>
+ <tr><td>T</td><td>deg C</td><td>Temperature at 1,5 m (1 minute mean)</td></tr>
+ <tr><td>T10</td><td>deg C</td><td>Minimum temperature at 10 cm</td></tr>
+ <tr><td>TD</td><td>deg C</td><td>Dew point temperature</td></tr>
+ <tr><td>U</td><td>%</td><td>Relative humidity at 1,5 m</td></tr>
+ <tr><td>VV</td><td>m</td><td>Horizontal sight</td></tr>
+ <tr><td>WW</td><td>-</td><td>Weather- and station-code</td></tr>
+</tbody></table>
+
+
+# ----- Notes for the group members are listed below -----
+All (sub)chapters below are ment for the KB74-Opschaler group members.
 
 # Setting up GitHub on JupyterHub
 1. Login to JupyterHub on the datascience server. 
@@ -40,47 +89,6 @@ Before you start working on code in jupyter, be sure that you have the latest ve
 * `git commit -m 'commit message. For examples changes that you made to the code.'`
 * `git push`
 More push & pull information can be found in [this notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/GitHub%20push%20%26%20pull%20tutorial.ipynb).
-
-# About the data
-There also is sensor data (occupancy, CO2 values, humidity, temperature and more) from within the dwellings available, this has not been added to this file.
-
-### Smart meter data
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Sample rate</th><th>Description</th></tr></thead><tbody>
- <tr><td>Timestamp</td><td>-</td><td>10 s</td><td>Timestamp of data telegram (set by smart meter) in local time </td></tr>
- <tr><td>eMeter</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, normal tariff </td></tr>
- <tr><td>eMeterReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, normal tariff </td></tr>
- <tr><td>eMeterLow</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered to client, low tariff </td></tr>
- <tr><td>eMeterLowReturn</td><td>kWh</td><td>10 s</td><td>Meter reading electricity delivered by client, low tariff </td></tr>
- <tr><td>ePower</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered to client </td></tr>
- <tr><td>ePowerReturn</td><td>kWh</td><td>10 s</td><td>Actual electricity power delivered by client </td></tr>
- <tr><td>gasTimestamp</td><td>-</td><td>1 h</td><td>Timestamp of the gasMeter reading (set by smart meter) in local time </td></tr>
- <tr><td>gasMeter</td><td>m3</td><td>1 h</td><td>Last hourly value (temperature converted0, gas delivered to client </td></tr>
-</tbody></table>
-
-### Weather data
-This is weather data from the KNMI weather station in Rotterdam with a sample rate of 15 minutes.  
-A representative from OPSCHALER says that this weather station is the most nearby all the dwellings, the exact dwelling locations however are unknown.  
-They probably are in a 25 km radius from this weather station.  
-
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>Parameter</th><th>Unit</th><th>Description</th></tr></thead><tbody>
- <tr><td>DD</td><td>degrees</td><td>Wind direction</td></tr>
- <tr><td>DR</td><td>s</td><td>Precipitation time</td></tr>
- <tr><td>FX</td><td>m/s</td><td>Maximum gust of wind at 10 m</td></tr>
- <tr><td>FF</td><td>m/s</td><td>Windspeed at 10 m</td></tr>
- <tr><td>N</td><td>okta</td><td>Cloud coverage</td></tr>
- <tr><td>P</td><td>hPa</td><td>Outside pressure</td></tr>
- <tr><td>Q</td><td>W/m2</td><td>Global radiation</td></tr>
- <tr><td>RG</td><td>mm/h</td><td>Rain intensity</td></tr>
- <tr><td>SQ</td><td>m</td><td> Sunshine duration (in minutes)</td></tr>
- <tr><td>T</td><td>deg C</td><td>Temperature at 1,5 m (1 minute mean)</td></tr>
- <tr><td>T10</td><td>deg C</td><td>Minimum temperature at 10 cm</td></tr>
- <tr><td>TD</td><td>deg C</td><td>Dew point temperature</td></tr>
- <tr><td>U</td><td>%</td><td>Relative humidity at 1,5 m</td></tr>
- <tr><td>VV</td><td>m</td><td>Horizontal sight</td></tr>
- <tr><td>WW</td><td>-</td><td>Weather- and station-code</td></tr>
-</tbody></table>
 
 # Important data locations
 Below is a list of the most important data locations for the Opschaler project. <b>Make sure to not modify or add any files in the folders listed below.</b> Some notebooks have been programmed in such a way that they expect all files in a folder to have a certain file structure. For example: in the `smartmeter_data folder` the only files in there should be smartmeter files in the format `dwelling_id.csv`. Any other file in there will crash the notebook which uses this folder to process the files.  
