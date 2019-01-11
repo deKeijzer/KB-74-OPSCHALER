@@ -1,4 +1,4 @@
-`TODO: Comment code, Add references I found and read, fix datacamp, improve notebooks`
+`TODO: Comment code, Add references I found and read, fix datacamp, improve notebooks, Scrum and Paper`
 # PERSONAL PORTFOLIO
 
 This document gathers the most important steps taken during the Applied Data Science course performed by the student Víctor García Romillo (18076033). With this document I pretend to reflect the knowledge acquired during the minor and the contributions I made to the Opschaler project.
@@ -33,7 +33,7 @@ I have completed all mandatory Coursera courses. Green ticks are quizes taken. P
 
 ## Friday Presentations
 
-This is the list of the presentations we created until the moment (4-11-2018):
+This is the list of the presentations where I contributed either editing or presenting:
 
 [Week 1](https://prezi.com/p/28wycwuqqggc/#present): All the group edited this presentation.<br/>
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/7-9-2018.pptx): presented by Víctor Gómez and me.<br/>
@@ -61,3 +61,12 @@ This notebook was already created by Brian de Keijzer but started over in order 
 
 - Feed forward DNN [Github link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/DNN.ipynb)  
 This notebook was already created by Brian de Keijzer but started over in order to put in practice the knowledge I acquired in this area during the minor.
+
+## SCRUM
+
+Scrum has been used and maintained for 4 sprints of a two week length each, because it was thought to be mandatory.
+Once we found this wasn't the case, we decided to drop it.
+This decision has been made because doing sprints the correct SCRUM way did not really apply to our research in a usable and user friendly way.
+The assigned task from the Scrum workshop can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/Resources_portfolio/How%20does%20SCRUM%20comply%20Agile%20manifesto%20values.pdf) 
+
+## Paper
