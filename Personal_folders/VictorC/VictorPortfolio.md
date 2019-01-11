@@ -6,7 +6,7 @@ This personal portofolio performs the analysis of the contribution of VÃ­ctor GÃ
 
 When I applied to this minor my first priority was learning python. I have worked before with other programing languages such as *Matlab*, *C#* , *R*... Here is a small summary of my progress in *Datacamp*:
 
-<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamppoints.JPG">
+<img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp.jpg">
 
 Now I wil display a list with all my complete *Datacamp* courses (all compulsory courses are completed):
 
@@ -24,10 +24,12 @@ Now I wil display a list with all my complete *Datacamp* courses (all compulsory
 [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)  
 [Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1)  
 
-![Parte 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp1.JPG)
-![Parte 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp2.JPG)
-![Parte 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp3.JPG)
-![Parte 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/datacamp4.JPG)
+![Parte 1](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses1.jpg)
+![Parte 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses2.jpg)
+![Parte 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses3.jpg)
+![Parte 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses4.jpg)
+![Parte 5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/courses5.jpg)
+
 
 ## Coursera: Machine Learning by Stanford University
 
