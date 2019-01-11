@@ -49,7 +49,7 @@ Starter Basic data cleaning dummy set:
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb)  
 
 ### Data visualization
-  In last couple of weeks of the first semester of the project. The best available dwelling was dwelling ID: 378, currently this dwelling has changed and the best dwelling is now dwelling ID: 8655. The primairy focus was to try to visualize the gasPower. The graph should've been more accurate since the dataset still consisted of NaN's and no mean values were taken. 
+  In last couple of weeks of the first semester of the project. The best available dwelling was dwelling ID: 378, currently this dwelling has changed and the best dwelling is now dwelling ID: 8655. The primairy focus was to try to visualize the gasPower. The graph should've been more accurate since the dataset still consisted of NaN's and no mean values were taken. [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/First_visuals.ipynb) 
   
   Below is a piece of the code which created the plot/graph(with NaN's and no mean)
 ```python
@@ -70,6 +70,12 @@ Starter Basic data cleaning dummy set:
 
 To see if there were any correlations between the KNMI data and the smart meter data for dwelling 378 I created a Seaborn heatmap. Due to the NaN's in 378 there are empty spaces. There are high negative correlations between certain variables and positieve correlations on certain variables. 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/seaborncor.png"> </p>
+
+## Fourier series
+
+The goal for the project at first was to predict the overal energy and electrical consumption to eventually figure out when certain appliences were used in a dwelling/residential house to save energy. This eventually changed to predicting only the gas consumption which was already difficult. In order to eventually have predictions on which appliences households used regurlarly an Fourier model had to be applied to distinguish different appliences in the household from eachother. An ARIMA/ARMA model would have worked, but I got advised to do a Fourier series, but this proved to be very difficult. I found two different ways to program a Fourier signal(FFT). I would've also liked to create a ARIMA model, but this was not a priority at the moment. 
+
+
 
 #### Communication
 
