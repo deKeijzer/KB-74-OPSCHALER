@@ -37,6 +37,8 @@ __Team 2__: Reading literature on other forecasting studies
   
   Most of the research was based around either multivariate linear regression (MVLR) or deep neural networks (DNN). We weren't able find any papers that applied Fourier Transforms to recognize certain human patterns, which we thought could help with the forecasting accuracy. We saw this as an oppertunity to try something new, which will be shown later in the portfolio (spoiler alert: didn't work as well as expected). 
   
+  Alongside the literature, all project members focused on the basics of Python. This was mostly done using Datacamp and Coursera, which can be found at the bottom of the portfolio. 
+  
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
   
 __Presentations__  
