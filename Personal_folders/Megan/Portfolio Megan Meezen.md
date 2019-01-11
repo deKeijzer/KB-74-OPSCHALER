@@ -43,4 +43,7 @@ This paper wil include information on the following subject:
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
 
-
+```python
+s = "Python syntax highlighting"
+print s
+```
