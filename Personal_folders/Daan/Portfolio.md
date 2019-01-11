@@ -35,7 +35,7 @@ __Team 2__: Reading literature on other forecasting studies
   
   I was part of the second team, which meant we had to search for related research papers on forecasting energy consumption. We noticed straight away that most of the research has been done on universtity buildings, probably due to privacy issues regarding the data collection of residential dwellings. By collaborating with OPSCHALER, we had access to 52 dwellings with up to 9 months of data. This was pretty cool. 
   
-  Most of the research was based around either multivariate linear regression (MVLR) or deep neural networks (DNN). However, we couldn't find any papers which have applied Fourier Transforms to recognize certain human patterns, which could help with the forecasting accuracy. We saw this as an oppertunity to try something new, which will be shown later in the portfolio (spoiler alert: didn't work as well as expected). 
+  Most of the research was based around either multivariate linear regression (MVLR) or deep neural networks (DNN). We weren't able find any papers that applied Fourier Transforms to recognize certain human patterns, which we thought could help with the forecasting accuracy. We saw this as an oppertunity to try something new, which will be shown later in the portfolio (spoiler alert: didn't work as well as expected). 
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
   
