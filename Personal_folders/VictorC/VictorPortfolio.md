@@ -53,11 +53,12 @@ In the list below you find all the presentations of *Opshaler* group I took part
 
 ## Paper Contibution
 
-The [research paper]() was the main goal of this project. The parts I have written are :
+The [research paper](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/paper.pdf) was the main goal of this project. The parts I have written are :
 
-<p>-*DNN methodology part* (suffered changes made by brian and group suggestions. Also figures are not done by me).</p>
-<p>-*Conclusions* (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
-<p>-*Results from MVLR,DNN, and GRU* (First time we wrote this part, it was done by Megan. However, results changed a lot because a validation problem we had,so I rewrote everything again.)</p>
+<p>-<b>DNN methodology part</b>(suffered changes made by brian and group suggestions. Also figures are not done by me).</p>
+<p>-<b>Conclusions</b> (Made with my teamate Daan, and also changed with group suggestions and Baldiri feedback).</p>
+<p>-<b>Results from MVLR,DNN, and GRU</b> (First time we wrote this part, it was done by Megan. However, results changed a lot because a validation problem we had,so I rewrote everything again. At the end Pol moved it to the conclusion, and suffered more changes)</p>
+
 
 Furthermore, we created an excel with references, were we all added the ones that could be usefull or related to our project.
 This is the [link](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/PortfolioInf/References.xlsx).
