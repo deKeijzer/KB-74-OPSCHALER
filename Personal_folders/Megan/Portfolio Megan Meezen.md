@@ -30,7 +30,7 @@ This paper wil include information on the following subject:
   -Dwellings: Residential houses in the area of Rotterdam the Netherlands
   -Smartmeter data: data from smartmeters from dwellings
   -gasPower: Amount of gas used
-  -Also two papers were mostly used to do inquistry research(dutch translation: vooronderzoek):
+  -Also a paper I used a lot was the one from a researcher from the TU Delft:  [link ](  https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Master%20thesis%20report_%20Cristina%20Jurado%20Lopez-Data-driven%20Predictive%20Control%20for%20Heating%20Demand%20in%20Buildings%20(1).pdf)
   
   -Seaborn: Is een correlatiemap 
   -Fourier: Wiskundige manier om patronen 
@@ -112,7 +112,10 @@ Fourier methhod 2
 
 # Presentions
 
-  I have also done a couple of presentations alone and together with teammates. I will post a link to my teammates portfolio for the rest of the presentations in which I participated. The presentations down below are the ones I created and performed. 
+  I have also done a couple of presentations alone and together with teammates. I will post a link to my teammates portfolio for the rest of the presentations in which I participated.  [Link teammate](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/portfolio.md)
+  
+  
+  The presentations down below are the ones I created and performed. 
 
 [1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/16-11-2018.pdf)
 [2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-10-2018%20good.pdf)
@@ -122,16 +125,21 @@ Fourier methhod 2
 
   Here are the papers and conducted research links as discussed above. I added the links to the rough paper drafts I made and findings which I mainly created and the final paper were the whole team worked on. The table we created which shows the machine learning models performance is also in the final paper.
 
-  1 = This paper draft contains my first findings based on reseaches conducted on machine learning methods
-  [1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Findings_methodology.pdf)
+  1 = This paper draft contains my first findings based on reseaches conducted on machine learning methods[1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Findings_methodology.pdf)
+  
   2 = A paper which explains the Gated Recurrent Unit
   [2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/GRU.pdf)
+  
   3 = A paper I made based on the differnt types of regressional methods
   [3](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/methods%20for%20regression.pdf)
+  
   4 = A rough draft in which I added unfinished parts of the final paper and applied some feedback to it. 
   [4](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Paper_rough_draft.pdf)
  
-   Final team opschaler paper paper
- [5]()
+   Final team opschaler paper [5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Opschaler%20paper%20final%20version.pdf)
   
+  #### Thank you :)
+  
+   I'd like to thank my teammates for the effort & thank the teachers for being very helpfull during this minor.
+    
   
