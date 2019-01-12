@@ -155,11 +155,11 @@ Table 2 design is by me.
 
 
 ## Python notebooks
-All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i try to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.
+All notebooks have been commented, apart from lines where the programming is basic Python (for data science). Besides commenting code, i tried to document all changes by committing small changes to GitHub. Doing this helped to document the work being done. However, the amount of commits obviously is no estimate of the quality of the work.
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Brian/appendix/github_timeline.png"> </p>
 
-Certain events have been marked with an arrow, to see their description click the dropdown box below. 
+Certain events have been marked with an arrow, to see their description click the dropdown box below. The left commit history is for this KB74 repository, whereas the right one is for the timeseries in Keras repository mentioned later on in this portfolio.
 
 <details><summary> <b>Click here to see the GitHub commit history description.</b>  </summary>  
 
