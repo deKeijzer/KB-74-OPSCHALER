@@ -39,25 +39,25 @@ __Team 2__: Reading literature on other forecasting studies
   
   Alongside the literature, all project members focused on machine learning in Python. This was mostly done using Datacamp and Coursera. The courses and weeks in which I participated can be found at the bottom of the portfolio. 
   
-  Due to the impressive  motivation and contribution in machine learning by our group member Brian, my focus during this minor was mainly around understanding and visualizing the data. Thus, this portfolio will mostly show the contributions I did in terms of getting to know the fundementals behind the data. 
+  Due to the impressive  motivation and contribution in machine learning by our group member Brian, my focus during this minor was mainly around understanding and visualizing the data. Thus, this portfolio will mostly show the contributions I did in terms of getting to know the fundamentals behind the data. 
   
   __Understanding and visualizing the data__
   
  
- To reach our goal of using as less building characteristics and climate data as possible, I decided to look at what could be done with just the outside temperature and gas consumption data from multiple dwellings. After team 2 had finished collecting the smart meter data from the OPSCHALER database and weather data from KNMI, I [wrote a code](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) to visualize the temperature and gas consumption at different time frames. This was done by taking the mean gas consumption and average outside temperature. The following gif shows the result:
+ To reach our goal of using as less building characteristics and climate data as possible, I decided to look at what could be done with just the outside temperature and gas consumption data from multiple dwellings. After team 2 had finished collecting the smart meter data from the OPSCHALER database and weather data from KNMI, I [wrote a code](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/correlationships.ipynb) to visualize the temperature and gas consumption at different time frames. This was done by taking the mean gas consumption and average outside temperature. The following gif shows the result:
   
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp2.gif"  width="700"> </p>
     
  The first plot is the (almost) raw data with a resolution of 1 hour. Mainly due to human patterns and day/night diffference, the data fluctuates a lot. However, when the data is resampled to different time frames, an inversely proportional correlation between gas consumption and temperature begins to show up. Although this is intuitive, showing this correlation with data is pretty amazing. 
    
-   To show this in another way, [in the same notebook](https://datascience.hhs.nl:8888/user/16021665/notebooks/KB-74-OPSCHALER/Personal_folders/Daan/correlationships.ipynb) I used Seaborn heatmap to plot the correlation between all variables from the KNMI data and dwelling energy consumptions. The correlation between outside temperature (T) and gas consumption (gasMeter) was calculated at different times frames, which can be seen in the following plot: 
+   To show this in another way, [in the same notebook](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/correlationships.ipynb) I used Seaborn heatmap to plot the correlation between all variables from the KNMI data and dwelling energy consumptions. The correlation between outside temperature (T) and gas consumption (gasMeter) was calculated at different times frames, which can be seen in the following plot: 
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/correlatie.png"  width="700"> </p>  
   
   It is impressive to see a correlation of (almost) -1 between the outside temperature and gas consumption at a time fame of a month. When this was shown to our project leader Baldiri, he asked us to sent those plots for his future lectures about building characteristics. This gave our group motivation to keep on getting great results, which in my opinion is one of the most important things when working together.  
   
   We also noticed that most dwellings seem to stop heating when the outside temperature is above around 16.5 °C. This property was used to create a simple linear regression using the gas consumption when the outside temperature was lower than 16.5 °C. The result can be seen in the following plot:
       <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Images/gasvstemp1d%20(1).png"  width="700"> </p>
-  When this is extrapolated, an estimation can be calculated for the gas consumption at temperatures below  16.5 °C. When the outside temperature is higher than this value, the only gas consumped could be due to human behaviors such as taking showers and cooking. To get insight into this value, I wrote a simple code that calculates the mean gas consumption when the average outside tmeperatures is above 16.5 °C, which can be seen below:
+  When this is extrapolated, an estimation can be calculated for the gas consumption at temperatures below  16.5 °C. When the outside temperature is higher than this value, the only gas consumped could be due to human behaviors such as taking showers and cooking. To get insight into this value, I wrote a simple code that calculates the mean gas consumption when the average outside temperature is above 16.5 °C, which can be seen below:
   
     bias = rdf[rdf['T'] > 16.5] #defines a bias for temperatures above 16.5 Degrees 
     bias = bias['gasPower'].mean() #takes the average of gasPower when T > 16.5
