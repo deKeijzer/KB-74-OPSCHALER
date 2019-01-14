@@ -75,4 +75,5 @@ In order to finish this portfolio I will state my contributions to the [paper](h
 
 This paper was a common effort from all the members of the group. We all tried to improve each part, but in order to set some tasks at the beginning of the writing we agreed to divide the work in different parts. I contributed in the metholodogy part with Brian de Keijzer.
 
-I also did some research tasks to find useful papers related with the project. They can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/tree/master/Personal_folders/Vector/Resources_portfolio/20%20articles)
+I also did some research tasks to find useful papers related with the project. They can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/tree/master/Personal_folders/Vector/Resources_portfolio/20%20articles) 
+__(I don't own any of them, please note that credits go to the researchers of each paper)__
