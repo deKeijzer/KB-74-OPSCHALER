@@ -59,7 +59,7 @@ The friday presentations have been equally shared (as much as possible) between 
 [Week 2](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/14-9-2018.pptx) I helped with the making of the presentation.  
 [Week 3](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx) I made and did the presentation with Daan Boesten.  
 [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/17-10-2018.pptx) Presented by Brian and me.  
-[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Briand made the presentation.  
+[Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx) Presented by me, Brian made the presentation.  
   
 ## Paper contribution
 I've put a lot of work into the paper. I started with writing the introduction and the results. The results are also written by Brian. After this I put in over 30 hours of correcting/helping the others.  
