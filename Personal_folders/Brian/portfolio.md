@@ -139,11 +139,12 @@ These courses have been very useful to learn more about DNNs and specifically CN
 ## Friday presentations  
 The weekly KB74-OPSCHALER presentations that I contributed to. The presentations are ment to be viewed in presentation mode since some of them contain useful animations.
 * [Week 1: made by all group members](https://prezi.com/p/28wycwuqqggc/#present), presented by Megan & Brian. 
-* [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor G. and Brian.
+* [Week 4](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/21-09-2018.pptx), presented by Victor Garcia and Brian.
 * [Week 7](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/12-10-2018.pptx), presented by Pol and Brian.
 * [Week 10](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/9-11-2018.pptx), presented by Pol. Slide 2 up to and including 25 are made by me.
-* [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor G. and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor G. Figures from slide 42 are from Daan. The other content is made by me.
-* [Week ? (07-12-2018), contains useful animations](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/07-12-2018.pptx), made & presented by me.
+* [Week 11](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/Opschaler%20partners%20presentation%20%20at%20TU%20Delft%20(13-11-2018).pptx), presented by Victor Garcia and me. The complete presentation design and the figures from slide 5, 14, 16 are made by Victor Garcia Figures from slide 42 are from Daan. The other content is made by me.
+* [Week ? (07-12-2018), contains useful animations](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/07-12-2018.pptx), made & presented by me.  
+* [Symposium 01-02-2019](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/appendix/friday%20presentations/01-02-2019%20-%20Symposium%20presentation.pptx), presented by Megan & Me. 
 
 ## Research paper
 My contributions to the research paper have been broadly spread out. Most of my contributions where general minor layout, grammar, consistency and paragraph changes. The methodology has partly been written by me. In specific the parts about the Pearson correlation coefficients. Most thing about the models have been written in collaboration with Victor Garcia. The research paper can be found [here](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Opschaler%20paper%20-%2011-01-2019.pdf).  
