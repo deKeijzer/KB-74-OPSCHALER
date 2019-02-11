@@ -71,6 +71,13 @@ This paper wil include information on the following subject:
 
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/LSTM.ipynb) 
 
+  Note: I also created a 3 dimensional map of a multivariate regression, which required an X,Y,Z space or two parameters moving around in the same area, but due to predictimg gas consumption this type of model wasn't suitable for a prediction with the use of 3MVLR to gain more insight. 
+  
+  [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/3dmvlr.ipynb) 
+  
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/3DMVLR.png"> </p>
+
+
 
  <p align="center">
   <b>CNN</b><br> 
@@ -139,7 +146,29 @@ Starter Basic data cleaning dummy set and yes this dummy set has been taken from
 To see if there were any correlations between the KNMI data and the smart meter data for dwelling 378 I created a Seaborn heatmap. Due to the NaN's in 378 there are empty spaces. There are high negative correlations between certain variables and positieve correlations on certain variables. 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/seaborncor.png"> </p>
 
-## Fourier series
+## More data cleaning
+
+  So for the remake of this portfolio I created some more data prep based on the processed and clean data files for the average dwelling, in the first part of the datacleaning you saw a seaborn heatmap with a lot of NaN's still included and not clear which parameters and features were suitable. I also added a histogram to gain more insight in the varity and division of the data and its features. You can see the images for the finally neat seaborn map. 
+  
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix.png"> </p>
+  
+   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix_2.png"> </p>
+   
+ This gave an insight in the different correlations which eventually led to this list which was also presented at the final presentation at the symposium:
+ 
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix_2.png"> </p>
+ 
+ [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Prep.ipynb) 
+  
+ 
+ 
+
+
+
+
+# Fourier series
+
+(edit: this was also a github examplary notebook used for fourier which ended up as an example, majority part of notebook isn't my property, just to give an insight in the progress of the project, the data files had been loaded in though. )
 
 The goal for the project at first was to predict the overal energy and electrical consumption to eventually figure out when certain appliences were used in a dwelling/residential house to save energy. This eventually changed to predicting only the gas consumption which was already difficult. In order to eventually have predictions on which appliences households used regurlarly an Fourier model had to be applied to distinguish different appliences in the household from eachother. An ARIMA/ARMA model would have worked, but I got advised to do a Fourier series, but this proved to be very difficult. I found two different ways to program a Fourier signal(FFT). I would've also liked to create a ARIMA model, but this was not a priority at the moment. 
 
@@ -153,11 +182,13 @@ Fourier methhod 2
 
 ### Conducted research on predictive models/NN
 
-  During the project different predictive models were used. The project team was divided into two teams those who researched and those who created the models. I researched LSTM and GRU which are both neural networks which belonged to RNN. I also researched DNN and MVLR. There are multiple ways of interpreting these models and different was to compute them. Below I will link to the research I conducted. I would've linked my all my bookmarks/refrences in this git hub portfolio which I read, but there are hundreds of them. So to keep this my github portfolio ordened I inserted the documents I made regarding the machine learning topics. 
+  During the project different predictive models were used. The project team was divided into two teams those who researched and those who created the models. I researched LSTM and GRU which are both neural networks which belonged to RNN. I also researched DNN and MVLR. There are multiple ways of interpreting these models and different was to compute them. Below I will link to the research I conducted. I would've linked my all my bookmarks/refrences in this git hub portfolio which I read, but there are hundreds of them. So to keep this my github portfolio ordened I inserted the documents I made regarding the machine learning topics. Github currently has a problem with opening PDF's , I also enlisted the PDF in the e-mail attachments just in case the links fail to work
 
 #### Communication
 
   As In have mentioned in the beginnen of my portfolio. Before I started this minor I didn't have any programming background. I have    done a lot of research in the first couple of weeks on different topics regarding data science. I made a couple of documents containing helpfull information about: Fourier, Linear Regression, Regressional types, Neural networks/machine learning (DNN/GRU/MVLR), Seaborn. I created these documents for me to better understand Python and machine learnng and so my groupmates could also benefit from the documents. I have also created a Flow-chart based on the main code from OPSCHALER which has been changed over time. It was quite important for the progress of the group to have an overview of what we we're exactly doing at the time. I was really focused on datacamp the first couple of weeks and struggles with programming. I know some basics, but I am stil not as skilled as some of my other teammates. I have also read the most papers on understanding machine learning and it's uses and advantages. 
+  
+  (edit: I actually have computed more models on NN now compared to other teammates in the past so that's a plus) :) 
 
 
 # Presentations
@@ -189,7 +220,7 @@ Fourier methhod 2
    Final team opschaler paper [5](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Opschaler%20paper%20final%20version.pdf)
   
   #### Thank you :)
-  
-   I'd like to thank my teammates for the effort & thank the teachers for being very helpfull during this minor.
+    
+   As mentioned above I have added al these files listed, which I wrote all myself except for the final paper draft which was written together. 
     
   
