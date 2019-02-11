@@ -154,11 +154,13 @@ To see if there were any correlations between the KNMI data and the smart meter 
   
    <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix_2.png"> </p>
    
- This gave an insight in the different correlations which eventually led to this list which was also presented at the final presentation at the symposium:
- 
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix_2.png"> </p>
  
  [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Prep.ipynb) 
+ 
+ This gave an insight in the different correlations which eventually led to this list which was also presented at the final presentation at the symposium:
+ 
+ In grey were the chosen features for the predictions 
  
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/parameters.png"> </p>
  
