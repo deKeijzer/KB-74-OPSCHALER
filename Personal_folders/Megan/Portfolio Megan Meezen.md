@@ -68,7 +68,10 @@ This paper wil include information on the following subject:
 
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/MVLR.png"> </p>
    As you can see the actual gas prediction completely overlaps the prediction, which results in overfitting over a longer period of time, the amount of epochs(10) and test size(0.1) is standardized is all my NN notebooks to see if the different models perform the same or different in different set of conditions. Which actually does, every model does behave differently in the same set of conditions. Based on already known data from other scripts from the project the MVLR model should perform the best on the processed data set. 
-   
+
+[Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/LSTM.ipynb) 
+
+
  <p align="center">
   <b>CNN</b><br> 
 </p>
@@ -78,13 +81,21 @@ This paper wil include information on the following subject:
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN_sep.png"> </p>
   As seen the predicted values vary quite differently from the test/train data, but based on the amount of epochs the CNN actually performs better, which is rather suprising taking into account that the MVLR theoretically should perform better, increasing the amount of epochs and training and test size could influence the accuracy of the model. If we take computational power into account this CNN model does take more time and computational power with more 'accurate' predictions on GasPower.
   
+  [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/CNN.ipynb) 
+  
    <p align="center">
   <b>LSTM</b><br> 
 </p>
 
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/LSTM_BLACK.png"> </p>
 
   
-  The LSTM notebook actually didn't work right for some reason on the jupyter server which was quite a hinderance for me, the LSTM model was optional for me as this was the model which I found quite difficult to compute, I found a way to visualize it, but the accuracy is way off, but yet it was still an accomplishment for me, for those who would still like to see this LSTM notebook, it's on my personal drive of mycharm, for computational purposed I would have rather used pycharm.
+  The LSTM notebook actually didn't work right for some reason on the jupyter server which was quite a hinderance for me, the LSTM model was optional for me as this was the model which I found quite difficult to compute, I found a way to visualize it, but the accuracy is way off, but yet it was still an accomplishment for me, for those who would still like to see this LSTM notebook, it's on my personal drive of mycharm, for computational purposed I would have rather used pycharm. As it can be see the LSTM model does not perform well with prediction gas consumption this is due to the fact that there is a limited amount of data available, it is known that an LSTM needs tons of data to perform well, but would perform more accurate in case there was more data available. 
+  
+   [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/LSTM.ipynb) 
+  
+  
+ 
   
   
 
