@@ -11,7 +11,7 @@
 
 
 <p align="center">
-  <b>This is my portfolio for the minor Applied data science from the Hague University of applied sciences. I am a third year student industrial engineering and management. Befor I started this minor I had no background in programming Python, but I was keen on learning the skill. I was assigned with other fellow students to project OPSCHALER from the TU Delft. The project OPSCHALER started in September 2018 till January 2019. The goal for project OPSCHALER was to analyze smart meter data from 54 dwellings to see if it was possible to accurately predict residential energy consumption. One of the key points was to see if it was possible to predict energy consumption with as few paramaters as possible with the use of the residential housing and KNMI data. This portfolio will mainly focussed on what I learned during the minor. I hope you do enjoy my portfolio.</b><br>
+  <b>This is my portfolio for the minor Applied data science from the Hague University of applied sciences. I am a third year student industrial engineering and management. Befor I started this minor I had no background in programming Python, but I was keen on learning the skill. I was assigned with other fellow students to project OPSCHALER from the TU Delft. The project OPSCHALER started in September 2018 till January 2019. The goal for project OPSCHALER was to analyze smart meter data from 54 dwellings to see if it was possible to accurately predict residential energy consumption. One of the key points was to see if it was possible to predict energy consumption with as few paramaters as possible with the use of the residential housing and KNMI data. This portfolio will mainly focussed on what I learned during the minor. I hope you do enjoy my portfolio. NOTE TO READER: this portfolio has been improved to the repeat or re-trial portfolio delivery. It has been said to add more Neural Networks which I did.</b><br>
 </p>
 
 ### Reader's Guide
@@ -25,6 +25,10 @@ This paper wil include information on the following subject:
 - Communication: Presentation, summaries, paper etc.
 - Domain knowledge
 
+  I.E. this is not a chronological order, just a summary of what this notebook includes. 
+
+  Also my notebooks may be a mix of English and Dutch mixed together, but I don't see this as a problem since my readers are billingual.
+
 ###
 
   -Dwellings: Residential houses in the area of Rotterdam the Netherlands
@@ -33,12 +37,14 @@ This paper wil include information on the following subject:
   -Also a paper I used a lot was the one from a researcher from the TU Delft:  [link ](  https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Master%20thesis%20report_%20Cristina%20Jurado%20Lopez-Data-driven%20Predictive%20Control%20for%20Heating%20Demand%20in%20Buildings%20(1).pdf)
   
   -Seaborn: Is een correlatiemap 
-  -Fourier: Wiskundige manier om patronen 
+  -Fourier: Wiskundige manier om patronen te herkennen voor menselijke patronen binnen een huishouden, dit kan invloed hebben op het gasverbruik. 
+   
+   So first it is also important to know that out of all the features, six features were selected to use for predicting gas usage, which feature is used depends completely on the type of model and it's usage. 
 
 ### Completed Courses
 
 ### Datacamp
-  I have completed the mandatory Datacamp courses. Which I found very helpfull for beginning programmers. Below you can see my score and completed chapters:
+  I have completed the mandatory Datacamp courses. Which I found very helpfull for beginning programmers. Below you can see my score and completed chapters, I have also used Datacamp & Coursera & Machine learning mastery to create the neural networks:
 
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/datacamp.png"> </p>
@@ -51,9 +57,22 @@ This paper wil include information on the following subject:
 
 <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Coursera.png"> </p>
 
+## Neural Networks Multivariate linear regression, Convolutional neural networks, Long-term short-term neural networks
+  All these models shall be referred to from now on as: CNN, MVLR, LSTM
+  
+  So I created these models to show my skill and understanding of CNN, MVLR and LSTM. At first I had problems computing the easy neural network models as I wasn't allowed to show a DNN because it already had been done a lot of times by other people, which is completely understandable. I primarily used the Keras libraries as the anker point for the NN's because some funtions of tensorflow are not available because of the packages installed on the datascience server. First I shall talk about my first created MVLR, the MVLR is the best machine learning model to start with. 
+
+<p align="center">
+  <b>MVLR</b><br> 
+</p>
+
+
+
+  
+
 ### Data preperation and cleaning
   Data preperation and cleaning are known in data science as very time consuming tasks. Since I didn't have any experience with Python I searched the internet for usefull guides on how to prep and clean the data we had. At first we only had smart meter data from 60 dwellings which now have been reduced to 52 dwellings. There were quite a lot of problems with the data sets from smart meter data and KNMI data. Before I even attempted in cleaning & prepping the "real" smartmeter data I searched for a random dataset and started prepping and cleaning to practice and develop my skills. See the link to my basic data prep&clean code on a IMDB movie rating.
-Starter Basic data cleaning dummy set: 
+Starter Basic data cleaning dummy set and yes this dummy set has been taken from another github user, I used this for practice in the beginning of the minor, so don't pay much attention to it, I just let this sit in my github so I can see where I improved my github page and for my own learning curve: 
 
 [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Basic_data_cleaning_dummy%20set.ipynb)  
 
