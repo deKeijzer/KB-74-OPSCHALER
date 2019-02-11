@@ -66,7 +66,16 @@ This paper wil include information on the following subject:
   <b>MVLR</b><br> 
 </p>
 
-
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/MVLR.png"> </p>
+   As you can see the actual gas prediction completely overlaps the prediction, which results in overfitting over a longer period of time, the amount of epochs(10) and test size(0.1) is standardized is all my NN notebooks to see if the different models perform the same or different in different set of conditions. Which actually does, every model does behave differently in the same set of conditions. Based on already known data from other scripts from the project the MVLR model should perform the best on the processed data set. 
+   
+ <p align="center">
+  <b>CNN</b><br> 
+</p>
+ 
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN.png"> </p>
+ 
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN%sep"> </p>
 
   
 
