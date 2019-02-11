@@ -75,7 +75,18 @@ This paper wil include information on the following subject:
  
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN.png"> </p>
  
-  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN%sep"> </p>
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/CNN_sep.png"> </p>
+  As seen the predicted values vary quite differently from the test/train data, but based on the amount of epochs the CNN actually performs better, which is rather suprising taking into account that the MVLR theoretically should perform better, increasing the amount of epochs and training and test size could influence the accuracy of the model. If we take computational power into account this CNN model does take more time and computational power with more 'accurate' predictions on GasPower.
+  
+   <p align="center">
+  <b>LSTM</b><br> 
+</p>
+
+
+  
+  The LSTM notebook actually didn't work right for some reason on the jupyter server which was quite a hinderance for me, the LSTM model was optional for me as this was the model which I found quite difficult to compute, I found a way to visualize it, but the accuracy is way off, but yet it was still an accomplishment for me, for those who would still like to see this LSTM notebook, it's on my personal drive of mycharm, for computational purposed I would have rather used pycharm.
+  
+  
 
   
 
