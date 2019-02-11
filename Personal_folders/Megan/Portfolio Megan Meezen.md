@@ -163,6 +163,10 @@ To see if there were any correlations between the KNMI data and the smart meter 
  In grey were the chosen features for the predictions 
  
   <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/parameters.png"> </p>
+  
+  And also noted that I made a histogram for overview as seen as below 
+ 
+ <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Histogram_features.png"> </p>
  
  
 # Fourier series
