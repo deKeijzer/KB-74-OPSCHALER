@@ -159,13 +159,10 @@ To see if there were any correlations between the KNMI data and the smart meter 
  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/correlations_matrix_2.png"> </p>
  
  [Click the link for the notebook :)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Prep.ipynb) 
-  
+ 
+  <p align="center"> <img src="https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/parameters.png"> </p>
  
  
-
-
-
-
 # Fourier series
 
 (edit: this was also a github examplary notebook used for fourier which ended up as an example, majority part of notebook isn't my property, just to give an insight in the progress of the project, the data files had been loaded in though. )
@@ -201,6 +198,7 @@ Fourier methhod 2
 [1](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/16-11-2018.pdf)
 [2](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-10-2018%20good.pdf)
 [3)](https://datascience.hhs.nl:8888/user/14109999/files/KB-74-OPSCHALER/Personal_folders/Megan/portfoliolinks/Imagesportfolio/17-12-2018.pdf)
+[4)](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/portfoliolinks/Imagesportfolio/Final_pres.pdf)
 
 # Papers and research
 
