@@ -13,7 +13,7 @@ Links to the personal portfolio's of the KB-74-OPSCHALER group members are liste
 - [Victor Garcia](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Vector/portfolio.md)  
 - [Victor Gómez Muñoz](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/VictorC/VictorPortfolio.md)  
 - [Daan Boesten](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Daan/Portfolio.md)  
-- [Megan Meezen](https://github.com/deKeijzer/KB-74-OPSCHALER/blob/master/Personal_folders/Megan/Portfolio%20Megan%20Meezen.md)
+
 
 # About the data
 There also is sensor data (occupancy, CO2 values, humidity, temperature and more) from within the dwellings available, this has not been added to this file.
